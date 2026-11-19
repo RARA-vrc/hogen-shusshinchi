@@ -12,6 +12,7 @@
     "licenses:check": "node scripts/build-licenses.ts --check",
     "geo:fetch": "node scripts/geo/fetch.ts",
     "geo:build": "node scripts/geo/build.ts",
+    "simulate": "node scripts/simulate.ts",
     "predev": "npm run licenses",
     "dev": "vite",
     "prebuild": "npm run licenses",
