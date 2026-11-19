@@ -237,7 +237,7 @@ describe('published app text', () => {
 });
 
 describe('wording and feedback helpers', () => {
-  it('uses the prefecture's own suffix for "inside the prefecture"', () => {
+  it("uses the prefecture own suffix for inside-the-prefecture wording", () => {
     expect(insidePref('東京都')).toBe('都内');
     expect(insidePref('北海道')).toBe('道内');
     expect(insidePref('大阪府')).toBe('府内');
