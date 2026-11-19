@@ -9,7 +9,7 @@
 ### 本プロジェクトのソースコード
 
 - 名称:本プロジェクトのソースコード
-- 配布元URL:本リポジトリ(https://github.com/RARA-vrc/hogen-akinator)
+- 配布元URL:本リポジトリ(https://github.com/RARA-vrc/hogen-shusshinchi)
 - ライセンス:MIT(https://opensource.org/license/mit)
 - クレジット表記:© 2026 RARA
 - 加工内容:自作
@@ -20,7 +20,7 @@
 ### 自作の質問データ・進行役の台詞データ(data/questions/、data/host/)
 
 - 名称:自作の質問データ・進行役の台詞データ(data/questions/、data/host/)
-- 配布元URL:本リポジトリ(https://github.com/RARA-vrc/hogen-akinator)
+- 配布元URL:本リポジトリ(https://github.com/RARA-vrc/hogen-shusshinchi)
 - ライセンス:CC BY 4.0(暫定)(https://creativecommons.org/licenses/by/4.0/deed.ja)
 - クレジット表記:© 2026 RARA
 - 加工内容:自作(質問文・選択肢・分布定義・台詞はすべて本プロジェクトで作成)

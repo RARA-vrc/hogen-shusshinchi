@@ -18,7 +18,7 @@ import { HOST_CONFIG, chooseVoice, hostLine } from '../app/host.ts';
 import { insidePref } from '../app/text.ts';
 import { defaultConfig } from '../engine/config.ts';
 import { LEVEL_CELL, LEVEL_PREF, topK } from '../engine/engine.ts';
-import { dayOf, recordIfConsented, type LogSink } from '../log/sink.ts';
+import { COMMENT_LIMIT, cleanComment, dayOf, recordIfConsented, type LogSink } from '../log/sink.ts';
 import { clear, h, percent, type Child } from './dom.ts';
 import { hostFace, type Expression } from './face.ts';
 import { createHeatMap, type HeatMap } from './map.ts';
@@ -26,6 +26,10 @@ import { isSoundEnabled, loadSoundSetting, playSound, setSoundEnabled } from './
 
 const ABROAD = 'abroad';
 const MULTIPLE = 'multiple';
+
+// Where consented records go: 'send' = the configured endpoint, 'local' =
+// this browser only (development), 'none' = nowhere.
+export type LogMode = 'send' | 'local' | 'none';
 
 interface State {
   screen: 'start' | 'question' | 'result' | 'answer' | 'end' | 'credits';
@@ -38,9 +42,10 @@ interface State {
   correct: string; // cell id, ABROAD, MULTIPLE or ''
   answerPref: string; // selected value on the answer screen
   answerCell: string;
+  comment: string; // optional free text typed on the answer screen
 }
 
-export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void {
+export function startApp(root: HTMLElement, data: AppData, sink: LogSink, logMode: LogMode): void {
   const config = defaultConfig();
   const map: HeatMap = createHeatMap(data.topology, data.modelJson.cellIds, '推定の途中経過を示す日本地図');
   const state: State = {
@@ -54,6 +59,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     correct: '',
     answerPref: '',
     answerCell: '',
+    comment: '',
   };
 
   // ---------------------------------------------------------------- helpers
@@ -185,6 +191,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
       answers,
       estimate,
       correct: state.correct,
+      comment: cleanComment(state.comment),
       day: dayOf(new Date()),
     });
   }
@@ -197,6 +204,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     state.correct = '';
     state.answerPref = '';
     state.answerCell = '';
+    state.comment = '';
     state.screen = isFinished(state.game) ? 'result' : 'question';
     if (state.screen === 'result') finishToResult();
     render();
@@ -231,7 +239,16 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
         h(
           'p',
           null,
-          '質問への回答、推定結果、最後に選んでもらう正解の地域、日付(日単位)を、匿名の統計として質問の改良に使う場合があります。氏名・IPアドレス・端末の情報は扱いません。現在のバージョンでは、回答をどこにも送信していません。',
+          '質問への回答、推定結果、最後に選んでもらう正解の地域、任意で書いてもらうコメント、日付(日単位)を、質問の改良に使います。氏名・IPアドレス・端末の情報は保存しません。',
+        ),
+        h(
+          'p',
+          null,
+          logMode === 'send'
+            ? '同意した場合、これらは Google のサービス(Google Apps Script)を通じて、作者が管理する表に送信・保存されます。コメントには、個人が特定できることを書かないでください。'
+            : logMode === 'local'
+              ? '(開発モード)同意した場合、このブラウザの中にだけ保存します。どこにも送信しません。'
+              : '現在のバージョンでは、回答をどこにも送信していません。',
         ),
         h('label', { class: 'consent-check', for: 'consent' }, check, ' 上記の利用に同意する(任意。同意しなくても遊べます)'),
       ),
@@ -518,6 +535,25 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
         cellSelect,
       );
     }
+    let commentField: Child = null;
+    if (state.consent && logMode !== 'none') {
+      const box = h('textarea', { id: 'answer-comment', rows: '3', maxlength: String(COMMENT_LIMIT) });
+      box.value = state.comment;
+      box.addEventListener('input', () => {
+        state.comment = box.value;
+      });
+      commentField = h(
+        'div',
+        { class: 'field' },
+        h('label', { for: 'answer-comment' }, `コメント(任意・${COMMENT_LIMIT}字まで)`),
+        box,
+        h(
+          'p',
+          { class: 'small' },
+          '「この質問は地元では言い方が違う」「この言葉で分かるはず」など、気づいたことがあれば教えてください。個人が特定できることは書かないでください。',
+        ),
+      );
+    }
     const ready = state.answerPref === ABROAD || state.answerPref === MULTIPLE || (isPref && state.answerCell !== '');
 
     return [
@@ -529,6 +565,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
       h('p', { class: 'small' }, '小・中学生のころを過ごした地域を選んでください。市区町村より細かいことは聞きません。'),
       h('div', { class: 'field' }, h('label', { for: 'answer-pref' }, '都道府県'), prefSelect),
       cellField,
+      commentField,
       h(
         'div',
         { class: 'row' },

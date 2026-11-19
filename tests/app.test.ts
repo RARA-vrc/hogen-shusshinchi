@@ -15,6 +15,11 @@ import { defaultConfig } from '../src/engine/config.ts';
 import { LEVEL_CELL, LEVEL_PREF, LEVEL_REGION } from '../src/engine/engine.ts';
 import { modelFromJson, type ModelJson } from '../src/engine/model.ts';
 import {
+  COMMENT_LIMIT,
+  HttpSink,
+  cleanComment,
+  isUsableEndpoint,
+  type PostRequest,
   LOCAL_LOG_KEY,
   LOCAL_LOG_LIMIT,
   LocalSink,
@@ -179,6 +184,7 @@ describe('logging', () => {
     answers: ['a'],
     estimate: { level: 'pref', id: '27' },
     correct: '2704',
+    comment: '',
     day: '2026-11-19',
   };
 
@@ -206,8 +212,62 @@ describe('logging', () => {
   });
 
   it('a record holds only the agreed fields, with the date rounded to the day', () => {
-    expect(Object.keys(entry).sort()).toEqual(['answers', 'correct', 'day', 'estimate', 'questions']);
+    expect(Object.keys(entry).sort()).toEqual(['answers', 'comment', 'correct', 'day', 'estimate', 'questions']);
     expect(dayOf(new Date('2026-11-19T23:59:58Z'))).toBe('2026-11-19');
+  });
+});
+
+describe('comments and sending', () => {
+  it('cleans a comment: trims, drops control characters, cuts to the limit', () => {
+    expect(cleanComment('  hello\nworld\t ')).toBe('hello world');
+    expect(cleanComment('')).toBe('');
+    expect(cleanComment('x'.repeat(COMMENT_LIMIT + 50)).length).toBe(COMMENT_LIMIT);
+  });
+
+  it('HttpSink posts the record as plain-text JSON without a preflight', () => {
+    const calls: { url: string; init: PostRequest }[] = [];
+    const sink = new HttpSink('https://example.invalid/exec', (url, init) => {
+      calls.push({ url, init });
+      return Promise.resolve();
+    });
+    const entry: PlayRecord = {
+      questions: ['q1'],
+      answers: ['a'],
+      estimate: { level: 'pref', id: '27' },
+      correct: '2704',
+      comment: 'c',
+      day: '2026-11-19',
+    };
+    sink.record(entry);
+    expect(calls.length).toBe(1);
+    expect(calls[0].url).toBe('https://example.invalid/exec');
+    expect(calls[0].init.method).toBe('POST');
+    expect(calls[0].init.mode).toBe('no-cors');
+    expect(calls[0].init.headers['Content-Type']).toContain('text/plain');
+    expect(JSON.parse(calls[0].init.body)).toEqual(entry);
+  });
+
+  it('HttpSink never throws and is not reached without consent', () => {
+    let count = 0;
+    const failing = new HttpSink('https://example.invalid/exec', () => {
+      count++;
+      throw new Error('offline');
+    });
+    const entry: PlayRecord = { questions: [], answers: [], estimate: { level: 'region', id: '' }, correct: '', comment: '', day: '2026-11-19' };
+    expect(() => failing.record(entry)).not.toThrow();
+    expect(count).toBe(1);
+    expect(recordIfConsented(failing, false, entry)).toBe(false);
+    expect(count).toBe(1);
+  });
+
+  it('accepts only https endpoints; the shipped config has a string endpoint', () => {
+    expect(isUsableEndpoint('')).toBe(false);
+    expect(isUsableEndpoint('http://example.invalid/x')).toBe(false);
+    expect(isUsableEndpoint('https://')).toBe(false);
+    expect(isUsableEndpoint('https://example.invalid/exec')).toBe(true);
+    const site = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'));
+    expect(typeof site.logEndpoint).toBe('string');
+    expect(site.logEndpoint === '' || isUsableEndpoint(site.logEndpoint)).toBe(true);
   });
 });
 

@@ -102,13 +102,14 @@ npm run questions  # src/generated/model.json、questions.json、docs/needs-revi
 - **キャラクター**:進行役は `src/ui/face.ts` の SVG で、場面に応じて6種類の表情に変わります。
 - **結果**:確信度に応じて、セル・都道府県・地方のいずれかの粒度で答えます。外れたら 2 番目、3 番目の候補で再挑戦し、最後に正解を選んでもらいます(都道府県とセルの選択式。「日本国外」「複数の地域で育った」も選べます)。
 - **クレジット画面**:`LICENSES.md` と同じ元データ(`data/licenses.yaml`)から生成しています。
-- **ログ**:この版では、回答をどこにも送信しません。`src/log/sink.ts` の `LogSink` に、何もしない `NoopSink`(公開版で使用)と、開発時に localStorage へ保存する `LocalSink` があります。記録するのは質問 id・回答・最終推定・正解のセル id・日付(日単位)だけで、開始画面で同意がなければ何も記録しません。
+- **ログとコメント**:記録するのは質問 id・回答・最終推定・正解のセル id・任意のコメント(300字まで)・日付(日単位)だけで、開始画面で同意がなければ何も記録しません。コメント欄は、同意した人の正解入力画面にだけ出ます。`src/log/sink.ts` の `LogSink` に、何もしない `NoopSink`、開発時に localStorage へ保存する `LocalSink`、`site.config.json` の `logEndpoint` へ送る `HttpSink` があります。`logEndpoint` が空のあいだ、公開版は何も送信しません。送り先は Google Apps Script とスプレッドシートを想定していて、スクリプトと手順は `gas/` にあります(未デプロイ・未検証)。
 
 ## 構成
 
 | 場所 | 内容 |
 | --- | --- |
-| `site.config.json` | リポジトリ名(Vite の base)と表示タイトル。リポジトリ名を変えるときはここだけ直す |
+| `site.config.json` | リポジトリ名(Vite の base)、表示タイトル、記録の送り先(`logEndpoint`、空なら送信しない) |
+| `gas/` | 回答とコメントを受け取る Google Apps Script と設定手順 |
 | `data/licenses.yaml` | 権利情報の唯一の元データ。LICENSES.md とアプリ内クレジットの両方をここから生成する |
 | `data/questions/` | 質問データ(1問1ファイル) |
 | `docs/needs-review.md` | 質問データのレビュー一覧(生成物) |

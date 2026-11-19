@@ -1,11 +1,12 @@
-// Play logging. Nothing is sent anywhere in this version: the only
-// implementations are a no-op sink and a development sink that writes to
-// localStorage. A network sink (e.g. Cloudflare Workers) can be added later
-// by implementing LogSink.
+// Play logging. Sinks: a no-op sink, a development sink that writes to
+// localStorage, and an HTTP sink that posts to the endpoint set in
+// site.config.json (logEndpoint). With an empty endpoint the published site
+// sends nothing.
 //
 // A record holds only: question ids, chosen answers, the final estimate, the
-// correct area chosen by the player, and the date (rounded to the day).
-// No IP address, device information or free text is handled.
+// correct area chosen by the player, an optional short comment typed by the
+// player, and the date (rounded to the day). The app adds no device
+// information; nothing is recorded without consent.
 
 export interface PlayRecord {
   questions: string[]; // question ids, in the order asked
@@ -13,6 +14,7 @@ export interface PlayRecord {
   estimate: { level: string; id: string }; // e.g. { level: 'pref', id: '27' }
   // Cell id, or 'abroad' / 'multiple' / '' (not given).
   correct: string;
+  comment: string; // optional free text from the player, '' if none
   day: string; // YYYY-MM-DD
 }
 
@@ -33,6 +35,20 @@ export interface KeyValueStore {
 
 export const LOCAL_LOG_KEY = 'hogen-play-log';
 export const LOCAL_LOG_LIMIT = 200;
+export const COMMENT_LIMIT = 300;
+
+// Trims a comment, collapses control characters to spaces and cuts it to the
+// length limit.
+export function cleanComment(text: string): string {
+  let out = '';
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    out += code < 32 || code === 127 ? ' ' : text.charAt(i);
+  }
+  out = out.trim();
+  if (out.length > COMMENT_LIMIT) out = out.slice(0, COMMENT_LIMIT);
+  return out;
+}
 
 // Development only: keeps the latest records in localStorage.
 export class LocalSink implements LogSink {
@@ -59,6 +75,50 @@ export class LocalSink implements LogSink {
       // storage full or unavailable: drop the record
     }
   }
+}
+
+export interface PostRequest {
+  method: string;
+  mode: string;
+  keepalive: boolean;
+  headers: Record<string, string>;
+  body: string;
+}
+
+export type PostFunction = (url: string, init: PostRequest) => unknown;
+
+// Posts each record as JSON to one endpoint (a Google Apps Script web app,
+// see gas/README.md). The body is sent as text/plain so the browser makes a
+// simple request without a CORS preflight, which Apps Script cannot answer.
+// The response is not read; failures are ignored so play is never blocked.
+export class HttpSink implements LogSink {
+  url: string;
+  post: PostFunction;
+
+  constructor(url: string, post: PostFunction) {
+    this.url = url;
+    this.post = post;
+  }
+
+  record(entry: PlayRecord): void {
+    try {
+      const result = this.post(this.url, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(entry),
+      });
+      if (result instanceof Promise) result.catch(() => undefined);
+    } catch {
+      // offline or blocked: drop the record
+    }
+  }
+}
+
+// Only https endpoints are accepted; anything else means "do not send".
+export function isUsableEndpoint(url: string): boolean {
+  return url.startsWith('https://') && url.length > 'https://'.length;
 }
 
 // Rounds a timestamp to the day (UTC), so no time of day is kept.
