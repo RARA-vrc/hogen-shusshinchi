@@ -1,0 +1,29 @@
+{
+  "name": "hogen-akinator",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "licenses": "node scripts/build-licenses.ts",
+    "licenses:check": "node scripts/build-licenses.ts --check",
+    "predev": "npm run licenses",
+    "dev": "vite",
+    "prebuild": "npm run licenses",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "pretest": "npm run licenses",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1",
+    "yaml": "^2.9.1"
+  }
+}

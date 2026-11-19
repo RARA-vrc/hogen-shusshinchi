@@ -1,0 +1,40 @@
+# Single source of truth for licence and credit information.
+# scripts/build-licenses.ts generates both LICENSES.md and the in-app credits
+# data (src/generated/credits.json) from this file. Do not edit LICENSES.md by
+# hand.
+#
+# Rules (see README):
+# - Add a third-party dataset only after opening its distribution page and
+#   confirming licence, credit wording and retrieval date. Never fill these in
+#   from memory.
+# - Non-commercial licences (CC BY-NC etc.) are not allowed here.
+# - npm packages are not listed here; they are read from package.json and
+#   node_modules at build time.
+#
+# Fields: id, category (code | own-data | third-party-data), name, source_url,
+# license, license_url, credit, processing, retrieved (YYYY-MM-DD).
+# For this project's own work, source_url is "self" and retrieved is "n/a".
+
+entries:
+  - id: source-code
+    category: code
+    name: 本プロジェクトのソースコード
+    source_url: self
+    license: MIT
+    license_url: https://opensource.org/license/mit
+    credit: © 2026 RARA
+    processing: 自作
+    retrieved: n/a
+
+  - id: question-data
+    category: own-data
+    name: 自作の質問データ・進行役の台詞データ(data/questions/、data/host/)
+    source_url: self
+    license: CC BY 4.0(暫定)
+    license_url: https://creativecommons.org/licenses/by/4.0/deed.ja
+    credit: © 2026 RARA
+    processing: 自作(質問文・選択肢・分布定義・台詞はすべて本プロジェクトで作成)
+    retrieved: n/a
+
+# Third-party data (administrative boundaries, medical areas, population) is
+# added in phase 1, after each distribution page has been checked.

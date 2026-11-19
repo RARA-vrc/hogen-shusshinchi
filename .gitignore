@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+# Generated at build time from data/licenses.yaml
+src/generated/
+
+# Raw downloads used by the data scripts (never committed)
+data/raw/
+
+# National Institute for Japanese Language and Linguistics data:
+# no licence obtained yet, input files must never be committed.
+scripts/import-gaj/input/
+scripts/import-gaj/output/
+
+*.log
+.DS_Store
