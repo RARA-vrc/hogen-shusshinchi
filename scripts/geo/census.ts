@@ -9,6 +9,10 @@ export interface CensusRow {
   name: string;
   kind: string; // a: prefecture/national, 0: ward of a designated city, 1: designated city, 2: city, 3: town/village
   population: number;
+  // For a ward (kind 0): code and name of the city it belongs to.
+  // Otherwise the municipality's own code and name.
+  cityCode: string;
+  cityName: string;
 }
 
 function decodeXml(s: string): string {
@@ -55,6 +59,8 @@ export function parseSheetRows(xml: string, strings: string[]): Record<string, s
 
 export function rowsToCensus(rows: Record<string, string>[]): CensusRow[] {
   const out: CensusRow[] = [];
+  let parentCode = '';
+  let parentName = '';
   for (let i = 0; i < rows.length; i++) {
     const m = /^(\d{5})_(.+)$/.exec(rows[i].B ?? '');
     if (m === null) continue;
@@ -64,7 +70,22 @@ export function rowsToCensus(rows: Record<string, string>[]): CensusRow[] {
     if (raw === '' || !Number.isFinite(population)) {
       throw new Error(`census: no population for ${rows[i].B}`);
     }
-    out.push({ code: m[1], name: m[2], kind: rows[i].D ?? '', population });
+    const kind = rows[i].D ?? '';
+    // Wards are listed directly below their city (kind 1).
+    if (kind === '1') {
+      parentCode = m[1];
+      parentName = m[2];
+    }
+    const isWard = kind === '0';
+    if (isWard && parentCode === '') throw new Error(`census: ward ${m[1]} has no parent city`);
+    out.push({
+      code: m[1],
+      name: m[2],
+      kind,
+      population,
+      cityCode: isWard ? parentCode : m[1],
+      cityName: isWard ? parentName : m[2],
+    });
   }
   return out;
 }

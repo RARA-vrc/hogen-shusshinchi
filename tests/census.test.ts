@@ -21,7 +21,9 @@ describe('census workbook parser', () => {
 
   it('extracts municipality rows and treats "-" as zero', () => {
     const rows = parseSheetRows(SHEET, parseSharedStrings(SHARED));
-    expect(rowsToCensus(rows)).toEqual([
+    expect(
+      rowsToCensus(rows).map((r) => ({ code: r.code, name: r.name, kind: r.kind, population: r.population })),
+    ).toEqual([
       { code: '01100', name: '札幌市', kind: '1', population: 1973395 },
       { code: '07546', name: '双葉町', kind: '3', population: 0 },
     ]);

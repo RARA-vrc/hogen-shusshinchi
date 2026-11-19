@@ -15,9 +15,10 @@ describe('parseCsv', () => {
 
 describe('assemble', () => {
   const census = [
-    { code: '01101', name: 'A区', kind: '0', population: 300 },
-    { code: '01102', name: 'B区', kind: '0', population: 100 },
-    { code: '01202', name: 'C市', kind: '2', population: 0 },
+    { code: '01101', name: 'X市A区', kind: '0', population: 300, cityCode: '01100', cityName: 'X市' },
+    { code: '01102', name: 'X市B区', kind: '0', population: 100, cityCode: '01100', cityName: 'X市' },
+    { code: '01202', name: 'C市', kind: '2', population: 0, cityCode: '01202', cityName: 'C市' },
+    { code: '01203', name: 'D町', kind: '3', population: 10, cityCode: '01203', cityName: 'D町' },
   ];
   const part = (code: string, cell: string, cx: number, cy: number, area: number) => ({
     code, cell, cellName: `cell${cell}`, cx, cy, area,
@@ -36,10 +37,25 @@ describe('assemble', () => {
     );
     expect(municipalities.length).toBe(3);
     expect(cells).toEqual([
-      { id: '0101', name: 'cell0101', pref: '01', lon: 141, lat: 41, population: 400 },
+      { id: '0101', name: 'cell0101', label: 'X市', pref: '01', lon: 141, lat: 41, population: 400 },
       // zero population: falls back to the plain mean
-      { id: '0102', name: 'cell0102', pref: '01', lon: 141, lat: 41, population: 0 },
+      { id: '0102', name: 'cell0102', label: 'C市', pref: '01', lon: 141, lat: 41, population: 0 },
     ]);
+  });
+
+  it('labels cells by their largest city, or by ward when a city spans several cells', () => {
+    const { cells } = assemble(
+      [
+        part('01101', '0101', 140, 40, 5),
+        part('01203', '0101', 140, 40, 5),
+        part('01102', '0102', 141, 41, 3),
+      ],
+      census,
+      4,
+    );
+    expect(cells.map((c) => c.label)).toEqual(['X市A区周辺', 'X市B区']);
+    const single = assemble([part('01202', '0101', 1, 1, 1), part('01203', '0101', 1, 1, 1)], census, 4);
+    expect(single.cells[0].label).toBe('D町周辺');
   });
 
   it('rejects a municipality split across two cells', () => {
@@ -66,6 +82,7 @@ describe('committed geography outputs', () => {
     for (const c of cellsDoc.cells) {
       expect(typeof c.id).toBe('string');
       expect(c.name.length).toBeGreaterThan(0);
+      expect(c.label.length).toBeGreaterThan(0);
       expect(c.pref).toBe(c.id.slice(0, 2));
       expect(c.lon).toBeGreaterThan(122);
       expect(c.lon).toBeLessThan(154);
@@ -75,6 +92,15 @@ describe('committed geography outputs', () => {
       ids.add(c.id);
     }
     expect(ids.size).toBe(cellsDoc.cells.length);
+  });
+
+  it('display labels are unique within each prefecture', () => {
+    const seen = new Set<string>();
+    for (const c of cellsDoc.cells) {
+      const key = `${c.pref}:${c.label}`;
+      expect(seen.has(key)).toBe(false);
+      seen.add(key);
+    }
   });
 
   it('cell populations add up to the prefecture and municipality totals', () => {

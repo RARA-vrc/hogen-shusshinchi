@@ -38,7 +38,11 @@ const MAPSHAPER = join(ROOT, 'node_modules', 'mapshaper', 'bin', 'mapshaper');
 
 export interface Cell {
   id: string;
+  // Official name of the secondary medical area. Kept for reference only;
+  // the UI shows `label`, which players can recognise.
   name: string;
+  // Display name built from the largest city in the cell, e.g. "札幌市周辺".
+  label: string;
   pref: string;
   lon: number;
   lat: number;
@@ -163,6 +167,7 @@ export function assemble(
   }
 
   const municipalities: Municipality[] = [];
+  const members = new Map<string, CensusRow[]>();
   const acc = new Map<string, { name: string; pop: number; wx: number; wy: number; sx: number; sy: number; n: number }>();
   const codes = Array.from(best.keys()).sort();
   for (let i = 0; i < codes.length; i++) {
@@ -175,7 +180,9 @@ export function assemble(
     if (a === undefined) {
       a = { name: p.cellName, pop: 0, wx: 0, wy: 0, sx: 0, sy: 0, n: 0 };
       acc.set(p.cell, a);
+      members.set(p.cell, []);
     }
+    members.get(p.cell)!.push(c);
     a.pop += c.population;
     a.wx += p.cx * c.population;
     a.wy += p.cy * c.population;
@@ -186,6 +193,7 @@ export function assemble(
 
   const cells: Cell[] = [];
   const ids = Array.from(acc.keys()).sort();
+  const labels = cellLabels(ids, members);
   for (let i = 0; i < ids.length; i++) {
     const a = acc.get(ids[i])!;
     const lon = a.pop > 0 ? a.wx / a.pop : a.sx / a.n;
@@ -193,6 +201,7 @@ export function assemble(
     cells.push({
       id: ids[i],
       name: a.name,
+      label: labels[i],
       pref: ids[i].slice(0, 2),
       lon: round(lon, coordDecimals),
       lat: round(lat, coordDecimals),
@@ -200,6 +209,59 @@ export function assemble(
     });
   }
   return { cells, municipalities };
+}
+
+const TOKYO_WARDS = '13100';
+
+// Display names. The largest city of a cell names it ("札幌市周辺"; just
+// "横浜市" when the cell is that city alone). When several cells share the
+// same largest city (a big city split into several cells, or the Tokyo
+// wards), the largest ward is used instead ("川崎市中原区周辺", "世田谷区周辺").
+export function cellLabels(ids: string[], members: Map<string, CensusRow[]>): string[] {
+  const topCity: string[] = [];
+  const topCityName: string[] = [];
+  const shareCount = new Map<string, number>();
+  for (let i = 0; i < ids.length; i++) {
+    const rows = members.get(ids[i])!;
+    const popByCity = new Map<string, number>();
+    for (let k = 0; k < rows.length; k++) {
+      popByCity.set(rows[k].cityCode, (popByCity.get(rows[k].cityCode) ?? 0) + rows[k].population);
+    }
+    let best = '';
+    let bestName = '';
+    let bestPop = -1;
+    for (let k = 0; k < rows.length; k++) {
+      const pop = popByCity.get(rows[k].cityCode)!;
+      if (pop > bestPop) {
+        bestPop = pop;
+        best = rows[k].cityCode;
+        bestName = rows[k].cityName;
+      }
+    }
+    topCity.push(best);
+    topCityName.push(bestName);
+    shareCount.set(best, (shareCount.get(best) ?? 0) + 1);
+  }
+  const out: string[] = [];
+  for (let i = 0; i < ids.length; i++) {
+    const rows = members.get(ids[i])!;
+    const shared = topCity[i] === TOKYO_WARDS || shareCount.get(topCity[i])! > 1;
+    let base = topCityName[i];
+    let alone = true;
+    if (shared) {
+      let ward: CensusRow | null = null;
+      for (let k = 0; k < rows.length; k++) {
+        if (rows[k].cityCode !== topCity[i]) continue;
+        if (ward === null || rows[k].population > ward.population) ward = rows[k];
+      }
+      base = ward!.name;
+      alone = rows.length === 1;
+    } else {
+      for (let k = 0; k < rows.length; k++) if (rows[k].cityCode !== topCity[i]) alone = false;
+    }
+    out.push(alone ? base : `${base}周辺`);
+  }
+  return out;
 }
 
 function prefectures(census: CensusRow[]): { code: string; name: string; population: number }[] {
