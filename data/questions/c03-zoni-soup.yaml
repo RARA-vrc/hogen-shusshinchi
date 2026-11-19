@@ -1,0 +1,30 @@
+id: c03-zoni-soup
+category: culture
+fun: 0.5
+text: "同じく実家のお雑煮。汁の味つけは――"
+options:
+  - { id: sumashi, text: "すまし(しょうゆ・だし)" }
+  - { id: shiromiso, text: "白みそ" }
+  - { id: akamiso, text: "赤みそ・合わせみそ" }
+  - { id: azuki, text: "小豆汁(ぜんざい風)" }
+distribution:
+  default: { sumashi: 0.78, shiromiso: 0.04, akamiso: 0.06, azuki: 0.01, unknown: 0.11 }
+  zones:
+    - prefs: ["25", "26", "27", "29", "30"]
+      dist: { sumashi: 0.30, shiromiso: 0.55, akamiso: 0.04, azuki: 0.01, unknown: 0.10 }
+    - prefs: ["28"]
+      dist: { sumashi: 0.46, shiromiso: 0.38, akamiso: 0.04, azuki: 0.01, unknown: 0.11 }
+    - prefs: ["37"]
+      dist: { sumashi: 0.30, shiromiso: 0.55, akamiso: 0.03, azuki: 0.01, unknown: 0.11 }
+    - prefs: ["36"]
+      dist: { sumashi: 0.50, shiromiso: 0.30, akamiso: 0.06, azuki: 0.01, unknown: 0.13 }
+    - prefs: ["31"]
+      dist: { sumashi: 0.38, shiromiso: 0.04, akamiso: 0.03, azuki: 0.45, unknown: 0.10 }
+    - prefs: ["32"]
+      dist: { sumashi: 0.55, shiromiso: 0.04, akamiso: 0.04, azuki: 0.25, unknown: 0.12 }
+    - regions: [okinawa]
+      dist: { sumashi: 0.15, shiromiso: 0.03, akamiso: 0.03, azuki: 0.01, unknown: 0.78 }
+source: "未確認"
+confidence: low
+needs_review: true
+notes: "分布の数値は作成時の見積もり。県ごとの比率は不確か。家庭差も大きい。"

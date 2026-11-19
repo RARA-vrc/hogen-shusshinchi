@@ -1,0 +1,18 @@
+id: g13-sasaru
+category: unaware
+fun: 0.7
+text: "ポケットの中でスマホが勝手に反応して、変な画面に。「あれ、ボタンが押ささってた」。この「押ささる」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.90, unknown: 0.06 }
+  zones:
+    - regions: [hokkaido]
+      dist: { use: 0.50, hear: 0.35, none: 0.08, unknown: 0.07 }
+    - prefs: ["02", "03", "05"]
+      dist: { use: 0.30, hear: 0.35, none: 0.25, unknown: 0.10 }
+    - prefs: ["04", "06", "07"]
+      dist: { use: 0.12, hear: 0.22, none: 0.56, unknown: 0.10 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

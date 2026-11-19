@@ -1,0 +1,18 @@
+id: v16-karau
+category: unaware
+fun: 0.6
+text: "入学式の朝。ぴかぴかのランドセルを前に、祖母が「さあ、――てみせて」"
+options:
+  - { id: seou, text: "「しょって」「背負って」" }
+  - { id: karau, text: "「からって」" }
+distribution:
+  default: { seou: 0.90, karau: 0.02, unknown: 0.08 }
+  zones:
+    - regions: [kyushu]
+      dist: { seou: 0.24, karau: 0.68, unknown: 0.08 }
+    - regions: [okinawa]
+      dist: { seou: 0.80, karau: 0.05, unknown: 0.15 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

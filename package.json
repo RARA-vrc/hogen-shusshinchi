@@ -13,14 +13,17 @@
     "geo:fetch": "node scripts/geo/fetch.ts",
     "geo:build": "node scripts/geo/build.ts",
     "simulate": "node scripts/simulate.ts",
-    "predev": "npm run licenses",
+    "predev": "npm run generate",
     "dev": "vite",
-    "prebuild": "npm run licenses",
+    "prebuild": "npm run generate",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "pretest": "npm run licenses",
+    "pretest": "npm run generate",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "questions": "node scripts/questions/build.ts",
+    "generate": "npm run licenses && npm run questions",
+    "presimulate": "npm run questions"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

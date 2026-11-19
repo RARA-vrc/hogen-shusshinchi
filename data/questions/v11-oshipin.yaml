@@ -1,0 +1,16 @@
+id: v11-oshipin
+category: unaware
+fun: 0.4
+text: "教室の掲示板にプリントを貼りたい。「誰か、――取って」"
+options:
+  - { id: gabyo, text: "「画びょう」" }
+  - { id: oshipin, text: "「押しピン」" }
+distribution:
+  default: { gabyo: 0.86, oshipin: 0.07, unknown: 0.07 }
+  zones:
+    - regions: [kinki, chugoku, shikoku, kyushu]
+      dist: { gabyo: 0.37, oshipin: 0.55, unknown: 0.08 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

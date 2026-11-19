@@ -3,8 +3,9 @@
 //   node scripts/simulate.ts [--model path/to/model.json] [--synthetic]
 //                            [--trials 20] [--seed 1] [--noise 0.1,0.2]
 //
-// Without --model it uses data/model/model.json (built from the real
-// question set) if present, otherwise a synthetic question set.
+// Without --model it uses src/generated/model.json (built from the real
+// question set by scripts/questions/build.ts) if present, otherwise a
+// synthetic question set.
 // See simulate-core.ts for what the numbers do and do not mean.
 
 import { existsSync, readFileSync } from 'node:fs';
@@ -27,7 +28,7 @@ function main(): void {
   const trials = Number(arg('trials', '20'));
   const seed = Number(arg('seed', '1'));
   const noises = arg('noise', '0.1,0.2').split(',').map(Number);
-  const defaultPath = join(ROOT, 'data', 'model', 'model.json');
+  const defaultPath = join(ROOT, 'src', 'generated', 'model.json');
   const modelPath = arg('model', defaultPath);
   const synthetic = process.argv.indexOf('--synthetic') >= 0 || !existsSync(modelPath);
 
@@ -52,12 +53,12 @@ function main(): void {
       `stop at top cell ${config.stopTopCellProb}, min gain ${config.minGainBits} bits`,
   );
   console.log('');
-  console.log('| ランダム回答率 | 都道府県 top-1 | 都道府県 top-3 | セル top-1 | セル top-3 | 平均質問数 |');
-  console.log('| --- | --- | --- | --- | --- | --- |');
+  console.log('| ランダム回答率 | 地方 top-1 | 都道府県 top-1 | 都道府県 top-3 | セル top-1 | セル top-3 | 平均質問数 |');
+  console.log('| --- | --- | --- | --- | --- | --- | --- |');
   for (let i = 0; i < noises.length; i++) {
     const s = simulate(model, config, { noise: noises[i], trialsPerCell: trials, seed: seed + i });
     console.log(
-      `| ${pct(noises[i])} | ${pct(s.prefTop1)} | ${pct(s.prefTop3)} | ${pct(s.cellTop1)} | ` +
+      `| ${pct(noises[i])} | ${pct(s.regionTop1)} | ${pct(s.prefTop1)} | ${pct(s.prefTop3)} | ${pct(s.cellTop1)} | ` +
         `${pct(s.cellTop3)} | ${s.meanQuestions.toFixed(1)} |`,
     );
   }

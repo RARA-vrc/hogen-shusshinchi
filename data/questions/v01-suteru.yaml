@@ -1,0 +1,28 @@
+id: v01-suteru
+category: vocab
+fun: 0.6
+text: "友達に空のペットボトルを渡しながら、ひとこと。「これ、ゴミ箱に――」"
+options:
+  - { id: suteru, text: "「捨てといて」" }
+  - { id: hokasu, text: "「ほかしといて」" }
+  - { id: nageru, text: "「投げといて」" }
+  - { id: hokaru, text: "「ほかっといて」" }
+distribution:
+  default: { suteru: 0.90, hokasu: 0.02, nageru: 0.02, hokaru: 0.01, unknown: 0.05 }
+  zones:
+    - regions: [kinki]
+      dist: { suteru: 0.52, hokasu: 0.40, nageru: 0.01, hokaru: 0.01, unknown: 0.06 }
+    - prefs: ["24"]
+      dist: { suteru: 0.62, hokasu: 0.20, nageru: 0.01, hokaru: 0.10, unknown: 0.07 }
+    - prefs: ["21", "23"]
+      dist: { suteru: 0.64, hokasu: 0.04, nageru: 0.01, hokaru: 0.25, unknown: 0.06 }
+    - regions: [hokkaido]
+      dist: { suteru: 0.43, hokasu: 0.01, nageru: 0.50, hokaru: 0.01, unknown: 0.05 }
+    - regions: [tohoku]
+      dist: { suteru: 0.52, hokasu: 0.01, nageru: 0.40, hokaru: 0.01, unknown: 0.06 }
+    - regions: [chugoku, shikoku]
+      dist: { suteru: 0.82, hokasu: 0.08, nageru: 0.02, hokaru: 0.01, unknown: 0.07 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

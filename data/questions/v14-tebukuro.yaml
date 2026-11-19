@@ -1,0 +1,26 @@
+id: v14-tebukuro
+category: unaware
+fun: 0.6
+text: "外は雪。玄関で子どもに声をかける。「寒いから、手袋を――」"
+options:
+  - { id: hameru, text: "「はめなさい」" }
+  - { id: suru, text: "「しなさい」" }
+  - { id: haku, text: "「はきなさい」" }
+  - { id: tsukeru, text: "「つけなさい」" }
+distribution:
+  default: { hameru: 0.32, suru: 0.42, haku: 0.02, tsukeru: 0.18, unknown: 0.06 }
+  zones:
+    - regions: [hokkaido]
+      dist: { hameru: 0.08, suru: 0.12, haku: 0.70, tsukeru: 0.05, unknown: 0.05 }
+    - prefs: ["02"]
+      dist: { hameru: 0.15, suru: 0.20, haku: 0.50, tsukeru: 0.08, unknown: 0.07 }
+    - prefs: ["03", "04", "05", "06", "07"]
+      dist: { hameru: 0.26, suru: 0.34, haku: 0.20, tsukeru: 0.13, unknown: 0.07 }
+    - prefs: ["36", "37"]
+      dist: { hameru: 0.18, suru: 0.25, haku: 0.40, tsukeru: 0.10, unknown: 0.07 }
+    - regions: [okinawa]
+      dist: { hameru: 0.20, suru: 0.35, haku: 0.03, tsukeru: 0.20, unknown: 0.22 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。北海道以外(東北各県、徳島・香川)の比率は不確か。"

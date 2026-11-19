@@ -1,0 +1,19 @@
+id: v03-shoppai
+category: vocab
+fun: 0.4
+text: "味噌汁をひと口。どうやら塩を入れすぎたらしい。「うわ、――」"
+options:
+  - { id: shoppai, text: "「しょっぱい」" }
+  - { id: karai, text: "「からい」「しおからい」" }
+distribution:
+  default: { shoppai: 0.85, karai: 0.09, unknown: 0.06 }
+  zones:
+    - regions: [kinki, chugoku, shikoku, kyushu]
+      prefs: ["16", "17", "18", "21", "23"]
+      dist: { shoppai: 0.32, karai: 0.60, unknown: 0.08 }
+    - regions: [okinawa]
+      dist: { shoppai: 0.50, karai: 0.35, unknown: 0.15 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

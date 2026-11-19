@@ -1,0 +1,35 @@
+id: v05-bandage
+category: vocab
+fun: 0.7
+text: "紙で指を切ってしまった。「痛っ。誰か――持ってない?」"
+options:
+  - { id: bansoko, text: "「ばんそうこう」" }
+  - { id: bandaid, text: "「バンドエイド」" }
+  - { id: cutban, text: "「カットバン」" }
+  - { id: sabio, text: "「サビオ」" }
+  - { id: riba, text: "「リバテープ」" }
+distribution:
+  default: { bansoko: 0.52, bandaid: 0.30, cutban: 0.08, sabio: 0.02, riba: 0.02, unknown: 0.06 }
+  zones:
+    - regions: [hokkaido]
+      dist: { bansoko: 0.30, bandaid: 0.15, cutban: 0.05, sabio: 0.42, riba: 0.01, unknown: 0.07 }
+    - regions: [tohoku]
+      dist: { bansoko: 0.30, bandaid: 0.15, cutban: 0.42, sabio: 0.04, riba: 0.01, unknown: 0.08 }
+    - regions: [chugoku, shikoku]
+      dist: { bansoko: 0.33, bandaid: 0.17, cutban: 0.35, sabio: 0.05, riba: 0.02, unknown: 0.08 }
+    - prefs: ["34"]
+      dist: { bansoko: 0.28, bandaid: 0.13, cutban: 0.25, sabio: 0.25, riba: 0.02, unknown: 0.07 }
+    - prefs: ["30"]
+      dist: { bansoko: 0.40, bandaid: 0.25, cutban: 0.05, sabio: 0.22, riba: 0.01, unknown: 0.07 }
+    - regions: [kyushu]
+      dist: { bansoko: 0.25, bandaid: 0.10, cutban: 0.25, sabio: 0.02, riba: 0.30, unknown: 0.08 }
+    - prefs: ["43"]
+      dist: { bansoko: 0.20, bandaid: 0.07, cutban: 0.15, sabio: 0.01, riba: 0.50, unknown: 0.07 }
+    - regions: [okinawa]
+      dist: { bansoko: 0.35, bandaid: 0.20, cutban: 0.05, sabio: 0.01, riba: 0.30, unknown: 0.09 }
+    - prefs: ["16"]
+      dist: { bansoko: 0.40, bandaid: 0.20, cutban: 0.05, sabio: 0.02, riba: 0.01, unknown: 0.32 }
+source: "未確認"
+confidence: low
+needs_review: true
+notes: "分布の数値は作成時の見積もり。商品名に由来する呼び名で、世代差が大きいはず。県ごとの比率は不確か。富山は選択肢にない呼び名が多いと見て「わからない」を高くしている。"

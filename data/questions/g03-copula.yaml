@@ -1,0 +1,45 @@
+id: g03-copula
+category: grammar
+fun: 0.5
+text: "友達の推理がずばり当たった。「そう、それ!」の気持ちで口から出るのは――"
+options:
+  - { id: da, text: "「そうだよ」" }
+  - { id: ya, text: "「そうやで」「そうやよ」" }
+  - { id: ja, text: "「そうじゃ」「そうじゃよ」" }
+  - { id: tai, text: "「そうたい」「そうばい」" }
+distribution:
+  default: { da: 0.88, ya: 0.04, ja: 0.02, tai: 0.01, unknown: 0.05 }
+  zones:
+    - regions: [kinki]
+      prefs: ["16", "17", "18", "21"]
+      dist: { da: 0.22, ya: 0.68, ja: 0.03, tai: 0.01, unknown: 0.06 }
+    - prefs: ["23"]
+      dist: { da: 0.70, ya: 0.15, ja: 0.04, tai: 0.01, unknown: 0.10 }
+    - prefs: ["33", "34", "35"]
+      dist: { da: 0.18, ya: 0.17, ja: 0.55, tai: 0.02, unknown: 0.08 }
+    - prefs: ["31", "32"]
+      dist: { da: 0.60, ya: 0.08, ja: 0.20, tai: 0.02, unknown: 0.10 }
+    - prefs: ["36", "39"]
+      dist: { da: 0.12, ya: 0.40, ja: 0.40, tai: 0.01, unknown: 0.07 }
+    - prefs: ["37"]
+      dist: { da: 0.12, ya: 0.55, ja: 0.25, tai: 0.01, unknown: 0.07 }
+    - prefs: ["38"]
+      dist: { da: 0.12, ya: 0.38, ja: 0.42, tai: 0.01, unknown: 0.07 }
+    - prefs: ["40"]
+      dist: { da: 0.10, ya: 0.45, ja: 0.05, tai: 0.30, unknown: 0.10 }
+    - prefs: ["41", "42"]
+      dist: { da: 0.10, ya: 0.35, ja: 0.05, tai: 0.40, unknown: 0.10 }
+    - prefs: ["43"]
+      dist: { da: 0.15, ya: 0.20, ja: 0.05, tai: 0.50, unknown: 0.10 }
+    - prefs: ["44"]
+      dist: { da: 0.12, ya: 0.40, ja: 0.33, tai: 0.05, unknown: 0.10 }
+    - prefs: ["45"]
+      dist: { da: 0.15, ya: 0.28, ja: 0.42, tai: 0.05, unknown: 0.10 }
+    - prefs: ["46"]
+      dist: { da: 0.20, ya: 0.20, ja: 0.45, tai: 0.03, unknown: 0.12 }
+    - regions: [okinawa]
+      dist: { da: 0.60, ya: 0.20, ja: 0.03, tai: 0.02, unknown: 0.15 }
+source: "Wikipedia日本語版「日本語の方言」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。「だ」「じゃ」「や」のおおよその範囲(山陰が「だ」である点を含む)は出典で確認。「たい・ばい」と県ごとの比率は作成者の知識による。"

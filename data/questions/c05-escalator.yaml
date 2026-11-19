@@ -1,0 +1,21 @@
+id: c05-escalator
+category: culture
+fun: 0.6
+text: "駅の長いエスカレーター。急いでいないあなたが、なんとなく立つのは――"
+options:
+  - { id: hidari, text: "左側(右を空ける)" }
+  - { id: migi, text: "右側(左を空ける)" }
+  - { id: nashi, text: "特に決まっていない/エスカレーターに乗る機会が少ない" }
+distribution:
+  default: { hidari: 0.60, migi: 0.05, nashi: 0.30, unknown: 0.05 }
+  zones:
+    - prefs: ["11", "12", "13", "14"]
+      dist: { hidari: 0.82, migi: 0.03, nashi: 0.11, unknown: 0.04 }
+    - prefs: ["27", "28", "29", "30"]
+      dist: { hidari: 0.08, migi: 0.72, nashi: 0.15, unknown: 0.05 }
+    - prefs: ["25", "26"]
+      dist: { hidari: 0.25, migi: 0.40, nashi: 0.30, unknown: 0.05 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

@@ -1,0 +1,22 @@
+id: g01-negation
+category: grammar
+fun: 0.4
+text: "友達から「今夜の飲み会、来る?」とメッセージ。気が乗らないあなたの返事は――"
+options:
+  - { id: nai, text: "「今日は行かない」" }
+  - { id: n, text: "「今日は行かん」" }
+  - { id: hen, text: "「今日は行かへん」" }
+distribution:
+  default: { nai: 0.86, n: 0.05, hen: 0.02, unknown: 0.07 }
+  zones:
+    - regions: [chugoku, shikoku, kyushu]
+      prefs: ["16", "17", "18", "21", "23", "24"]
+      dist: { nai: 0.30, n: 0.58, hen: 0.05, unknown: 0.07 }
+    - regions: [kinki]
+      dist: { nai: 0.22, n: 0.22, hen: 0.50, unknown: 0.06 }
+    - regions: [okinawa]
+      dist: { nai: 0.65, n: 0.20, hen: 0.02, unknown: 0.13 }
+source: "Wikipedia日本語版「日本語の方言」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: high
+needs_review: true
+notes: "分布の数値は作成時の見積もり。「ない」と「ん」の東西差は出典で確認。「へん」を近畿に置いたのは作成者の知識による。"

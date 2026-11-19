@@ -1,0 +1,23 @@
+id: v07-taiikuzuwari
+category: vocab
+fun: 0.6
+text: "体育館の床に全員集合。先生の号令は「はい、――して!」(ひざを抱えて座る、あの座り方)"
+options:
+  - { id: taiiku, text: "「体育座り」" }
+  - { id: sankaku, text: "「三角座り」" }
+  - { id: taisou, text: "「体操座り」" }
+distribution:
+  default: { taiiku: 0.82, sankaku: 0.04, taisou: 0.07, unknown: 0.07 }
+  zones:
+    - regions: [kinki]
+      dist: { taiiku: 0.25, sankaku: 0.62, taisou: 0.06, unknown: 0.07 }
+    - prefs: ["21", "22", "23", "24"]
+      dist: { taiiku: 0.28, sankaku: 0.05, taisou: 0.60, unknown: 0.07 }
+    - regions: [chugoku, shikoku]
+      dist: { taiiku: 0.45, sankaku: 0.30, taisou: 0.17, unknown: 0.08 }
+    - regions: [kyushu]
+      dist: { taiiku: 0.50, sankaku: 0.07, taisou: 0.35, unknown: 0.08 }
+source: "未確認"
+confidence: low
+needs_review: true
+notes: "分布の数値は作成時の見積もり。近畿の「三角座り」、東海の「体操座り」以外(中国・四国・九州)の比率は不確か。"

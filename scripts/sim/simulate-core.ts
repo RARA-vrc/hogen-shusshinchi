@@ -16,6 +16,7 @@ import {
   createEngine,
   nextQuestion,
   prefProbs,
+  regionProbs,
   reset,
   stopReason,
   topK,
@@ -32,6 +33,7 @@ export interface SimOptions {
 export interface SimStats {
   trials: number;
   // Population-weighted: each cell's results count in proportion to its prior.
+  regionTop1: number;
   prefTop1: number;
   prefTop3: number;
   cellTop1: number;
@@ -58,9 +60,11 @@ export function simulate(model: Model, config: EngineConfig, opts: SimOptions): 
   const rng = makeRng(opts.seed);
   const e = createEngine(model, config);
   const prefP = new Float32Array(model.prefCount);
+  const regionP = new Float32Array(model.regionCount);
   const top = new Int32Array(3);
   const stats: SimStats = {
     trials: 0,
+    regionTop1: 0,
     prefTop1: 0,
     prefTop3: 0,
     cellTop1: 0,
@@ -92,6 +96,9 @@ export function simulate(model: Model, config: EngineConfig, opts: SimOptions): 
         stats.prefTop1Unweighted += u;
       }
       for (let i = 0; i < n; i++) if (top[i] === model.cellPref[cell]) stats.prefTop3 += w;
+      regionProbs(e, regionP);
+      topK(regionP, model.regionCount, 1, top);
+      if (top[0] === model.cellRegion[cell]) stats.regionTop1 += w;
       stats.meanQuestions += w * e.histLen;
       stats.trials++;
     }

@@ -1,0 +1,24 @@
+id: c01-mcdonalds
+category: culture
+fun: 0.8
+text: "放課後、友達を誘う。「帰りに――寄ってかない?」(Mのマークのハンバーガー店)"
+options:
+  - { id: makku, text: "「マック」" }
+  - { id: makudo, text: "「マクド」" }
+distribution:
+  default: { makku: 0.90, makudo: 0.04, unknown: 0.06 }
+  zones:
+    - prefs: ["25", "26", "27", "28", "29", "30"]
+      dist: { makku: 0.14, makudo: 0.80, unknown: 0.06 }
+    - prefs: ["24"]
+      dist: { makku: 0.57, makudo: 0.35, unknown: 0.08 }
+    - regions: [shikoku]
+      dist: { makku: 0.62, makudo: 0.30, unknown: 0.08 }
+    - prefs: ["18"]
+      dist: { makku: 0.67, makudo: 0.25, unknown: 0.08 }
+    - prefs: ["33"]
+      dist: { makku: 0.77, makudo: 0.15, unknown: 0.08 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。近畿2府4県以外(三重・四国・福井・岡山)の比率は不確か。"

@@ -1,0 +1,24 @@
+id: c02-zoni-mochi
+category: culture
+fun: 0.6
+text: "元日の朝。実家のお雑煮に入っているお餅の形は――"
+options:
+  - { id: kaku, text: "四角い餅(角餅)" }
+  - { id: maru, text: "丸い餅(丸餅)" }
+  - { id: nashi, text: "餅を入れない/雑煮を食べる習慣がない" }
+distribution:
+  default: { kaku: 0.80, maru: 0.08, nashi: 0.07, unknown: 0.05 }
+  zones:
+    - regions: [kinki, chugoku, shikoku, kyushu]
+      prefs: ["17", "18"]
+      dist: { kaku: 0.12, maru: 0.76, nashi: 0.07, unknown: 0.05 }
+    - prefs: ["24"]
+      dist: { kaku: 0.48, maru: 0.40, nashi: 0.07, unknown: 0.05 }
+    - prefs: ["39", "46"]
+      dist: { kaku: 0.48, maru: 0.38, nashi: 0.08, unknown: 0.06 }
+    - regions: [okinawa]
+      dist: { kaku: 0.08, maru: 0.12, nashi: 0.72, unknown: 0.08 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。東が角餅・西が丸餅という大きな傾向に基づく。高知・鹿児島を角餅寄りにした点は要確認。"

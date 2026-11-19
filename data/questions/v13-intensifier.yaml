@@ -1,0 +1,37 @@
+id: v13-intensifier
+category: vocab
+fun: 0.7
+text: "行列のできる店のラーメンが、想像をはるかに超えてうまかった。友達に伝えるなら――"
+options:
+  - { id: namara, text: "「なまらうまい」" }
+  - { id: dera, text: "「でらうまい」" }
+  - { id: bari, text: "「ばりうまい」" }
+  - { id: buchi, text: "「ぶちうまい」" }
+  - { id: none, text: "どれも言わない" }
+distribution:
+  default: { namara: 0.01, dera: 0.01, bari: 0.03, buchi: 0.01, none: 0.88, unknown: 0.06 }
+  zones:
+    - regions: [hokkaido]
+      dist: { namara: 0.38, dera: 0.01, bari: 0.01, buchi: 0.01, none: 0.52, unknown: 0.07 }
+    - prefs: ["23"]
+      dist: { namara: 0.01, dera: 0.22, bari: 0.02, buchi: 0.01, none: 0.66, unknown: 0.08 }
+    - prefs: ["21"]
+      dist: { namara: 0.01, dera: 0.10, bari: 0.02, buchi: 0.01, none: 0.78, unknown: 0.08 }
+    - prefs: ["40"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.60, buchi: 0.01, none: 0.30, unknown: 0.07 }
+    - prefs: ["41"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.45, buchi: 0.01, none: 0.45, unknown: 0.07 }
+    - prefs: ["42"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.35, buchi: 0.01, none: 0.55, unknown: 0.07 }
+    - prefs: ["43", "44"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.22, buchi: 0.01, none: 0.68, unknown: 0.07 }
+    - prefs: ["34"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.25, buchi: 0.30, none: 0.36, unknown: 0.07 }
+    - prefs: ["35"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.12, buchi: 0.50, none: 0.29, unknown: 0.07 }
+    - prefs: ["28"]
+      dist: { namara: 0.01, dera: 0.01, bari: 0.25, buchi: 0.01, none: 0.65, unknown: 0.07 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。若い世代での使用率は不確か。兵庫・広島・九州各県の「ばり」の比率は要確認。"

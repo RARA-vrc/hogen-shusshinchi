@@ -1,0 +1,17 @@
+id: v12-cutter
+category: unaware
+fun: 0.4
+text: "制服の学ランやブレザーの下に着る、白い襟つきのシャツ。あなたの学校での呼び名は――"
+options:
+  - { id: ywai, text: "「ワイシャツ」" }
+  - { id: cutter, text: "「カッターシャツ」「カッター」" }
+distribution:
+  default: { ywai: 0.84, cutter: 0.10, unknown: 0.06 }
+  zones:
+    - regions: [kinki, chugoku, shikoku, kyushu]
+      prefs: ["16", "17", "18", "21", "23"]
+      dist: { ywai: 0.32, cutter: 0.60, unknown: 0.08 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

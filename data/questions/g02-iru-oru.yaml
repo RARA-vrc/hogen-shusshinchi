@@ -1,0 +1,21 @@
+id: g02-iru-oru
+category: grammar
+fun: 0.3
+text: "電話で「いまどこ?」と聞かれた。家でごろごろしているあなたは――"
+options:
+  - { id: iru, text: "「家にいるよ」" }
+  - { id: oru, text: "「家におるよ」" }
+distribution:
+  default: { iru: 0.88, oru: 0.06, unknown: 0.06 }
+  zones:
+    - regions: [chugoku, shikoku, kyushu]
+      prefs: ["16", "17", "18", "21", "23", "24"]
+      dist: { iru: 0.32, oru: 0.60, unknown: 0.08 }
+    - regions: [kinki]
+      dist: { iru: 0.58, oru: 0.35, unknown: 0.07 }
+    - regions: [okinawa]
+      dist: { iru: 0.75, oru: 0.12, unknown: 0.13 }
+source: "Wikipedia日本語版「日本語の方言」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。出典は「いる」「おる」を東西差の例として挙げるのみで、範囲の記述はない。境界は作成者の知識による。"

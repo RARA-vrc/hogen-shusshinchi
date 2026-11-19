@@ -1,0 +1,33 @@
+id: v06-mozoshi
+category: vocab
+fun: 0.7
+text: "文化祭の準備。壁新聞を書くための、あの大きな白い紙を買いに行く。店員さんに「すみません、――ありますか」"
+options:
+  - { id: mozo, text: "「模造紙」" }
+  - { id: bshi, text: "「B紙(ビーし)」" }
+  - { id: taiyo, text: "「大洋紙(たいようし)」" }
+  - { id: torinoko, text: "「鳥の子用紙」" }
+  - { id: hiro, text: "「広用紙(ひろようし)」" }
+distribution:
+  default: { mozo: 0.86, bshi: 0.01, taiyo: 0.01, torinoko: 0.01, hiro: 0.01, unknown: 0.10 }
+  zones:
+    - prefs: ["21", "23"]
+      dist: { mozo: 0.22, bshi: 0.68, taiyo: 0.01, torinoko: 0.01, hiro: 0.01, unknown: 0.07 }
+    - prefs: ["24"]
+      dist: { mozo: 0.62, bshi: 0.25, taiyo: 0.01, torinoko: 0.01, hiro: 0.01, unknown: 0.10 }
+    - prefs: ["15"]
+      dist: { mozo: 0.28, bshi: 0.01, taiyo: 0.60, torinoko: 0.01, hiro: 0.01, unknown: 0.09 }
+    - prefs: ["37", "38"]
+      dist: { mozo: 0.28, bshi: 0.01, taiyo: 0.01, torinoko: 0.60, hiro: 0.01, unknown: 0.09 }
+    - prefs: ["43"]
+      dist: { mozo: 0.27, bshi: 0.01, taiyo: 0.01, torinoko: 0.01, hiro: 0.60, unknown: 0.10 }
+    - prefs: ["41", "42", "46"]
+      dist: { mozo: 0.50, bshi: 0.01, taiyo: 0.01, torinoko: 0.01, hiro: 0.35, unknown: 0.12 }
+    - prefs: ["40"]
+      dist: { mozo: 0.66, bshi: 0.01, taiyo: 0.01, torinoko: 0.01, hiro: 0.20, unknown: 0.11 }
+    - prefs: ["06", "16"]
+      dist: { mozo: 0.46, bshi: 0.01, taiyo: 0.01, torinoko: 0.01, hiro: 0.01, unknown: 0.50 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。山形・富山は選択肢にない呼び名があると見て「わからない」を高くしている。九州各県の「広用紙」の比率は不確か。"

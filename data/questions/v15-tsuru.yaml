@@ -1,0 +1,19 @@
+id: v15-tsuru
+category: unaware
+fun: 0.7
+text: "掃除の時間。先生が「はい、みんなで机を後ろに――」"
+options:
+  - { id: hakobu, text: "「運んで」「下げて」" }
+  - { id: tsuru, text: "「つって」" }
+  - { id: kaku, text: "「かいて」" }
+distribution:
+  default: { hakobu: 0.90, tsuru: 0.01, kaku: 0.02, unknown: 0.07 }
+  zones:
+    - prefs: ["21", "23", "24"]
+      dist: { hakobu: 0.27, tsuru: 0.65, kaku: 0.01, unknown: 0.07 }
+    - regions: [shikoku]
+      dist: { hakobu: 0.52, tsuru: 0.01, kaku: 0.38, unknown: 0.09 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。四国の「机をかく」の範囲と比率は不確か。"

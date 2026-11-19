@@ -1,0 +1,26 @@
+id: v09-gakku
+category: unaware
+fun: 0.4
+text: "小学校の決まり。「子どもだけで――の外に出てはいけません」"
+options:
+  - { id: gakku, text: "「学区」" }
+  - { id: kouku, text: "「校区」" }
+  - { id: kouka, text: "「校下」" }
+distribution:
+  default: { gakku: 0.80, kouku: 0.10, kouka: 0.01, unknown: 0.09 }
+  zones:
+    - regions: [kinki, chugoku, shikoku, kyushu, okinawa]
+      prefs: ["18"]
+      dist: { gakku: 0.12, kouku: 0.78, kouka: 0.02, unknown: 0.08 }
+    - prefs: ["16", "17"]
+      dist: { gakku: 0.12, kouku: 0.28, kouka: 0.50, unknown: 0.10 }
+    - prefs: ["21", "23"]
+      dist: { gakku: 0.55, kouku: 0.25, kouka: 0.10, unknown: 0.10 }
+    - prefs: ["24"]
+      dist: { gakku: 0.35, kouku: 0.50, kouka: 0.03, unknown: 0.12 }
+    - regions: [hokkaido]
+      dist: { gakku: 0.42, kouku: 0.45, kouka: 0.02, unknown: 0.11 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。北海道・東海の比率は不確か。"

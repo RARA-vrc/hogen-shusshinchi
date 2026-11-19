@@ -1,0 +1,18 @@
+id: k02-rafuru
+category: knowledge
+fun: 0.8
+text: "日直の仕事。「黒板消しといて。ラーフルはそこにあるから」。この「ラーフル」――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.07, no: 0.88, unknown: 0.04 }
+  zones:
+    - prefs: ["46"]
+      dist: { local: 0.75, media: 0.08, no: 0.13, unknown: 0.04 }
+    - prefs: ["45"]
+      dist: { local: 0.60, media: 0.10, no: 0.25, unknown: 0.05 }
+    - prefs: ["38"]
+      dist: { local: 0.35, media: 0.10, no: 0.50, unknown: 0.05 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。鹿児島・宮崎・愛媛で黒板消しを指す、という点に基づく。愛媛の比率は不確か。"

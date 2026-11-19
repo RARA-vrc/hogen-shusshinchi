@@ -1,0 +1,23 @@
+id: v04-katazukeru
+category: unaware
+fun: 0.6
+text: "机の上に出しっぱなしのハサミ。弟に「それ、元の引き出しに――」"
+options:
+  - { id: katazukete, text: "「片付けといて」" }
+  - { id: naoshite, text: "「なおしといて」" }
+  - { id: katashite, text: "「かたしといて」" }
+  - { id: shimatte, text: "「しまっといて」" }
+distribution:
+  default: { katazukete: 0.50, naoshite: 0.02, katashite: 0.05, shimatte: 0.38, unknown: 0.05 }
+  zones:
+    - regions: [kanto]
+      prefs: ["07"]
+      dist: { katazukete: 0.40, naoshite: 0.02, katashite: 0.23, shimatte: 0.30, unknown: 0.05 }
+    - regions: [kinki, chugoku, shikoku, kyushu]
+      dist: { katazukete: 0.25, naoshite: 0.52, katashite: 0.02, shimatte: 0.15, unknown: 0.06 }
+    - regions: [okinawa]
+      dist: { katazukete: 0.30, naoshite: 0.40, katashite: 0.02, shimatte: 0.20, unknown: 0.08 }
+source: "未確認"
+confidence: medium
+needs_review: true
+notes: "分布の数値は作成時の見積もり。"

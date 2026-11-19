@@ -1,0 +1,22 @@
+id: a02-ame
+category: accent
+fun: 0.4
+text: "「雨」と「飴」。声に出して言い比べてみてください。"
+options:
+  - { id: wakeru, text: "高低がはっきり違う" }
+  - { id: onaji, text: "自分の発音ではほぼ同じ/区別を意識したことがない" }
+distribution:
+  default: { wakeru: 0.82, onaji: 0.10, unknown: 0.08 }
+  zones:
+    - prefs: ["07", "08", "09"]
+      dist: { wakeru: 0.42, onaji: 0.45, unknown: 0.13 }
+    - prefs: ["04", "06"]
+      dist: { wakeru: 0.62, onaji: 0.25, unknown: 0.13 }
+    - prefs: ["41", "43", "45"]
+      dist: { wakeru: 0.43, onaji: 0.42, unknown: 0.15 }
+    - prefs: ["18"]
+      dist: { wakeru: 0.60, onaji: 0.25, unknown: 0.15 }
+source: "Wikipedia日本語版「日本語の方言」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "分布の数値は作成時の見積もり。無アクセントの地域(東北南部・関東北東部・九州中部)は出典で確認。県への割り当てと福井を含めた点は作成者の知識による。若い世代では区別する人が増えているはず。"
