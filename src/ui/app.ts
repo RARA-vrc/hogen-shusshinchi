@@ -164,6 +164,30 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink, logMod
     );
   }
 
+  // The questions asked so far with the player's own answers, folded away
+  // until opened.
+  function answerList(): HTMLElement {
+    const e = state.game.engine;
+    const items: Child[] = [];
+    for (let i = 0; i < e.histLen; i++) {
+      const q = data.questions[e.histQ[i]];
+      items.push(
+        h(
+          'li',
+          null,
+          h('span', { class: 'history-q' }, q.text),
+          h('span', { class: 'history-a' }, `→ ${q.options[e.histA[i]].text}`),
+        ),
+      );
+    }
+    return h(
+      'details',
+      { class: 'history' },
+      h('summary', null, `質問とあなたの回答(${e.histLen} 問)`),
+      h('ol', null, ...items),
+    );
+  }
+
   function finishToResult(): void {
     state.guesses = buildGuesses(state.game);
     state.guessIndex = 0;
@@ -480,6 +504,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink, logMod
       showMap(guessCells(g)),
       h('h3', null, '上位の候補'),
       h('ol', { class: 'candidates' }, ...candidates),
+      answerList(),
       h(
         'button',
         {
@@ -629,6 +654,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink, logMod
       ),
       showMap(c >= 0 ? [c] : []),
       h('p', { class: 'small' }, '地図の色は最終的な推定の強さ、太い枠は正解の地域です。'),
+      answerList(),
       h(
         'button',
         {

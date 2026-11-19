@@ -506,3 +506,38 @@ textarea {
 a {
   color: var(--accent);
 }
+
+/* list of asked questions and the player's answers */
+.history {
+  margin: 1rem 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 0.6rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.history summary {
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 2rem;
+}
+
+.history ol {
+  margin: 0.5rem 0 0.25rem;
+  padding-left: 1.6rem;
+}
+
+.history li {
+  margin: 0.6rem 0;
+  font-size: 0.9rem;
+}
+
+.history-q {
+  display: block;
+  color: var(--muted);
+}
+
+.history-a {
+  display: block;
+  font-weight: 700;
+}
