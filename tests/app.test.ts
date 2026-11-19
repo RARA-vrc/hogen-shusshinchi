@@ -27,7 +27,10 @@ import {
 import { buildHost, loadHostFiles, validateHost } from '../scripts/host/build.ts';
 import { buildModel, loadQuestionFiles } from '../scripts/questions/build.ts';
 import { ROOT, loadGeo } from '../scripts/sim/geo-model.ts';
+import { insidePref } from '../src/app/text.ts';
+import { EXPRESSIONS } from '../src/ui/face.ts';
 import { heatColor, heatLevel } from '../src/ui/map.ts';
+import { SOUNDS } from '../src/ui/sound.ts';
 
 const geo = loadGeo(ROOT);
 const built = buildModel(loadQuestionFiles(join(ROOT, 'data', 'questions')), geo);
@@ -230,5 +233,30 @@ describe('published app text', () => {
     const site = readFileSync(join(ROOT, 'site.config.json'), 'utf8');
     expect(app.includes('アキネ')).toBe(false);
     expect(JSON.parse(site).title.includes('アキネ')).toBe(false);
+  });
+});
+
+describe('wording and feedback helpers', () => {
+  it('uses the prefecture's own suffix for "inside the prefecture"', () => {
+    expect(insidePref('東京都')).toBe('都内');
+    expect(insidePref('北海道')).toBe('道内');
+    expect(insidePref('大阪府')).toBe('府内');
+    expect(insidePref('京都府')).toBe('府内');
+    expect(insidePref('沖縄県')).toBe('県内');
+  });
+
+  it('the screens no longer hard-code "県内"', () => {
+    const app = readFileSync(join(ROOT, 'src', 'ui', 'app.ts'), 'utf8');
+    expect(app.includes('県内')).toBe(false);
+  });
+
+  it('defines short, quiet sounds and six expressions', () => {
+    for (const notes of Object.values(SOUNDS)) {
+      for (const [freq, start, duration] of notes) {
+        expect(freq).toBeGreaterThan(100);
+        expect(start + duration).toBeLessThan(0.5);
+      }
+    }
+    expect(EXPRESSIONS.length).toBe(6);
   });
 });

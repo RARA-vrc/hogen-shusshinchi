@@ -15,11 +15,14 @@ import {
   type Guess,
 } from '../app/game.ts';
 import { HOST_CONFIG, chooseVoice, hostLine } from '../app/host.ts';
+import { insidePref } from '../app/text.ts';
 import { defaultConfig } from '../engine/config.ts';
-import { LEVEL_CELL, LEVEL_PREF } from '../engine/engine.ts';
+import { LEVEL_CELL, LEVEL_PREF, topK } from '../engine/engine.ts';
 import { dayOf, recordIfConsented, type LogSink } from '../log/sink.ts';
 import { clear, h, percent, type Child } from './dom.ts';
+import { hostFace, type Expression } from './face.ts';
 import { createHeatMap, type HeatMap } from './map.ts';
+import { isSoundEnabled, loadSoundSetting, playSound, setSoundEnabled } from './sound.ts';
 
 const ABROAD = 'abroad';
 const MULTIPLE = 'multiple';
@@ -70,11 +73,11 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     return hostLine(data.host, v, key, answeredCount(state.game), vars);
   }
 
-  function hostBubble(text: string): HTMLElement {
+  function hostBubble(text: string, expression: Expression): HTMLElement {
     return h(
       'div',
       { class: 'host' },
-      h('div', { class: 'host-face', 'aria-hidden': 'true' }, hostFace()),
+      h('div', { class: 'host-face', 'aria-hidden': 'true' }, hostFace(expression) as unknown as Node),
       h('p', { class: 'host-line' }, text),
     );
   }
@@ -102,6 +105,57 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     map.update(state.game.engine.post);
     map.highlight(highlight);
     return h('div', { class: 'map-box' }, map.element as unknown as Node);
+  }
+
+  // Brief press feedback before moving on: the chosen button is marked and
+  // the others are disabled, so the choice is visible for a moment.
+  function pick(button: HTMLElement, then: () => void): void {
+    playSound('select');
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const all = root.querySelectorAll('button');
+    for (let i = 0; i < all.length; i++) (all[i] as HTMLButtonElement).disabled = true;
+    button.classList.add('picked');
+    window.setTimeout(then, reduce ? 0 : 220);
+  }
+
+  // Top three of a probability list as labelled bars.
+  function ranking(title: string, probs: Float32Array, names: string[], suffix: string): HTMLElement {
+    const top = new Int32Array(3);
+    const n = topK(probs, probs.length, 3, top);
+    const rows: Child[] = [];
+    for (let i = 0; i < n; i++) {
+      const p = probs[top[i]];
+      const bar = h('span', { class: 'rank-bar' });
+      bar.style.width = `${Math.max(2, Math.round(p * 100))}%`;
+      rows.push(
+        h(
+          'li',
+          { class: 'rank-row' },
+          h('span', { class: 'rank-name' }, `${names[top[i]]}${suffix}`),
+          h('span', { class: 'rank-track' }, bar),
+          h('span', { class: 'rank-value' }, percent(p)),
+        ),
+      );
+    }
+    return h('div', { class: 'rank' }, h('h4', null, title), h('ol', null, ...rows));
+  }
+
+  function soundToggle(): HTMLElement {
+    const on = isSoundEnabled();
+    return h(
+      'button',
+      {
+        class: 'sound-toggle',
+        type: 'button',
+        'aria-pressed': on ? 'true' : 'false',
+        onclick: () => {
+          setSoundEnabled(!on);
+          playSound('select');
+          render();
+        },
+      },
+      on ? '音:オン' : '音:オフ',
+    );
   }
 
   function finishToResult(): void {
@@ -158,7 +212,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     });
     return [
       h('h1', { class: 'title' }, data.title),
-      hostBubble(hostLine(data.host, 'standard', 'start', 0, {})),
+      hostBubble(hostLine(data.host, 'standard', 'start', 0, {}), 'happy'),
       h(
         'ul',
         { class: 'notes' },
@@ -187,6 +241,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
           class: 'primary',
           type: 'button',
           onclick: () => {
+            playSound('select');
             restart();
           },
         },
@@ -215,9 +270,17 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     const lead = leadingRegion(game);
     const dialect = voice() !== 'standard';
     let line: string;
-    if (n === 0) line = '最初の質問です。直感で答えてください。';
-    else if (dialect && n % 3 === 0) line = say('hunch', {}, false);
-    else line = say('next', {}, false);
+    let face: Expression;
+    if (n === 0) {
+      line = '最初の質問です。直感で答えてください。';
+      face = 'smile';
+    } else if (dialect && n % 3 === 0) {
+      line = say('hunch', {}, false);
+      face = 'confident';
+    } else {
+      line = say('next', {}, false);
+      face = n % 2 === 1 ? 'think' : 'smile';
+    }
 
     const options: Child[] = [];
     for (let o = 0; o < q.options.length; o++) {
@@ -228,10 +291,15 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
           {
             class: isUnknown ? 'option option-unknown' : 'option',
             type: 'button',
-            onclick: () => {
-              answerCurrent(game, o);
-              if (isFinished(game)) finishToResult();
-              render();
+            onclick: (ev: Event) => {
+              pick(ev.currentTarget as HTMLElement, () => {
+                answerCurrent(game, o);
+                if (isFinished(game)) {
+                  finishToResult();
+                  playSound('result');
+                }
+                render();
+              });
             },
           },
           q.options[o].text,
@@ -241,7 +309,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
 
     return [
       h('p', { class: 'progress' }, `質問 ${n + 1}`),
-      hostBubble(line),
+      hostBubble(line, face),
       h('h2', { class: 'question' }, q.text),
       h('div', { class: 'options' }, ...options),
       h(
@@ -254,6 +322,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
             type: 'button',
             disabled: n === 0,
             onclick: () => {
+              playSound('back');
               goBack(game);
               render();
             },
@@ -267,6 +336,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
               class: 'secondary',
               type: 'button',
               onclick: () => {
+                playSound('result');
                 finishToResult();
                 render();
               },
@@ -282,8 +352,14 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
           'p',
           { class: 'estimate-text' },
           n === 0
-            ? 'まだ手がかりなし(色は人口の多さ)'
+            ? 'まだ手がかりなし。いまの数字と色は、人口の多さだけで決まっています。'
             : `いちばん有力:${data.regionNames[lead.region]}地方(${percent(lead.prob)})`,
+        ),
+        h(
+          'div',
+          { class: 'ranks' },
+          ranking('地方', game.regionP, data.regionNames, '地方'),
+          ranking('都道府県', game.prefP, data.prefNames, ''),
         ),
         showMap([]),
       ),
@@ -304,6 +380,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     else if (g.level === LEVEL_CELL) line = say('result_cell', vars, false);
     else if (g.level === LEVEL_PREF) line = say('result_pref', vars, false);
     else line = say('result_region', vars, false);
+    const face: Expression = state.guessIndex > 0 ? 'surprise' : 'confident';
 
     const hints: Child[] = [];
     for (let i = 0; i < g.hints.length; i++) {
@@ -323,14 +400,18 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
 
     return [
       h('p', { class: 'progress' }, `${answeredCount(state.game)} 問の回答から推定`),
-      hostBubble(line),
+      hostBubble(line, face),
       h('h2', { class: 'guess' }, place),
       h('p', { class: 'confidence' }, `確信度 ${percent(g.prob)}`),
       g.hints.length > 0 &&
         h(
           'div',
           { class: 'hints' },
-          h('h3', null, g.level === LEVEL_PREF ? '県内では、このあたりかも' : 'その中では、このあたりかも'),
+          h(
+            'h3',
+            null,
+            g.level === LEVEL_PREF ? `${insidePref(data.prefNames[g.pref])}では、このあたりかも` : 'その中では、このあたりかも',
+          ),
           h('ul', null, ...hints),
         ),
       h(
@@ -342,6 +423,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
             class: 'primary',
             type: 'button',
             onclick: () => {
+              playSound('hit');
               state.hit = true;
               if (g.level === LEVEL_CELL) {
                 state.correct = data.modelJson.cellIds[g.cell];
@@ -363,6 +445,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
             class: 'secondary',
             type: 'button',
             onclick: () => {
+              playSound('miss');
               if (state.guessIndex + 1 < state.guesses.length) {
                 state.guessIndex += 1;
               } else {
@@ -431,7 +514,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
       cellField = h(
         'div',
         { class: 'field' },
-        h('label', { for: 'answer-cell' }, '県内のどのあたり?(いちばん近いもの)'),
+        h('label', { for: 'answer-cell' }, `${insidePref(data.prefNames[p])}のどのあたり?(いちばん近いもの)`),
         cellSelect,
       );
     }
@@ -440,6 +523,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     return [
       hostBubble(
         state.hit ? say('ask_answer', {}, true) : `${say('miss', {}, true)} ${say('ask_answer', {}, true)}`,
+        state.hit ? 'smile' : 'sorry',
       ),
       h('h2', null, '正解を教えてください'),
       h('p', { class: 'small' }, '小・中学生のころを過ごした地域を選んでください。市区町村より細かいことは聞きません。'),
@@ -455,6 +539,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
             type: 'button',
             disabled: !ready,
             onclick: () => {
+              playSound('select');
               state.correct = isPref ? state.answerCell : state.answerPref;
               writeLog();
               state.screen = 'end';
@@ -493,7 +578,7 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
   function endScreen(): Child[] {
     const c = data.modelJson.cellIds.indexOf(state.correct);
     return [
-      hostBubble(`${state.hit ? say('hit', {}, true) : ''} ${say('thanks', {}, true)}`.trim()),
+      hostBubble(`${state.hit ? say('hit', {}, true) : ''} ${say('thanks', {}, true)}`.trim(), state.hit ? 'happy' : 'smile'),
       h('h2', null, 'おつかれさまでした'),
       h(
         'dl',
@@ -622,32 +707,11 @@ export function startApp(root: HTMLElement, data: AppData, sink: LogSink): void 
     else if (state.screen === 'answer') children = answerScreen();
     else if (state.screen === 'end') children = endScreen();
     else children = creditsScreen();
-    const main = h('main', { class: `screen screen-${state.screen}` }, ...children);
+    const main = h('main', { class: `screen screen-${state.screen}` }, h('div', { class: 'topbar' }, soundToggle()), ...children);
     root.appendChild(main);
     window.scrollTo(0, 0);
   }
 
+  loadSoundSetting();
   render();
-}
-
-// Simple self-made mascot: a round face with a small cap.
-function hostFace(): Node {
-  const ns = 'http://www.w3.org/2000/svg';
-  const svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('viewBox', '0 0 48 48');
-  const parts: [string, Record<string, string>][] = [
-    ['circle', { cx: '24', cy: '27', r: '17', class: 'face-skin' }],
-    ['path', { d: 'M8 22 Q24 2 40 22 Z', class: 'face-cap' }],
-    ['circle', { cx: '24', cy: '8', r: '3', class: 'face-cap' }],
-    ['circle', { cx: '18', cy: '28', r: '2.2', class: 'face-ink' }],
-    ['circle', { cx: '30', cy: '28', r: '2.2', class: 'face-ink' }],
-    ['path', { d: 'M18 35 Q24 40 30 35', class: 'face-mouth' }],
-  ];
-  for (let i = 0; i < parts.length; i++) {
-    const node = document.createElementNS(ns, parts[i][0]);
-    const names = Object.keys(parts[i][1]);
-    for (let k = 0; k < names.length; k++) node.setAttribute(names[k], parts[i][1][names[k]]);
-    svg.appendChild(node);
-  }
-  return svg;
 }

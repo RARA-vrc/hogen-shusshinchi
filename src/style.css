@@ -90,30 +90,52 @@ p {
 }
 
 .host-face {
-  flex: 0 0 3rem;
-  width: 3rem;
-  height: 3rem;
+  flex: 0 0 4.5rem;
+  width: 4.5rem;
+  animation: face-pop 0.28s ease-out;
 }
 
-.face-skin {
-  fill: #ffd9a8;
-  stroke: #7c4a1e;
-  stroke-width: 1.5;
+.face {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.face-cap {
-  fill: var(--accent);
+@keyframes face-pop {
+  from {
+    transform: scale(0.88) rotate(-4deg);
+  }
+  to {
+    transform: none;
+  }
 }
 
-.face-ink {
-  fill: #3b2410;
+.host-line {
+  animation: line-in 0.25s ease-out;
 }
 
-.face-mouth {
-  fill: none;
-  stroke: #3b2410;
-  stroke-width: 1.8;
-  stroke-linecap: round;
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.3rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sound-toggle {
+  min-height: 2rem;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-radius: 1rem;
 }
 
 .host-line {
@@ -202,6 +224,49 @@ a:focus-visible {
   border-color: var(--accent);
 }
 
+button {
+  transition: transform 0.08s ease-out, background-color 0.15s, border-color 0.15s;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.option.picked,
+.option.picked:disabled {
+  opacity: 1;
+  background: var(--accent);
+  border-color: var(--accent);
+  border-style: solid;
+  color: var(--accent-text);
+  animation: picked 0.22s ease-out;
+}
+
+@keyframes picked {
+  0% {
+    transform: scale(0.97);
+  }
+  60% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.guess {
+  animation: line-in 0.35s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
 .option-unknown {
   color: var(--muted);
   border-style: dashed;
@@ -254,6 +319,53 @@ a:focus-visible {
   margin: 0;
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+.ranks {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.rank h4 {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.rank ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rank-row {
+  display: grid;
+  grid-template-columns: 6.5em 1fr 3.6em;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.rank-track {
+  height: 0.55rem;
+  background: var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.rank-bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1rem;
+  transition: width 0.3s;
+}
+
+.rank-value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
 }
 
 .map-box {
