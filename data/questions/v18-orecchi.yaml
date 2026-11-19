@@ -1,0 +1,14 @@
+id: v18-orecchi
+category: vocab
+fun: 0.5
+text: "友達が「おれっちも行くよ」と言った。「おれたち」の意味で使う「おれっち」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.02, hear: 0.10, none: 0.80, unknown: 0.08 }
+  zones:
+    - prefs: ["19"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+source: "未確認(利用者からの情報提供:甲州弁で「俺たち」を「おれっち」と言う)"
+confidence: low
+needs_review: true
+notes: "文献では確認できていない(Wikipedia日本語版「甲州弁」には記載なし、2026-11-19閲覧)。山梨以外でも使う地域があるかもしれず、その分布は未調査。数値は作成時の見積もり。"

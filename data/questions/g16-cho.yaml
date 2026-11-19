@@ -1,0 +1,16 @@
+id: g16-cho
+category: grammar
+fun: 0.7
+text: "「そんなに無理しちょ」。これは「そんなに無理するな」の意味。この「〜しちょ」「〜んじょ」という止め方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["1901", "1902", "1903"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+    - cells: ["1904"]
+      dist: { use: 0.10, hear: 0.30, none: 0.50, unknown: 0.10 }
+source: "Wikipedia日本語版「甲州弁」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、甲州弁で動詞の連用形に「ちょ」を付けて禁止を表す(例:「無理をしちょ」「飲んじょ」)という点。県内の地域差と数値は作成時の見積もりで、郡内地方の値は出典未確認。"

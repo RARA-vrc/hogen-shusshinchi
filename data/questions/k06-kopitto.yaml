@@ -1,0 +1,14 @@
+id: k06-kopitto
+category: knowledge
+fun: 0.7
+text: "「こぴっとしろし」。この「こぴっと」――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.15, no: 0.79, unknown: 0.05 }
+  zones:
+    - prefs: ["19"]
+      dist: { local: 0.65, media: 0.15, no: 0.15, unknown: 0.05 }
+source: "Wikipedia日本語版「甲州弁」(2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、甲州弁の「こぴっと」が「ちゃんと」「しゃんと」の意味で、「こぴっとしろし」の例がある点。テレビドラマで使われたため、県外でも聞いたことがある人がいる想定。数値は作成時の見積もり。"

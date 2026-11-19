@@ -1,0 +1,20 @@
+id: g15-zura
+category: grammar
+fun: 0.6
+text: "友達に「あの店、今日は休みずら?」と聞かれた。この「〜ずら」(「〜でしょ」「〜だろう」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.06, none: 0.87, unknown: 0.06 }
+  zones:
+    - cells: ["1901", "1902", "1903"]
+      dist: { use: 0.35, hear: 0.45, none: 0.13, unknown: 0.07 }
+    - cells: ["1904"]
+      dist: { use: 0.12, hear: 0.40, none: 0.40, unknown: 0.08 }
+    - prefs: ["22"]
+      dist: { use: 0.15, hear: 0.45, none: 0.32, unknown: 0.08 }
+    - prefs: ["20"]
+      dist: { use: 0.12, hear: 0.35, none: 0.45, unknown: 0.08 }
+source: "Wikipedia日本語版「甲州弁」(2026-11-19閲覧。二次情報であり、一次文献は未確認)。山梨に関する部分のみ。利用者からも「そうずら」の情報提供あり"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、山梨で推量に「ずら」「ら」を使い、国中地方(県西側)で「ずら」、郡内地方(県東側)で「べー」「だんべー」を使う、という点。静岡・長野の値は出典未確認の見積もり。数値はすべて作成時の見積もり。"

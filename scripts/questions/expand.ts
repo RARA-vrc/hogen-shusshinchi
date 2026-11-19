@@ -10,7 +10,7 @@ export const UNVERIFIED = '未確認';
 
 export const QUESTION_BUILD_CONFIG = {
   // Standard deviation (km) of the Gaussian used to blend neighbouring cells.
-  smoothingKm: 40,
+  smoothingKm: 15,
   // Published dialect maps mostly reflect older speakers, so no single answer
   // may be given a probability at or above this in a question file.
   maxProbability: 0.95,
