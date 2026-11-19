@@ -1,0 +1,16 @@
+id: kinki
+needs_review: true
+notes: "関西方言風。作成者が書いた下書きで、話者による確認はしていない。"
+lines:
+  next:
+    - "ほな、次の質問いくで。"
+    - "なるほどなあ。次はこれや。"
+  hunch:
+    - "だんだん見えてきたで。"
+    - "だいぶ絞れてきたわ。"
+  result_cell:
+    - "わかったで。あんた、{pref}の{label}あたりの人やろ?"
+  result_pref:
+    - "わかったで。あんた、{pref}の人やろ?"
+  result_region:
+    - "県までは絞れへんかったけど、{region}の人やろ?"

@@ -50,15 +50,23 @@
 
 直接依存しているパッケージの一覧です。ライセンスは、インストールされた各パッケージの `package.json` の `license` 欄から生成時に読み取っています。
 
-### 公開サイトに組み込まれるもの(dependencies)
+### 公開サイトに組み込まれるもの(dependencies と、その間接依存すべて)
 
-(該当なし)
+| パッケージ | バージョン | ライセンス | 配布元 |
+| --- | --- | --- | --- |
+| commander | 2.20.3 | MIT | https://github.com/tj/commander.js |
+| d3-array | 3.2.5 | ISC | https://github.com/d3/d3-array |
+| d3-geo | 3.1.2 | ISC | https://github.com/d3/d3-geo |
+| internmap | 2.0.3 | ISC | https://github.com/mbostock/internmap |
+| topojson-client | 3.1.0 | ISC | https://github.com/topojson/topojson-client |
 
 ### 開発・ビルド時にのみ使うもの(devDependencies)
 
 | パッケージ | バージョン | ライセンス | 配布元 |
 | --- | --- | --- | --- |
+| @types/d3-geo | 3.1.1 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
 | @types/node | 26.6.6 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
+| @types/topojson-client | 3.1.5 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
 | @types/yauzl | 3.4.0 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
 | mapshaper | 0.8.5 | MPL-2.0 | https://github.com/mbloch/mapshaper |
 | typescript | 7.0.2 | Apache-2.0 | https://github.com/microsoft/TypeScript |

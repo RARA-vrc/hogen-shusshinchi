@@ -1,29 +1,22 @@
-import site from '../site.config.json';
-import credits from './generated/credits.json';
+import { loadAppData } from './app/data.ts';
+import { LocalSink, NoopSink, type LogSink } from './log/sink.ts';
 import './style.css';
+import { startApp } from './ui/app.ts';
 
-// Phase 0 placeholder. The real screens (start, question, result, answer,
-// credits) are built in phase 4.
-const app = document.getElementById('app');
-if (app !== null) {
-  const h1 = document.createElement('h1');
-  h1.textContent = site.title;
-  app.appendChild(h1);
-
-  const p = document.createElement('p');
-  p.textContent = '準備中です。';
-  app.appendChild(p);
-
-  const h2 = document.createElement('h2');
-  h2.textContent = 'クレジット';
-  app.appendChild(h2);
-
-  const list = document.createElement('ul');
-  for (let i = 0; i < credits.entries.length; i++) {
-    const e = credits.entries[i];
-    const li = document.createElement('li');
-    li.textContent = `${e.name}:${e.license}(${e.credit})`;
-    list.appendChild(li);
+async function main(): Promise<void> {
+  const root = document.getElementById('app');
+  if (root === null) return;
+  root.textContent = '読み込み中…';
+  try {
+    const data = await loadAppData();
+    // Nothing is sent anywhere. In development, plays (with consent) are kept
+    // in localStorage for inspection; the published site records nothing.
+    const sink: LogSink = import.meta.env.DEV ? new LocalSink(window.localStorage) : new NoopSink();
+    startApp(root, data, sink);
+  } catch (err) {
+    root.textContent = 'データの読み込みに失敗しました。ページを再読み込みしてください。';
+    console.error(err);
   }
-  app.appendChild(list);
 }
+
+void main();

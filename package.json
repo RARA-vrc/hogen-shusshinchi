@@ -22,11 +22,14 @@
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "questions": "node scripts/questions/build.ts",
-    "generate": "npm run licenses && npm run questions",
-    "presimulate": "npm run questions"
+    "generate": "npm run licenses && npm run questions && npm run host",
+    "presimulate": "npm run questions",
+    "host": "node scripts/host/build.ts"
   },
   "devDependencies": {
+    "@types/d3-geo": "^3.1.1",
     "@types/node": "^26.6.6",
+    "@types/topojson-client": "^3.1.5",
     "@types/yauzl": "^3.4.0",
     "mapshaper": "^0.8.5",
     "typescript": "^7.0.2",
@@ -34,5 +37,9 @@
     "vitest": "^5.1.1",
     "yaml": "^2.9.1",
     "yauzl": "^3.4.0"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.2",
+    "topojson-client": "^3.1.0"
   }
 }

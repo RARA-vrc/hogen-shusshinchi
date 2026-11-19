@@ -1,0 +1,16 @@
+id: hokkaido
+needs_review: true
+notes: "北海道方言風。作成者が書いた下書きで、話者による確認はしていない。"
+lines:
+  next:
+    - "したっけ、次の質問いくよ。"
+    - "なるほどねえ。次はこれだわ。"
+  hunch:
+    - "だんだん見えてきたっしょ。"
+    - "だいぶ絞れてきたわ。"
+  result_cell:
+    - "わかったさ。あんた、{pref}の{label}あたりの人でないかい?"
+  result_pref:
+    - "わかったさ。あんた、{pref}の人でないかい?"
+  result_region:
+    - "県までは絞れんかったけど、{region}の人でないかい?"

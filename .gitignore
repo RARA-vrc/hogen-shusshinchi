@@ -14,3 +14,4 @@ scripts/import-gaj/output/
 
 *.log
 .DS_Store
+.claude/

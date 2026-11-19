@@ -4,7 +4,7 @@
 //   node scripts/build-licenses.ts          write both outputs
 //   node scripts/build-licenses.ts --check  fail if LICENSES.md is out of date
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
@@ -76,18 +76,44 @@ function urlOf(pkg: any): string {
   return url;
 }
 
-function readPackages(root: string, names: string[], bundled: boolean, out: PackageEntry[]): void {
-  const sorted = names.slice().sort();
-  for (let i = 0; i < sorted.length; i++) {
-    const pkg = readJson(join(root, 'node_modules', sorted[i], 'package.json'));
-    out.push({
-      name: sorted[i],
+// Licences accepted for code that is bundled into the published site.
+export const BUNDLE_ALLOWED = ['MIT', 'ISC', 'BSD-2-Clause', 'BSD-3-Clause', 'Apache-2.0', '0BSD'];
+
+// Directories (relative to node_modules) of the given packages plus all their
+// transitive dependencies. A dependency nested inside its parent
+// (parent/node_modules/dep) takes precedence over the hoisted copy, as in
+// Node's own resolution.
+export function runtimeClosure(root: string, names: string[]): string[] {
+  const seen: string[] = [];
+  const queue = names.slice();
+  while (queue.length > 0) {
+    const dir = queue.pop()!;
+    if (seen.indexOf(dir) >= 0) continue;
+    seen.push(dir);
+    const pkg = readJson(join(root, 'node_modules', dir, 'package.json'));
+    const deps = Object.keys(pkg.dependencies ?? {});
+    for (let i = 0; i < deps.length; i++) {
+      const nested = `${dir}/node_modules/${deps[i]}`;
+      queue.push(existsSync(join(root, 'node_modules', nested, 'package.json')) ? nested : deps[i]);
+    }
+  }
+  return seen;
+}
+
+function readPackages(root: string, dirs: string[], bundled: boolean, out: PackageEntry[]): void {
+  const rows: PackageEntry[] = [];
+  for (let i = 0; i < dirs.length; i++) {
+    const pkg = readJson(join(root, 'node_modules', dirs[i], 'package.json'));
+    rows.push({
+      name: String(pkg.name),
       version: String(pkg.version),
       license: licenseOf(pkg),
       url: urlOf(pkg),
       bundled,
     });
   }
+  rows.sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
+  for (let i = 0; i < rows.length; i++) out.push(rows[i]);
 }
 
 export function validateEntries(entries: LicenseEntry[]): string[] {
@@ -132,7 +158,18 @@ export function loadModel(root: string): CreditsModel {
   }
   const pkg = readJson(join(root, 'package.json'));
   const packages: PackageEntry[] = [];
-  readPackages(root, Object.keys(pkg.dependencies ?? {}), true, packages);
+  // Runtime dependencies end up in the published site, so list them together
+  // with everything they depend on, and only accept permissive licences.
+  const runtime = runtimeClosure(root, Object.keys(pkg.dependencies ?? {}));
+  readPackages(root, runtime, true, packages);
+  for (let i = 0; i < packages.length; i++) {
+    if (BUNDLE_ALLOWED.indexOf(packages[i].license) < 0) {
+      throw new Error(
+        `npm package "${packages[i].name}" (${packages[i].license}) would be bundled into the site ` +
+          'but its licence is not on the allowed list; review it by hand',
+      );
+    }
+  }
   readPackages(root, Object.keys(pkg.devDependencies ?? {}), false, packages);
   for (let i = 0; i < packages.length; i++) {
     if (packages[i].license === '') {
@@ -210,7 +247,7 @@ export function renderMarkdown(model: CreditsModel): string {
     '',
     '直接依存しているパッケージの一覧です。ライセンスは、インストールされた各パッケージの `package.json` の `license` 欄から生成時に読み取っています。',
     '',
-    '### 公開サイトに組み込まれるもの(dependencies)',
+    '### 公開サイトに組み込まれるもの(dependencies と、その間接依存すべて)',
     '',
   );
   packageTable(lines, model.packages, true);
