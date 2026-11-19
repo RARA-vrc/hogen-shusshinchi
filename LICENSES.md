@@ -28,7 +28,23 @@
 
 ## 第三者のデータ
 
-(現時点では同梱していません)
+### 国土数値情報 医療圏データ(2020年度(令和2年度)版、A38-20)
+
+- 名称:国土数値情報 医療圏データ(2020年度(令和2年度)版、A38-20)
+- 配布元URL:https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-v2_0.html
+- ライセンス:CC BY 4.0(配布ページの表示は「オープンデータ(CC_BY_4.0)」)(https://nlftp.mlit.go.jp/ksj/other/agreement.html)
+- クレジット表記:出典:国土交通省国土数値情報ダウンロードサイト(https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-v2_0.html)。「国土数値情報(医療圏データ)」(国土交通省)をもとに RARA 作成
+- 加工内容:一次医療圏(市区町村)ポリゴンを二次医療圏・都道府県ごとに統合し、形状を簡略化して小さな島を省略、TopoJSON に変換。市区町村と二次医療圏の対応表、二次医療圏の名称・代表点を抽出
+- 取得日:2026-11-19
+
+### 令和2年国勢調査 都道府県・市区町村別の主な結果(総務省統計局)
+
+- 名称:令和2年国勢調査 都道府県・市区町村別の主な結果(総務省統計局)
+- 配布元URL:https://www.e-stat.go.jp/stat-search/files?toukei=00200521&tstat=000001049104&tclass1=000001049105&stat_infid=000032143614
+- ライセンス:政府統計の総合窓口(e-Stat)利用規約(政府標準利用規約 第2.0版準拠、CC BY 4.0 互換)(https://www.e-stat.go.jp/terms-of-use)
+- クレジット表記:出典:政府統計の総合窓口(e-Stat)(https://www.e-stat.go.jp/)。「令和2年国勢調査 都道府県・市区町村別の主な結果」(総務省統計局)を加工して作成
+- 加工内容:市区町村別の総人口と名称を抽出し、二次医療圏ごとに人口を合計。人口で重み付けした代表点の計算に使用
+- 取得日:2026-11-19
 
 ## npm パッケージ
 
@@ -43,7 +59,10 @@
 | パッケージ | バージョン | ライセンス | 配布元 |
 | --- | --- | --- | --- |
 | @types/node | 26.6.6 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
+| @types/yauzl | 3.4.0 | MIT | https://github.com/DefinitelyTyped/DefinitelyTyped |
+| mapshaper | 0.8.5 | MPL-2.0 | https://github.com/mbloch/mapshaper |
 | typescript | 7.0.2 | Apache-2.0 | https://github.com/microsoft/TypeScript |
 | vite | 8.3.8 | MIT | https://github.com/vitejs/vite |
 | vitest | 5.1.1 | MIT | https://github.com/vitest-dev/vitest |
 | yaml | 2.9.1 | ISC | https://www.npmjs.com/package/yaml |
+| yauzl | 3.4.0 | MIT | https://github.com/thejoshwolfe/yauzl |

@@ -24,6 +24,26 @@ npm run build      # 型チェックと本番ビルド(dist/)
 npm run licenses   # LICENSES.md とクレジット画面用データを再生成
 ```
 
+## 地理データ
+
+地域の基本単位(セル)は二次医療圏です(335)。`data/geo/` の成果物はコミット済みなので、通常は作り直す必要はありません。
+
+```
+npm run geo:fetch  # 元データを data/raw/ に取得(約1.2GB、コミットしない)
+npm run geo:build  # cells.json / municipalities.json / japan.topo.json を生成
+```
+
+| ファイル | 内容 |
+| --- | --- |
+| `data/geo/cells.json` | セルの id・名称・都道府県コード・代表点・人口、都道府県の一覧 |
+| `data/geo/municipalities.json` | 市区町村とセルの対応表(人口付き) |
+| `data/geo/japan.topo.json` | 簡略化した地図(レイヤー:`cells`、`prefs`) |
+
+- 境界と二次医療圏の構成は国土数値情報 医療圏データの2020年度版、人口は令和2年国勢調査によります。2024年度からの第8次医療計画で見直された医療圏は反映していません。
+- セルの代表点は、構成市区町村の重心を人口で重み付けして平均した点です(面積の重心ではなく、人が住んでいる側に寄ります)。
+- 地図では 3 km² 未満の島を省略しています。人口などのデータからは省いていません。
+- 簡略化の強さなどは `scripts/geo/build.ts` の `GEO_CONFIG` で変えられます。
+
 ## 構成
 
 | 場所 | 内容 |

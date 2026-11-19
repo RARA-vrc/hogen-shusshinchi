@@ -10,6 +10,8 @@
   "scripts": {
     "licenses": "node scripts/build-licenses.ts",
     "licenses:check": "node scripts/build-licenses.ts --check",
+    "geo:fetch": "node scripts/geo/fetch.ts",
+    "geo:build": "node scripts/geo/build.ts",
     "predev": "npm run licenses",
     "dev": "vite",
     "prebuild": "npm run licenses",
@@ -21,9 +23,12 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
+    "@types/yauzl": "^3.4.0",
+    "mapshaper": "^0.8.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
     "vitest": "^5.1.1",
-    "yaml": "^2.9.1"
+    "yaml": "^2.9.1",
+    "yauzl": "^3.4.0"
   }
 }
