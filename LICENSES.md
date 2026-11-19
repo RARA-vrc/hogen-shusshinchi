@@ -31,9 +31,9 @@
 ### 国土数値情報 医療圏データ(2020年度(令和2年度)版、A38-20)
 
 - 名称:国土数値情報 医療圏データ(2020年度(令和2年度)版、A38-20)
-- 配布元URL:https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-v2_0.html
-- ライセンス:CC BY 4.0(配布ページの表示は「オープンデータ(CC_BY_4.0)」)(https://nlftp.mlit.go.jp/ksj/other/agreement.html)
-- クレジット表記:出典:国土交通省国土数値情報ダウンロードサイト(https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-v2_0.html)。「国土数値情報(医療圏データ)」(国土交通省)をもとに RARA 作成
+- 配布元URL:https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html
+- ライセンス:CC BY 4.0(配布ページの表示は「オープンデータ(CC_BY_4.0)」)(https://nlftp.mlit.go.jp/ksj/other/agreement_01.html)
+- クレジット表記:出典:国土交通省国土数値情報ダウンロードサイト(https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A38-2020.html)。「国土数値情報(医療圏データ)」(国土交通省)をもとに RARA 作成
 - 加工内容:一次医療圏(市区町村)ポリゴンを二次医療圏・都道府県ごとに統合し、形状を簡略化して小さな島を省略、TopoJSON に変換。市区町村と二次医療圏の対応表、二次医療圏の名称・代表点を抽出
 - 取得日:2026-11-19
 
