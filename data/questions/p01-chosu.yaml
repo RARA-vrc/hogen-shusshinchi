@@ -1,0 +1,14 @@
+id: p01-chosu
+category: vocab
+fun: 0.6
+text: "治りかけの傷を指でいじっていたら「ちょすんでない!」と言われた。「いじる、さわる」という意味のこの「ちょす」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["01"]
+      dist: { use: 0.35, hear: 0.40, none: 0.18, unknown: 0.07 }
+source: "Wikipedia日本語版「北海道方言」 https://ja.wikipedia.org/wiki/北海道方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、北海道方言の動詞に「ちょす、ちょうす(いじる、いじくる)」があり、浜言葉(沿岸部)の語彙にも「ちょす(触る)」が挙がっている点。道内の地域差、青森など周辺地域での使用は未確認。数値はすべて作成時の見積もり。"

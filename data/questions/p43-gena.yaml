@@ -1,0 +1,20 @@
+id: p43-gena
+category: grammar
+fun: 0.6
+text: "「明日の練習は休みげな」。「休みだそうだ」「休みなんだって」の意味のこの「〜げな」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.04, none: 0.88, unknown: 0.07 }
+  zones:
+    - cells: ["4303", "4304", "4305", "4006", "4007", "4008"]
+      dist: { use: 0.30, hear: 0.40, none: 0.22, unknown: 0.08 }
+    - cells: ["4302", "4306", "4312", "4005"]
+      dist: { use: 0.18, hear: 0.40, none: 0.34, unknown: 0.08 }
+    - prefs: ["42"]
+      dist: { use: 0.10, hear: 0.35, none: 0.47, unknown: 0.08 }
+    - prefs: ["40", "41", "43"]
+      dist: { use: 0.06, hear: 0.30, none: 0.56, unknown: 0.08 }
+source: "Wikipedia日本語版「熊本弁」https://ja.wikipedia.org/wiki/熊本弁 /「筑後弁」https://ja.wikipedia.org/wiki/筑後弁 / 英語版「Nagasaki dialect」https://en.wikipedia.org/wiki/Nagasaki_dialect (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、古語の伝達の助動詞「げな」が熊本県北部(および福岡県南部)で現在も使われていること(例「明日ん練習休みげな」)、筑後弁で伝聞に「げな」が使われること、長崎弁でも伝聞に gena が挙がっていること。「熊本県北部」が熊本市を含むかは書かれていないため、荒尾・玉名(4303)・山鹿(4304)・菊池(4305)を高め、熊本市・宇城・阿蘇を中程度にしたのは作成時の判断。福岡県南部は筑後のセル(4006-4008)に当てた。佐賀県、熊本県南部、福岡県のほかの地域は未確認で低めの値。若い世代の使用度も未確認。数値は作成時の見積もり。"

@@ -1,0 +1,20 @@
+id: p14-sanmamen
+category: culture
+fun: 0.6
+text: "横浜発祥とされるご当地ラーメン「サンマーメン」。中華料理店やラーメン店のメニューで、あなたの地元では――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.10, no: 0.83, unknown: 0.06 }
+  zones:
+    - cells: ["1412"]
+      dist: { local: 0.70, media: 0.15, no: 0.10, unknown: 0.05 }
+    - cells: ["1408", "1411", "1410"]
+      dist: { local: 0.30, media: 0.30, no: 0.34, unknown: 0.06 }
+    - prefs: ["14"]
+      dist: { local: 0.55, media: 0.20, no: 0.20, unknown: 0.05 }
+    - prefs: ["13", "11", "12"]
+      dist: { local: 0.10, media: 0.25, no: 0.59, unknown: 0.06 }
+source: "Wikipedia日本語版「サンマーメン」 https://ja.wikipedia.org/wiki/サンマーメン (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、サンマーメンが神奈川県横浜市発祥のご当地ラーメンで、横浜市周辺から関東の他都県にも広がったこと、県内でも小田急小田原線沿線より北側や西湘地域ではあまり食べられていないこと。西湘を平塚・小田原周辺セル、小田急線より北を相模原セルに当てたのは作成者の大まかな解釈。数値は作成時の見積もり。"

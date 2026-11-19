@@ -1,0 +1,18 @@
+id: p26-marutake
+category: knowledge
+fun: 0.7
+text: "京都の東西の通りの名前を、北から順に歌にして覚える数え歌「丸竹夷」。この歌――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.08, no: 0.85, unknown: 0.06 }
+  zones:
+    - cells: ["2604"]
+      dist: { local: 0.55, media: 0.15, no: 0.25, unknown: 0.05 }
+    - prefs: ["26"]
+      dist: { local: 0.30, media: 0.20, no: 0.44, unknown: 0.06 }
+    - prefs: ["25", "27", "28", "29"]
+      dist: { local: 0.03, media: 0.15, no: 0.76, unknown: 0.06 }
+source: "Wikipedia日本語版「京都市内の通り」 https://ja.wikipedia.org/wiki/京都市内の通り (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、京都市中心部の通り名を覚えるために通り名を織り込んだ歌が使われ、東西の通りの歌として「丸竹夷」、南北の通りの歌として「寺御幸」がよく知られていること。歌詞は引用していない。「北から順に」は作成者の補足で要確認。どの程度の人が知っているか、府外での知名度は出典に記載がなく、数値は作成時の見積もり。"

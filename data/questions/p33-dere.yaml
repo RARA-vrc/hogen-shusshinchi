@@ -1,0 +1,14 @@
+id: p33-dere
+category: vocab
+fun: 0.8
+text: "「この桃、でーれーうまい!」。この「でーれー」は「すごい」(どえらい)の意味。この言葉、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.06, none: 0.86, unknown: 0.07 }
+  zones:
+    - prefs: ["33"]
+      dist: { use: 0.40, hear: 0.42, none: 0.12, unknown: 0.06 }
+source: "Wikipedia日本語版「岡山弁」https://ja.wikipedia.org/wiki/岡山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、岡山弁の語彙に「でーれー」=すごい(「どえらい」の転)がある点のみ。県内の地域差(美作で使うか)、周辺県(広島県備後など)の分布は未確認。県外でも見聞きする人がいる想定でdefaultのhearをやや高めにしたが根拠はない。数値は作成時の見積もり。"

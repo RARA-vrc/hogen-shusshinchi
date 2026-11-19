@@ -1,0 +1,16 @@
+id: p22-tobu
+category: unaware
+fun: 0.7
+text: "発車ベルが鳴っている。「電車来た、とんでこう!」。この「とぶ」(「走る」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["22"]
+      dist: { use: 0.40, hear: 0.35, none: 0.17, unknown: 0.08 }
+    - prefs: ["14"]
+      dist: { use: 0.08, hear: 0.20, none: 0.64, unknown: 0.08 }
+source: "Wikipedia日本語版「静岡弁」 https://ja.wikipedia.org/wiki/静岡弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、静岡弁の「とぶ、とんでく」が「走る、走っていく」の意味で、静岡県全域で使われる語の印(★)が付いていること、神奈川県西部地区でも通用するとされること。神奈川は西部のみの記述だが県単位で薄めた値にした。愛知・山梨・長野など他の周辺県は未確認。世代差も未確認。数値は作成時の見積もり。"

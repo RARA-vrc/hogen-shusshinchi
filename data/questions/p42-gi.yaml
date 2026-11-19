@@ -1,0 +1,20 @@
+id: p42-gi
+category: grammar
+fun: 0.6
+text: "「明日、雨の降るぎー、試合は中止」。「降るなら」「降れば」の意味のこの「〜ぎー」「〜ぎ」「〜ぎん」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["4202", "4101", "4104", "4105"]
+      dist: { use: 0.38, hear: 0.35, none: 0.19, unknown: 0.08 }
+    - cells: ["4102", "4203", "4204"]
+      dist: { use: 0.18, hear: 0.35, none: 0.39, unknown: 0.08 }
+    - cells: ["4103"]
+      dist: { use: 0.05, hear: 0.30, none: 0.57, unknown: 0.08 }
+    - prefs: ["41", "42"]
+      dist: { use: 0.08, hear: 0.30, none: 0.54, unknown: 0.08 }
+source: "Wikipedia日本語版「佐賀弁」https://ja.wikipedia.org/wiki/佐賀弁 /「長崎弁」https://ja.wikipedia.org/wiki/長崎弁 / 英語版「Nagasaki dialect」https://en.wikipedia.org/wiki/Nagasaki_dialect (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは次の点。仮定条件に、佐賀地区(旧佐賀藩域)では「ぎー・ぎ・ぎにゃー」(例「あめん ふっぎー よかない」)、田代地区では「ぎり・ぎりー」、唐津地区では「なら・なりゃー」を使う。長崎県では佐世保市を中心に「ぎー・ぎ・ぎん・ぎんた」、大村・彼杵方言東部に「ぎんにゃ」、諫早に「ぎっと」、島原半島北部に「ぎら・ぎらー」、南部に「ぎりゃ・ぎりゃー」がある。地域は出典に明記されているので medium としたが、セルへの割り当て(佐賀地区=4101・4104・4105、田代を含む東部4102は変種「ぎり」で中程度、唐津4103は低め、県央4203・島原4204は変種があるので中程度)は作成時の判断。長崎市(4201)、五島・壱岐・対馬、福岡・熊本での使用は未確認。若い世代の使用度も未確認。数値は作成時の見積もり。"

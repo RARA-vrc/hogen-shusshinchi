@@ -1,0 +1,19 @@
+id: p03-tombo
+category: vocab
+fun: 0.5
+text: "夏の終わり、田んぼの上をたくさん飛んでいる、あの虫。家族やまわりの年配の人が呼んでいた名前は――"
+options:
+  - { id: tombo, text: "トンボ(それ以外は聞かない)" }
+  - { id: danburi, text: "「だんぶり」" }
+  - { id: agezu, text: "「あげず」" }
+distribution:
+  default: { tombo: 0.88, danburi: 0.03, agezu: 0.02, unknown: 0.07 }
+  zones:
+    - cells: ["0301", "0302", "0306", "0307", "0308", "0309"]
+      dist: { tombo: 0.45, danburi: 0.42, agezu: 0.04, unknown: 0.09 }
+    - cells: ["0303", "0304", "0305"]
+      dist: { tombo: 0.48, danburi: 0.08, agezu: 0.35, unknown: 0.09 }
+source: "Wikipedia日本語版「岩手県南部方言」 https://ja.wikipedia.org/wiki/岩手県南部方言 、「岩手県」 https://ja.wikipedia.org/wiki/岩手県 (方言の節) (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、岩手県南部の旧仙台藩域で話される岩手県南部方言ではトンボを「あげず」と言い、県中北部では「だんぶり」と言う、という語彙の違いが挙がっている点。南部方言地域は金ケ崎町から大船渡市まで(岩手県の記事)なので胆江・両磐・気仙セルに当てた。釜石セルの扱いは作成者の判断。年配の語の可能性があるため設問は「年配の人が呼んでいた名前」とした(世代差は未確認)。秋田・青森・宮城での呼び名は未確認で、周辺県にも出る可能性があるのでdefaultにも少し値を置いた。数値はすべて作成時の見積もり。"

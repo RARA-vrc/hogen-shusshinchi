@@ -1,0 +1,18 @@
+id: p08-sokke
+category: grammar
+fun: 0.6
+text: "友達の話に相づちを打つとき、「そうなの」「へえ、そうなんだ」の意味で「そっけ」「そうけ」と返す。あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["08"]
+      dist: { use: 0.35, hear: 0.40, none: 0.18, unknown: 0.07 }
+    - prefs: ["09"]
+      dist: { use: 0.25, hear: 0.40, none: 0.28, unknown: 0.07 }
+    - cells: ["1207"]
+      dist: { use: 0.10, hear: 0.30, none: 0.52, unknown: 0.08 }
+source: "Wikipedia日本語版「茨城弁」 https://ja.wikipedia.org/wiki/茨城弁 / 同「栃木弁」 https://ja.wikipedia.org/wiki/栃木弁 / 同「房州弁」 https://ja.wikipedia.org/wiki/房州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、茨城弁で「け」が「〜かい」にあたり、相づちで「そうなの」の意味の「そっけ」がよく使われるという点。栃木弁の記事にも疑問の語尾「け」(例「そうけぇ?」)、房州弁の記事にも「そうけ」=「そうか」がある。相づちとしての使用頻度が栃木・房州でどの程度かは未確認で、栃木・安房の値は作成者の見積もり。数値はすべて作成時の見積もり。"

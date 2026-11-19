@@ -1,0 +1,16 @@
+id: p29-mii
+category: grammar
+fun: 0.6
+text: "昨日の出来事を話すとき、「ほんでみー、先生がみー、急に来てん」のように、話の合間に「みー」をはさむ言い方。あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2901", "2902", "2903", "2904"]
+      dist: { use: 0.25, hear: 0.35, none: 0.31, unknown: 0.09 }
+    - cells: ["2905"]
+      dist: { use: 0.05, hear: 0.20, none: 0.65, unknown: 0.10 }
+source: "Wikipedia日本語版「奈良弁」 https://ja.wikipedia.org/wiki/奈良弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、北和・中和地方で間投助詞「み(ー)」を盛んに用い、回想的な内容を表すこと。北和・中和を奈良市・東和・西和・中和(2901〜2904)に対応させ、南和(2905)は低めにした(セル境界との対応は概略)。他県での使用は出典に記載がなく、周辺県の分布は未確認。世代差も未確認。数値は作成時の見積もり。"

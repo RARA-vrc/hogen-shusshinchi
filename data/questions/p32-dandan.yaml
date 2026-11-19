@@ -1,0 +1,16 @@
+id: p32-dandan
+category: knowledge
+fun: 0.7
+text: "お店の人に「だんだん」と言われた。この「だんだん」(ありがとう、の意味)――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.08, no: 0.85, unknown: 0.06 }
+  zones:
+    - cells: ["3201", "3202", "3203", "3207", "3103"]
+      dist: { local: 0.60, media: 0.10, no: 0.25, unknown: 0.05 }
+    - cells: ["3204", "3205", "3206", "3101", "3102"]
+      dist: { local: 0.15, media: 0.12, no: 0.65, unknown: 0.08 }
+source: "Wikipedia日本語版「雲伯方言」https://ja.wikipedia.org/wiki/雲伯方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、雲伯方言の語彙に「だんだん」=ありがとう があり、家族の間では使わないとされる点。雲伯方言は島根県出雲地方(飯南町を除く)・隠岐と鳥取県西部(米子市・境港市・西伯郡・日野郡)で話されるとある。セル3201-3203・3207・3103に当てた(セル境界と方言域は一致しない)。石見・鳥取東中部の値と、県外のmedia値は根拠のない見積もり。周辺県の分布は未確認。"

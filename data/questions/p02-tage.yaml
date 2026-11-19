@@ -1,0 +1,24 @@
+id: p02-tage
+category: vocab
+fun: 0.7
+text: "「このりんご、――うまい!」。「とても」にあたる言葉として、地元でいちばん耳にするのは――"
+options:
+  - { id: tage, text: "「たげ」" }
+  - { id: waya, text: "「わや」" }
+  - { id: gappa, text: "「がっぱ」" }
+  - { id: other, text: "どれも使わない" }
+distribution:
+  default: { tage: 0.01, waya: 0.02, gappa: 0.01, other: 0.90, unknown: 0.06 }
+  zones:
+    - cells: ["0201"]
+      dist: { tage: 0.55, waya: 0.05, gappa: 0.05, other: 0.27, unknown: 0.08 }
+    - cells: ["0203"]
+      dist: { tage: 0.15, waya: 0.40, gappa: 0.05, other: 0.32, unknown: 0.08 }
+    - cells: ["0204"]
+      dist: { tage: 0.15, waya: 0.05, gappa: 0.40, other: 0.32, unknown: 0.08 }
+    - prefs: ["02"]
+      dist: { tage: 0.08, waya: 0.05, gappa: 0.05, other: 0.74, unknown: 0.08 }
+source: "Wikipedia日本語版「津軽弁」 https://ja.wikipedia.org/wiki/津軽弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、津軽弁で「すごい、たくさん」の意の語として青森「わや」、弘前「たげ」、五所川原「がっぱ」が並べて挙がり、「わや」(とても)は青森市周辺で主に使われ、弘前周辺ではほとんど「たげ」が使われる、という点。各市を津軽地域・青森地域・西北五地域セル全体に広げたのは作成者の解釈。ほかの地方(北海道など)で「わや」が別の意味で使われる可能性は未確認で、値は未調整。南部地方の値も見積もり。数値はすべて作成時の見積もり。"

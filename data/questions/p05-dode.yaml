@@ -1,0 +1,14 @@
+id: p05-dode
+category: vocab
+fun: 0.6
+text: "後ろから急に声をかけられて「わあ、ドデした!」。「びっくりした」という意味のこの「ドデする」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - prefs: ["05"]
+      dist: { use: 0.25, hear: 0.42, none: 0.25, unknown: 0.08 }
+source: "Wikipedia日本語版「秋田弁」 https://ja.wikipedia.org/wiki/秋田弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、秋田弁の語彙表に「ドデする」(サ行変格、びっくりする。「動転する」からか)が載っている点。県内の地域差・世代差、周辺県の分布は未確認。数値はすべて作成時の見積もり。"

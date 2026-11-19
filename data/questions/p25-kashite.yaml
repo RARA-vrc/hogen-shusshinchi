@@ -1,0 +1,18 @@
+id: p25-kashite
+category: grammar
+fun: 0.6
+text: "「コンビニまで、行ってかして」。これは「一緒に行ってほしい」の意味。この「〜てかし(て)」という頼み方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2502", "2505", "2506"]
+      dist: { use: 0.25, hear: 0.35, none: 0.30, unknown: 0.10 }
+    - cells: ["2501", "2504"]
+      dist: { use: 0.12, hear: 0.28, none: 0.50, unknown: 0.10 }
+    - prefs: ["25"]
+      dist: { use: 0.05, hear: 0.18, none: 0.67, unknown: 0.10 }
+source: "Wikipedia日本語版「江州弁」(近江弁から転送) https://ja.wikipedia.org/wiki/近江弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、湖北・湖東・湖南にかけて「一緒に……してほしい」という意味の「-て+かし(て)」があり、「行ってかして」「来てかし」のように使うこと。出典の「湖南」が大津市を含むかは未確認のため大津(2501)と東近江(2504)は中間値にした。若い世代での使用度、周辺県の分布は未確認。数値は作成時の見積もり。"

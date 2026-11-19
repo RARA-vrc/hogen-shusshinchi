@@ -1,0 +1,18 @@
+id: p08-gojappe
+category: knowledge
+fun: 0.7
+text: "「あいつの話はごじゃっぺだから」。この「ごじゃっぺ」(でたらめ、いいかげんの意味)――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.12, no: 0.82, unknown: 0.05 }
+  zones:
+    - prefs: ["08"]
+      dist: { local: 0.70, media: 0.12, no: 0.13, unknown: 0.05 }
+    - prefs: ["09"]
+      dist: { local: 0.50, media: 0.15, no: 0.30, unknown: 0.05 }
+    - prefs: ["11", "12"]
+      dist: { local: 0.04, media: 0.20, no: 0.70, unknown: 0.06 }
+source: "Wikipedia日本語版「茨城弁」 https://ja.wikipedia.org/wiki/茨城弁 / 同「栃木弁」 https://ja.wikipedia.org/wiki/栃木弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、茨城弁の「ごじゃっぺ」がでたらめ・いいかげん(な人・こと)、ばかの意味であること、栃木弁の記事にも「ごじゃっぺ」(ウソ、冗談、いい加減)があり「茨城でも使われる」と書かれていること。県内の地域差、埼玉・千葉など周辺県での通用度は未確認。数値は作成時の見積もり。"

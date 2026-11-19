@@ -1,0 +1,16 @@
+id: p34-kisha
+category: unaware
+fun: 0.6
+text: "「次の汽車で帰るけえ」。電化されたJRの普通列車のことも、ふだん「汽車」と呼ぶ。この呼び方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.03, hear: 0.07, none: 0.84, unknown: 0.06 }
+  zones:
+    - cells: ["3401", "3402", "3403"]
+      dist: { use: 0.35, hear: 0.38, none: 0.20, unknown: 0.07 }
+    - cells: ["3404"]
+      dist: { use: 0.20, hear: 0.35, none: 0.37, unknown: 0.08 }
+source: "Wikipedia日本語版「広島弁」https://ja.wikipedia.org/wiki/広島弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、JR在来線を「汽車」と呼び、広島電鉄の路線だけを「電車」と呼ぶのが広島県西部のみの慣習とされる点。西部をセル3401-3403に当て、東広島(3404)は中間値にした。他県にも在来線を汽車と呼ぶ地域があるかは未確認のため、defaultをやや高めにした。例文は作成者の作文。数値は作成時の見積もり。"

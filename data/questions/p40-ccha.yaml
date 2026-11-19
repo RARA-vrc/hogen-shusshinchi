@@ -1,0 +1,22 @@
+id: p40-ccha
+category: grammar
+fun: 0.6
+text: "友達の話に強くうなずいて「そうっちゃ!」「そうなんちゃ!」。「そうそう!」「そうなんだよ!」の意味のこの「〜っちゃ」「〜ちゃ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.06, none: 0.86, unknown: 0.07 }
+  zones:
+    - cells: ["4012", "4013"]
+      dist: { use: 0.45, hear: 0.35, none: 0.13, unknown: 0.07 }
+    - cells: ["4009", "4010", "4011"]
+      dist: { use: 0.15, hear: 0.40, none: 0.37, unknown: 0.08 }
+    - prefs: ["44"]
+      dist: { use: 0.30, hear: 0.35, none: 0.28, unknown: 0.07 }
+    - prefs: ["45"]
+      dist: { use: 0.15, hear: 0.35, none: 0.42, unknown: 0.08 }
+    - prefs: ["40"]
+      dist: { use: 0.04, hear: 0.30, none: 0.58, unknown: 0.08 }
+source: "Wikipedia日本語版「北九州弁」https://ja.wikipedia.org/wiki/北九州弁 /「大分弁」https://ja.wikipedia.org/wiki/大分弁 /「日向方言」https://ja.wikipedia.org/wiki/日向方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、北九州弁の「-ちゃ/っちゃ」が「-だよ」の意味で、同意のあいづちとして「そうっちゃ」「そうなんちゃ!」と使われること。北九州弁の範囲は遠賀郡〜京築地域とされ、北九州市西部(八幡以西)では同じ意味で「-ばい」になるとも書かれている(セル単位では区別できないので4012全体を高めにした)。大分弁にも文末を強める「〜っちゃ」(例「違うっちゃ!」)があり、日向方言でも「と」の後の断定が「っちゃ」になる(「見たっちゃが」)ため、大分・宮崎にも値を置いた。筑豊(4009-4011)、山口県、福岡市以西で聞くかどうかは未確認。数値は作成時の見積もり。"

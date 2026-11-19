@@ -1,0 +1,14 @@
+id: p39-nanchaa
+category: grammar
+fun: 0.7
+text: "「心配せんでええ、なんちゃあない」。この「なんちゃあない」は「なんでもない」の意味(「誰ちゃあ来ん」=誰も来ない)。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["39"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+source: "Wikipedia日本語版「土佐弁」https://ja.wikipedia.org/wiki/土佐弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、土佐弁で「〜ちゃあ+否定」が「〜も+否定」を表し、「なんちゃあない」(なんでもない)・「誰ちゃあ来やせん」の例がある点。例文の前半は作成者の作文。県内の地域差、周辺県の分布は未確認。数値は作成時の見積もり。"

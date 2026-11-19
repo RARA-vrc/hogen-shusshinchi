@@ -1,0 +1,21 @@
+id: p27-kawagoshi
+category: grammar
+fun: 0.6
+text: "ぶどうの食べ方。「この品種は、皮――食べられるで」"
+options:
+  - { id: goto, text: "「皮ごと」" }
+  - { id: guchi, text: "「皮ぐち」" }
+  - { id: goshi, text: "「皮ごし」" }
+distribution:
+  default: { goto: 0.92, guchi: 0.01, goshi: 0.01, unknown: 0.06 }
+  zones:
+    - cells: ["2708"]
+      dist: { goto: 0.62, guchi: 0.30, goshi: 0.01, unknown: 0.07 }
+    - cells: ["2707"]
+      dist: { goto: 0.55, guchi: 0.15, goshi: 0.22, unknown: 0.08 }
+    - prefs: ["27"]
+      dist: { goto: 0.72, guchi: 0.20, goshi: 0.02, unknown: 0.06 }
+source: "Wikipedia日本語版「泉州弁」 https://ja.wikipedia.org/wiki/泉州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、泉南では「皮ごと食べる」のような「ごと」にあたる接尾語に「ごし」を使い、大阪市などでは「ぐち」とすること。「大阪市など」の範囲(大阪府内他地域・兵庫・京都・奈良など)は未確認のため府内他地域は中間値、府外はdefault。泉南は泉州セル(2707)の一部。若い世代でどれだけ使うかも未確認。数値は作成時の見積もり。"

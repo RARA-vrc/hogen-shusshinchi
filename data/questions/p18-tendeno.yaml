@@ -1,0 +1,16 @@
+id: p18-tendeno
+category: grammar
+fun: 0.5
+text: "コンビニへ行く家族に、「ついでにアイスも買うてんでの」。この「〜てんでの」(「〜してくださいね」と頼む言い方)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["1801", "1802", "1803"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+    - cells: ["1804"]
+      dist: { use: 0.04, hear: 0.25, none: 0.61, unknown: 0.10 }
+source: "Wikipedia日本語版「福井弁」 https://ja.wikipedia.org/wiki/福井弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、福井弁で「〜てんでの」が「〜てください」に当たる依頼表現で、「うらの分も買うてんでの」の例がある点。出典は嶺北が対象で嶺南は推定。若者の使用率は未確認(出典は若者の共通語化を指摘)。周辺県の分布は未確認。数値は作成時の見積もり。"

@@ -1,0 +1,18 @@
+id: p45-tege
+category: vocab
+fun: 0.7
+text: "「あの魚、てげ大きかったっちゃが」。「とても」「すごく」の意味で使うこの「てげ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["4502", "4505"]
+      dist: { use: 0.20, hear: 0.42, none: 0.30, unknown: 0.08 }
+    - prefs: ["45"]
+      dist: { use: 0.45, hear: 0.37, none: 0.11, unknown: 0.07 }
+    - prefs: ["46"]
+      dist: { use: 0.04, hear: 0.20, none: 0.68, unknown: 0.08 }
+source: "Wikipedia日本語版「日向方言」https://ja.wikipedia.org/wiki/日向方言 /「薩隅方言」https://ja.wikipedia.org/wiki/薩隅方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、日向方言(宮崎弁)の「てげ」が「とても」の意味で、「てげふてかったっちゃが」(ものすごく大きかったんだよ)の例があること。似た語として鹿児島の薩隅方言の「テゲ/テゲテゲ」は「大概」(いい加減、ほどほど)の意味で載っており、「とても」の意味ではないため鹿児島は低めにした(ただし「聞いたことがある」と答える人はいる想定)。諸県地方(4502・4505)は薩隅方言系とされるので宮崎県のほかより低めにしたが、実際の使用は未確認。大分・熊本の分布は未確認。数値は作成時の見積もり。"

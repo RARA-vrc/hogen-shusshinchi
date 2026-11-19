@@ -1,0 +1,18 @@
+id: p23-rin
+category: grammar
+fun: 0.7
+text: "遠慮している客に、家の人が「冷めないうちに食べりん」。この「〜りん」(「〜しなよ」と軽くすすめる言い方)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2308", "2309", "2310", "2311", "2312"]
+      dist: { use: 0.45, hear: 0.33, none: 0.14, unknown: 0.08 }
+    - cells: ["2307"]
+      dist: { use: 0.35, hear: 0.35, none: 0.22, unknown: 0.08 }
+    - prefs: ["23"]
+      dist: { use: 0.06, hear: 0.40, none: 0.46, unknown: 0.08 }
+source: "Wikipedia日本語版「三河弁」 https://ja.wikipedia.org/wiki/三河弁 、「名古屋弁」 https://ja.wikipedia.org/wiki/名古屋弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、三河弁で動詞の連用形に「りん」を付けて軽い命令を作り、名古屋弁の「食べやあ」に対して三河弁は「食べりん」となること、名古屋弁の記事で知多半島では軽い命令「〜りん」を用いるとされること。尾張の「聞いたことがある」の値、遠州など静岡県・岐阜県での使用、世代差は未確認の推定。例文は作成者の文。数値は作成時の見積もり。"

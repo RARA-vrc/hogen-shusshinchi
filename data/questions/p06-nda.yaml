@@ -1,0 +1,25 @@
+id: p06-nda
+category: grammar
+fun: 0.7
+text: "友達の話に「そうそう、そのとおり」と相づちを打つ。地元の口調でいちばん近いのは――"
+options:
+  - { id: ndano, text: "「んだのー」" }
+  - { id: ndazu, text: "「んだず」「んだずにゃー」" }
+  - { id: ndaju, text: "「んだじゅー」「んだにゃー」" }
+  - { id: ndasso, text: "「んだっそ」「んだごで」" }
+  - { id: other, text: "どれも使わない" }
+distribution:
+  default: { ndano: 0.01, ndazu: 0.01, ndaju: 0.01, ndasso: 0.01, other: 0.90, unknown: 0.06 }
+  zones:
+    - cells: ["0604"]
+      dist: { ndano: 0.50, ndazu: 0.03, ndaju: 0.02, ndasso: 0.02, other: 0.35, unknown: 0.08 }
+    - cells: ["0601"]
+      dist: { ndano: 0.02, ndazu: 0.50, ndaju: 0.04, ndasso: 0.03, other: 0.33, unknown: 0.08 }
+    - cells: ["0602"]
+      dist: { ndano: 0.03, ndazu: 0.10, ndaju: 0.42, ndasso: 0.02, other: 0.35, unknown: 0.08 }
+    - cells: ["0603"]
+      dist: { ndano: 0.02, ndazu: 0.05, ndaju: 0.02, ndasso: 0.48, other: 0.35, unknown: 0.08 }
+source: "Wikipedia日本語版「山形弁」 https://ja.wikipedia.org/wiki/山形弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、「そうだ」を意味する各方言として、村山弁「んだず」「んだべした」「んだずにゃー」、新庄弁「んだじゅー」「んだにゃー」、置賜弁「んだっそ」「んだごで」、庄内弁「んだのー」が挙げられている点。新庄弁を最上地方セル全体に当てたのは作成者の解釈。「んだべした」は福島でも使われるため選択肢から外した。山形県外の分布は未確認。数値はすべて作成時の見積もり。"

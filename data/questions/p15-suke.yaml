@@ -1,0 +1,18 @@
+id: p15-suke
+category: grammar
+fun: 0.6
+text: "「もう遅いすけ、送っていくよ」「雨降ってるっけ、傘持ってきな」。どちらも「〜から」(理由)の意味の「〜すけ」「〜っけ」。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["1502"]
+      dist: { use: 0.45, hear: 0.35, none: 0.12, unknown: 0.08 }
+    - cells: ["1501", "1503"]
+      dist: { use: 0.35, hear: 0.40, none: 0.17, unknown: 0.08 }
+    - cells: ["1504", "1505", "1506", "1507"]
+      dist: { use: 0.20, hear: 0.40, none: 0.30, unknown: 0.10 }
+source: "Wikipedia日本語版「新潟弁」 https://ja.wikipedia.org/wiki/新潟弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、新潟弁で理由の「から」に当たる語尾が「終止形+スケ」で、若年層では「終止形+ッケ」の形が多い点。出典の「新潟弁」は新潟市を中心とする地域の方言に限るとしているため、新潟市周辺以外のセルの値は未確認の推定。同源とされる関西の「さかい」とは別扱い。周辺県の分布は未確認。数値はすべて作成時の見積もり。"

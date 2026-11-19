@@ -1,0 +1,31 @@
+id: p22-kanyu
+category: grammar
+fun: 0.6
+text: "仲のいい友達を、週末の祭りに誘う。いちばん自然に口から出るのは――"
+options:
+  - { id: ikou, text: "「一緒に行こう(よ)」" }
+  - { id: ikomai, text: "「一緒に行こまい」" }
+  - { id: ikamai, text: "「一緒に行かまい(か)」「行きまい(か)」" }
+  - { id: ikazaa, text: "「一緒に行かざあ」" }
+  - { id: other, text: "ほかの言い方(「行くべ」など)" }
+distribution:
+  default: { ikou: 0.80, ikomai: 0.01, ikamai: 0.01, ikazaa: 0.01, other: 0.12, unknown: 0.05 }
+  zones:
+    - cells: ["2201", "2202", "2203", "2204"]
+      dist: { ikou: 0.68, ikomai: 0.01, ikamai: 0.01, ikazaa: 0.02, other: 0.23, unknown: 0.05 }
+    - cells: ["2205", "2206"]
+      dist: { ikou: 0.48, ikomai: 0.01, ikamai: 0.02, ikazaa: 0.40, other: 0.04, unknown: 0.05 }
+    - cells: ["2207"]
+      dist: { ikou: 0.48, ikomai: 0.01, ikamai: 0.22, ikazaa: 0.20, other: 0.04, unknown: 0.05 }
+    - cells: ["2208", "2308", "2309", "2310", "2311", "2312"]
+      dist: { ikou: 0.50, ikomai: 0.04, ikamai: 0.38, ikazaa: 0.01, other: 0.02, unknown: 0.05 }
+    - cells: ["2307"]
+      dist: { ikou: 0.55, ikomai: 0.17, ikamai: 0.20, ikazaa: 0.01, other: 0.02, unknown: 0.05 }
+    - prefs: ["23"]
+      dist: { ikou: 0.55, ikomai: 0.35, ikamai: 0.03, ikazaa: 0.01, other: 0.01, unknown: 0.05 }
+    - prefs: ["19", "20"]
+      dist: { ikou: 0.70, ikomai: 0.01, ikamai: 0.01, ikazaa: 0.08, other: 0.15, unknown: 0.05 }
+source: "Wikipedia日本語版「静岡弁」 https://ja.wikipedia.org/wiki/静岡弁 、「三河弁」 https://ja.wikipedia.org/wiki/三河弁 、「遠州弁」 https://ja.wikipedia.org/wiki/遠州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、静岡県の勧誘表現が東部(富士川以東)「べー」、中部(富士川以西・掛川市以東)「ざあ」(行かざあ)、西部(袋井市・森町以西)「まい(か)」(行かまい(か)・行きまい(か))に分かれること、「やらざぁ」は山梨・長野でも使われるとされること(静岡弁)、勧誘形が尾張「行こまい」・三河「行かまい」で対立すること(三河弁)、湖西市の文法は東三河弁とほぼ同じとされること(遠州弁)。中東遠セルは中部と西部の境界をまたぐため混合値にした。知多の値、若い世代での使用率、山梨・長野の値は未確認の推定。「べ」は別の質問(g09-be)で扱うため選択肢を「ほか」にまとめた。数値は作成時の見積もり。"

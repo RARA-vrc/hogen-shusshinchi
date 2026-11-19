@@ -1,0 +1,18 @@
+id: p25-hon
+category: grammar
+fun: 0.7
+text: "「明日は晴れるほん」。文末の「ほん」は「きっと〜だよ」と、自信をもって念を押す言い方。この「〜ほん」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2505", "2506"]
+      dist: { use: 0.38, hear: 0.40, none: 0.14, unknown: 0.08 }
+    - cells: ["2504", "2507"]
+      dist: { use: 0.10, hear: 0.30, none: 0.50, unknown: 0.10 }
+    - prefs: ["25"]
+      dist: { use: 0.03, hear: 0.17, none: 0.70, unknown: 0.10 }
+source: "Wikipedia日本語版「江州弁」(近江弁から転送) https://ja.wikipedia.org/wiki/近江弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、終助詞「ほん」が柔らかな念押し・主張・意志の強調を表し、確証や自信を伴う表現であること、彦根を中心に湖東から湖北・旧マキノ町にかけて用いられること。セル対応は彦根周辺(2505)・湖北(2506)を中心とし、東近江(2504)と高島(2507、旧マキノ町のみ該当)は一部該当として低めにした。他県での使用は出典に記載がなく、周辺県の分布は未確認。年代差も未確認。数値は作成時の見積もり。"

@@ -1,0 +1,14 @@
+id: p28-eecha
+category: grammar
+fun: 0.6
+text: "「もう、それでええっちゃ」。この「〜っちゃ」は「〜ってば」にあたる言い方。この「〜っちゃ」「〜んちゃ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.02, hear: 0.06, none: 0.85, unknown: 0.07 }
+  zones:
+    - cells: ["2808"]
+      dist: { use: 0.35, hear: 0.33, none: 0.24, unknown: 0.08 }
+source: "Wikipedia日本語版「但馬弁」 https://ja.wikipedia.org/wiki/但馬弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、但馬弁で「〜てば」にあたる言い方として主に北部で「〜ちゃ」を用い、促音・撥音に付くこと(例「それでええっちゃ」「行かれんちゃ」)。但馬南部の使用度は低い可能性があるが、但馬は1セル(2808)のため一括。鳥取・丹後など周辺の分布は未確認(他地方にも似た「ちゃ」がある可能性があり、defaultをやや高めにした)。数値は作成時の見積もり。"

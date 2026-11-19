@@ -1,0 +1,14 @@
+id: p16-maike
+category: grammar
+fun: 0.6
+text: "週末の予定を話していたら、友達が「じゃあ、いっしょに行こまいけ」。「一緒に行こう」と誘うこの「〜まいけ」(「〜んまいけ」とも)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["16"]
+      dist: { use: 0.40, hear: 0.38, none: 0.14, unknown: 0.08 }
+source: "Wikipedia日本語版「富山弁」 https://ja.wikipedia.org/wiki/富山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、富山弁で勧誘(〜しよう)に「まいけ」を使い、呉西では「〜まいけ」、呉東では「〜んまいけ」となる点、用例「行こまいけ」。県内ほぼ全域で使われるとの記述による。愛知・遠州の「〜まい」とは形が違うが、「け」の付かない形との混同で県外の値がやや上がる可能性あり。石川など周辺県の分布は未確認。数値は作成時の見積もり。"

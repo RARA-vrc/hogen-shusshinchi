@@ -1,0 +1,14 @@
+id: p09-daiji
+category: unaware
+fun: 0.7
+text: "転んだ友達に駆け寄って「だいじ?」。これは「大丈夫?」の意味。この「だいじ(だいじけ)」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["09"]
+      dist: { use: 0.45, hear: 0.35, none: 0.13, unknown: 0.07 }
+source: "Wikipedia日本語版「栃木弁」 https://ja.wikipedia.org/wiki/栃木弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、栃木弁の「だいじ?」(「だいじけぇ?」など)が「大丈夫?」の意味で、県外からの転入者が最初にぶつかる言葉の壁と言われるほど県内でメジャーだという点。茨城弁の記事には記載がなく、茨城・群馬など周辺県の分布は未確認(既定値のまま)。数値は作成時の見積もり。"

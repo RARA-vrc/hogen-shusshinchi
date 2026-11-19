@@ -1,0 +1,22 @@
+id: p43-gurashika
+category: vocab
+fun: 0.6
+text: "雨の中で震えている子犬を見て、「ぐらしかねえ」。「気の毒だ」「かわいそうだ」の意味のこの「ぐらしか」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["4309", "4310"]
+      dist: { use: 0.30, hear: 0.40, none: 0.22, unknown: 0.08 }
+    - cells: ["4612"]
+      dist: { use: 0.05, hear: 0.15, none: 0.70, unknown: 0.10 }
+    - prefs: ["46"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+    - cells: ["4502", "4505"]
+      dist: { use: 0.10, hear: 0.30, none: 0.52, unknown: 0.08 }
+    - prefs: ["43"]
+      dist: { use: 0.03, hear: 0.15, none: 0.74, unknown: 0.08 }
+source: "Wikipedia日本語版「熊本弁」https://ja.wikipedia.org/wiki/熊本弁 /「薩隅方言」https://ja.wikipedia.org/wiki/薩隅方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、熊本弁の「ぐらしか」(気の毒だ)が南部のうち球磨・葦北地域で使われ、薩隅方言と重複すること、薩隅方言の語彙に「グラシカ:可哀そうだ、気の毒だ」があること。球磨・葦北の範囲は出典に明記されているので medium とした(葦北は芦北セル4309に当てた)。薩隅方言の記事は鹿児島県(奄美群島を除く)と宮崎県諸県地方を範囲としているため、鹿児島本土を高め、奄美(4612)を低め、諸県(4502・4505)を中程度にしたが、それぞれの地域での実際の使用は未確認。八代・天草など熊本県のほかの地域は未確認で低め。数値は作成時の見積もり。"

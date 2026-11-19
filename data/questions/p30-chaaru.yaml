@@ -1,0 +1,25 @@
+id: p30-chaaru
+category: grammar
+fun: 0.6
+text: "朝、窓を開けたら道がぬれている。夜のうちに雨が降ったらしい。家族に「あ、雨――」"
+options:
+  - { id: chaaru, text: "「降っちゃーる」「降っちゃある」" }
+  - { id: taaru, text: "「降ったーる」「降ったる」" }
+  - { id: other, text: "「降っとる」「降ってる」「降ったんや」など、それ以外" }
+distribution:
+  default: { chaaru: 0.01, taaru: 0.01, other: 0.92, unknown: 0.06 }
+  zones:
+    - cells: ["3001", "3002"]
+      dist: { chaaru: 0.40, taaru: 0.08, other: 0.45, unknown: 0.07 }
+    - cells: ["3005", "3006", "3007"]
+      dist: { chaaru: 0.12, taaru: 0.38, other: 0.42, unknown: 0.08 }
+    - cells: ["3003", "3004"]
+      dist: { chaaru: 0.25, taaru: 0.12, other: 0.55, unknown: 0.08 }
+    - cells: ["2404"]
+      dist: { chaaru: 0.06, taaru: 0.15, other: 0.72, unknown: 0.07 }
+    - cells: ["2707"]
+      dist: { chaaru: 0.12, taaru: 0.03, other: 0.78, unknown: 0.07 }
+source: "Wikipedia日本語版「紀州弁」(和歌山弁) https://ja.wikipedia.org/wiki/和歌山弁 、「泉州弁」 https://ja.wikipedia.org/wiki/泉州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、紀州弁の結果態に「降っちゃーる」「降ったーる」など多くの形があり、和歌山市・海草郡・那賀郡では「降っちゃーる」、日高郡以南では「降ったーる」が多いこと。三重県南牟婁では「降ったる・降ったーる・降っちゃーる」、北牟婁では「降っとる」を使うとある(2404は南北牟婁を含むので低め)。泉州弁の記事には泉州で「てある」が変化した「ちゃある」を使うとある。橋本・有田(3003・3004)は出典に記載がなく中間値。数値は作成時の見積もり。"

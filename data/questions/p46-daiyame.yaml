@@ -1,0 +1,18 @@
+id: p46-daiyame
+category: vocab
+fun: 0.7
+text: "仕事から帰った家族が「さて、だいやめにすっか」。「晩酌(夕食どきの一杯)」の意味のこの「だいやめ」「だれやめ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["4612"]
+      dist: { use: 0.05, hear: 0.25, none: 0.60, unknown: 0.10 }
+    - prefs: ["46"]
+      dist: { use: 0.30, hear: 0.45, none: 0.18, unknown: 0.07 }
+    - cells: ["4502", "4505"]
+      dist: { use: 0.15, hear: 0.35, none: 0.42, unknown: 0.08 }
+source: "Wikipedia日本語版「薩隅方言」https://ja.wikipedia.org/wiki/薩隅方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、薩隅方言の語彙に「ダイヤメ:晩酌」があり、「だれやめ」が訛ったもの(疲れ=ダレを止める)と説明されていること。薩隅方言の記事は鹿児島県(奄美群島を除く)と宮崎県諸県地方を範囲としているため、鹿児島本土を高め、奄美(4612)を低め、諸県(4502・4505)を中程度にしたが、語ごとの分布は記事に書かれておらず未確認。熊本県南部など他県の分布も未確認。数値は作成時の見積もり。"

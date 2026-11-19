@@ -1,0 +1,16 @@
+id: p07-sasukene
+category: vocab
+fun: 0.6
+text: "雪かきを手伝おうとしたら、近所の人に「さすけねえ、さすけねえ」と言われた。「大丈夫、問題ない」という意味のこの「さすけねえ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["0701", "0702"]
+      dist: { use: 0.40, hear: 0.40, none: 0.13, unknown: 0.07 }
+    - prefs: ["07"]
+      dist: { use: 0.15, hear: 0.40, none: 0.37, unknown: 0.08 }
+source: "Wikipedia日本語版「福島弁」 https://ja.wikipedia.org/wiki/福島弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、語彙一覧に「さすけーねー(さすけねぇ)→差し支えない、問題ない」があり、地域表示が(北・中)=県北(福島市・伊達・二本松・本宮など)と県中(郡山市・田村など)である点。県南・会津・浜通りでの使用は出典に記載がなく、県内のほかの地域の値は見積もり。周辺県の分布は未確認。数値はすべて作成時の見積もり。"

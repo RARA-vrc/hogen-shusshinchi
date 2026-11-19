@@ -1,0 +1,16 @@
+id: p45-ke-question
+category: grammar
+fun: 0.5
+text: "「明日も部活あるけ?」。「〜あるの?」「〜あるか?」と相手にやわらかく尋ねる文末の「〜け」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.02, hear: 0.06, none: 0.85, unknown: 0.07 }
+  zones:
+    - cells: ["4503", "4507"]
+      dist: { use: 0.38, hear: 0.35, none: 0.19, unknown: 0.08 }
+    - prefs: ["45"]
+      dist: { use: 0.08, hear: 0.30, none: 0.54, unknown: 0.08 }
+source: "Wikipedia日本語版「日向方言」https://ja.wikipedia.org/wiki/日向方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、日向方言の疑問の終助詞「〜け」が標準語の「〜か」に相当するがよりやわらかく、他者への問いかけにだけ使い、主に県北で使われること。県北を延岡西臼杵(4503)と日向入郷(4507)に当てたのは作成時の判断。疑問の「〜け」は他地方(例えば東日本の一部)にもある可能性があり、大分県など周辺県の分布も未確認のため、default をやや高めにした。薩隅方言の記事にも疑問を表す接尾語「ケ」の例(「ジャッタケ」)があるが、鹿児島での使用度は未確認で default のまま。数値は作成時の見積もり。"

@@ -1,0 +1,16 @@
+id: p18-tsurutsuru
+category: unaware
+fun: 0.7
+text: "コップのお茶が、表面がふくらんで今にもこぼれそう。この状態を「つるつるいっぱい」と言うのを、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["16", "17", "18"]
+      dist: { use: 0.40, hear: 0.33, none: 0.19, unknown: 0.08 }
+    - cells: ["1804"]
+      dist: { use: 0.20, hear: 0.30, none: 0.40, unknown: 0.10 }
+source: "Wikipedia日本語版「福井弁」 https://ja.wikipedia.org/wiki/福井弁 、「富山弁」 https://ja.wikipedia.org/wiki/富山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、「つるつるいっぱい」がコップなどに液体があふれる寸前まで注がれた様子を指し、北陸で広く使われ方言と知らずに使われていることが多い点(福井弁の記事)、富山弁の記事でも石川・福井で使われるとされる点。嶺南(福井弁の記事の対象外)と新潟など周辺県の値は推定で未確認。北陸3県を区別する力は弱く、北陸と他地域を分ける質問。数値は作成時の見積もり。"

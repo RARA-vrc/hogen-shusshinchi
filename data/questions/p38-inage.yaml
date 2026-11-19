@@ -1,0 +1,19 @@
+id: p38-inage
+category: vocab
+fun: 0.5
+text: "「なんか、いなげな音がするね」。この「いなげな」は「変な」「おかしな」「風変わりな」の意味。この言葉、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["38"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+    - prefs: ["35"]
+      cells: ["3401", "3402", "3403", "3407"]
+      dist: { use: 0.25, hear: 0.38, none: 0.29, unknown: 0.08 }
+    - cells: ["3404", "3405", "3406"]
+      dist: { use: 0.10, hear: 0.25, none: 0.55, unknown: 0.10 }
+source: "Wikipedia日本語版「伊予弁」https://ja.wikipedia.org/wiki/伊予弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典(伊予弁)で確認したのは「いなげ」な=おかしな、変わった、変な、風変わりな。ほかに Wikipedia「広島弁」(https://ja.wikipedia.org/wiki/広島弁)に「いなげな」(県北・西部)、Wikipedia「山口弁」(https://ja.wikipedia.org/wiki/山口弁)に「いなげな」=変な・怪しげな があり(いずれも2026-11-19閲覧)、広島西部・県北と山口にも値を置いた。広島東部・中部の値と四国他県の分布は未確認。数値は作成時の見積もり。"

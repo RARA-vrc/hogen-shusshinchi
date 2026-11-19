@@ -1,0 +1,18 @@
+id: p20-goshitai
+category: vocab
+fun: 0.6
+text: "一日じゅう畑仕事を手伝って、縁側に座りこむ。「あー、ごしてえ」。この「ごしてえ」「ごしたい」(「とても疲れた」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2009", "2010", "2001", "2002", "2007", "2008", "2003"]
+      dist: { use: 0.25, hear: 0.42, none: 0.25, unknown: 0.08 }
+    - cells: ["2004", "2006"]
+      dist: { use: 0.18, hear: 0.40, none: 0.33, unknown: 0.09 }
+    - cells: ["2005"]
+      dist: { use: 0.06, hear: 0.30, none: 0.54, unknown: 0.10 }
+source: "Wikipedia日本語版「長野県方言」 https://ja.wikipedia.org/wiki/長野県方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、「ごしてえ」が北信・東信・中信で「とても疲れた」の意味で使われ、北信北部・諏訪・上伊那を中心に点々と分布するとの記述。セルへの割り当て(特に諏訪・上伊那・木曽・飯伊)は作成者の解釈。世代差、群馬・新潟など周辺県の分布は未確認。数値は作成時の見積もり。"

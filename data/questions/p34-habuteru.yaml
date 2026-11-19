@@ -1,0 +1,16 @@
+id: p34-habuteru
+category: vocab
+fun: 0.7
+text: "おやつを取られた弟が、ぷいっと横を向いた。「またはぶてとる」。この「はぶてる」は「すねる・ふてくされる」の意味。この言葉、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["3401", "3402", "3403", "3404"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+    - cells: ["3405", "3406", "3407"]
+      dist: { use: 0.10, hear: 0.25, none: 0.55, unknown: 0.10 }
+source: "Wikipedia日本語版「広島弁」https://ja.wikipedia.org/wiki/広島弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、広島弁の語彙に「はぶてる」=不機嫌になる、すねる があり、地域注記が「西部」となっている点。西部をセル3401-3404に当て、東部・県北は中程度の値にした(東部での使用は未確認)。山口など周辺県の分布は未確認。例文は作成者の作文。数値は作成時の見積もり。"

@@ -1,0 +1,18 @@
+id: p46-genne
+category: vocab
+fun: 0.7
+text: "人前で派手に転んでしまい、思わず「げんねー」。「恥ずかしい」の意味のこの「げんね」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["4612"]
+      dist: { use: 0.05, hear: 0.20, none: 0.65, unknown: 0.10 }
+    - prefs: ["46"]
+      dist: { use: 0.35, hear: 0.42, none: 0.16, unknown: 0.07 }
+    - cells: ["4502", "4505"]
+      dist: { use: 0.15, hear: 0.35, none: 0.42, unknown: 0.08 }
+source: "Wikipedia日本語版「薩隅方言」https://ja.wikipedia.org/wiki/薩隅方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、薩隅方言の語彙に「ゲンネ:恥ずかしい」があり、「芸がない」がつづまったものと説明されていること(活用でも「ゲンネカロ」のように原音に戻らない)。薩隅方言の記事の範囲(鹿児島県の奄美群島を除く地域と宮崎県諸県地方)に合わせて値を置いたが、語ごとの分布、年代差、周辺県の分布は未確認。数値は作成時の見積もり。"

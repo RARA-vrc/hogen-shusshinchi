@@ -1,0 +1,19 @@
+id: p10-jomo-karuta
+category: culture
+fun: 0.8
+text: "かるた大会で、読み手が最初に「つる舞う形の群馬県」と読み上げる「上毛かるた」。あなたは――"
+options:
+  - { id: played, text: "子どものころ遊んだ/札をだいたい覚えている" }
+  - { id: heard, text: "名前は聞いたことがある" }
+  - { id: no, text: "知らない" }
+distribution:
+  default: { played: 0.01, heard: 0.15, no: 0.79, unknown: 0.05 }
+  zones:
+    - prefs: ["10"]
+      dist: { played: 0.80, heard: 0.12, no: 0.04, unknown: 0.04 }
+    - prefs: ["09", "11"]
+      dist: { played: 0.02, heard: 0.30, no: 0.63, unknown: 0.05 }
+source: "Wikipedia日本語版「上毛かるた」 https://ja.wikipedia.org/wiki/上毛かるた (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、子ども時代を群馬県で過ごした人は読み札をほぼ暗記していることが多いこと、2月の県競技大会に向けて県内の子どもが冬休みなどに練習すること、競技では最初に「つる舞う形の群馬県」を2回読むこと。子ども会の大会は減っているとの記述もあり、若い世代の値は不確か。隣県での知名度は未確認。数値は作成時の見積もり。"

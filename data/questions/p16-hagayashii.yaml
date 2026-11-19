@@ -1,0 +1,16 @@
+id: p16-hagayashii
+category: vocab
+fun: 0.6
+text: "何度やってもパズルの最後の1ピースがはまらない。「あーもう、はがやしい!」。この「はがやしい」(「歯がゆい」「もどかしい」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - prefs: ["16"]
+      dist: { use: 0.35, hear: 0.40, none: 0.17, unknown: 0.08 }
+    - prefs: ["17"]
+      dist: { use: 0.05, hear: 0.25, none: 0.60, unknown: 0.10 }
+source: "Wikipedia日本語版「富山弁」 https://ja.wikipedia.org/wiki/富山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、富山弁の「はがやしい」が「はがゆい」「うっとうしい」のような意味で、思い通りにならないときに使うこと、金沢弁では「はんげー」となること。石川の値は、似た語があるため聞いて意味がわかる人がいる想定の推定。県内の地域差・世代差、岐阜など他の周辺県は未確認。数値は作成時の見積もり。"

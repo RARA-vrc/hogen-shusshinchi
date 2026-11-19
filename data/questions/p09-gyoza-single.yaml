@@ -1,0 +1,16 @@
+id: p09-gyoza-single
+category: culture
+fun: 0.6
+text: "餃子屋さんで「焼き、ダブルで」。この「シングル」「ダブル」という餃子の頼み方(1人前・2人前のこと)、あなたの地元では――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["0903"]
+      dist: { use: 0.35, hear: 0.40, none: 0.17, unknown: 0.08 }
+    - prefs: ["09"]
+      dist: { use: 0.15, hear: 0.35, none: 0.42, unknown: 0.08 }
+source: "Wikipedia日本語版「栃木弁」 https://ja.wikipedia.org/wiki/栃木弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、宇都宮市と周辺地域で餃子1人前(1枚)を「しんぐる」、2人前を「だぶる」、3人前を「とりぷる」と言うという点。宇都宮以外の県内・県外の分布は未確認で、宇都宮周辺以外の栃木の値は作成者の見積もり。数値は作成時の見積もり。"

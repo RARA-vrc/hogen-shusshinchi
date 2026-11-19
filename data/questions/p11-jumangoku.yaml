@@ -1,0 +1,19 @@
+id: p11-jumangoku
+category: culture
+fun: 0.7
+text: "テレビから「うまい、うますぎる」というフレーズが流れる、十万石まんじゅうのCM。あなたは――"
+options:
+  - { id: local, text: "地元のテレビでよく見た" }
+  - { id: media, text: "ネットなどで聞いたことがあるだけ" }
+  - { id: no, text: "知らない" }
+distribution:
+  default: { local: 0.01, media: 0.10, no: 0.83, unknown: 0.06 }
+  zones:
+    - prefs: ["11"]
+      dist: { local: 0.65, media: 0.12, no: 0.18, unknown: 0.05 }
+    - prefs: ["13", "10", "09", "08", "12"]
+      dist: { local: 0.06, media: 0.18, no: 0.70, unknown: 0.06 }
+source: "Wikipedia日本語版「十万石ふくさや」 https://ja.wikipedia.org/wiki/十万石ふくさや (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、十万石ふくさやがテレ玉(テレビ埼玉)を中心にCMを流していること、キャッチフレーズが「うまい、うますぎる」(棟方志功の考案)であること。県民の認知度の記述はなく、値は作成者の見積もり。テレ玉が県外でどこまで映るかは未確認で、隣接都県の値も見積もり。"

@@ -1,0 +1,16 @@
+id: p30-tsuremote
+category: vocab
+fun: 0.7
+text: "「つれもて行こら」。これは「一緒に行こう」の意味(「つれもて」=一緒に)。この「つれもて」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.04, none: 0.88, unknown: 0.07 }
+  zones:
+    - cells: ["3001", "3002", "3003"]
+      dist: { use: 0.25, hear: 0.50, none: 0.18, unknown: 0.07 }
+    - prefs: ["30"]
+      dist: { use: 0.12, hear: 0.45, none: 0.35, unknown: 0.08 }
+source: "Wikipedia日本語版「紀州弁」(和歌山弁) https://ja.wikipedia.org/wiki/和歌山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、紀北方言の例として「つれもて」=「一緒に」、「いこら」=「行きましょう」が挙げられ、「つれもて飲もら」(一緒に飲もう)の例もあること。紀北を和歌山・那賀・橋本(3001〜3003)に対応させたが、紀中・紀南での使用は出典で未確認のため県内他地域は中間値。周辺県の分布は未確認。数値は作成時の見積もり。"

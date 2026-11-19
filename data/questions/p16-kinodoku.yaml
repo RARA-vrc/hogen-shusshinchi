@@ -1,0 +1,20 @@
+id: p16-kinodoku
+category: knowledge
+fun: 0.7
+text: "近所の人におすそわけを渡したら、「まあ、きのどくな」と言われた。この「きのどくな」――"
+options:
+  - { id: thanks, text: "「ありがとう」の意味だとわかる" }
+  - { id: pity, text: "「かわいそうに」の意味だと思う" }
+  - { id: other, text: "ほかの意味だと思う" }
+unknown_text: "見当がつかない"
+distribution:
+  default: { thanks: 0.06, pity: 0.70, other: 0.10, unknown: 0.14 }
+  zones:
+    - prefs: ["16", "17"]
+      dist: { thanks: 0.72, pity: 0.15, other: 0.04, unknown: 0.09 }
+    - prefs: ["18"]
+      dist: { thanks: 0.45, pity: 0.35, other: 0.06, unknown: 0.14 }
+source: "Wikipedia日本語版「富山弁」 https://ja.wikipedia.org/wiki/富山弁 、「金沢弁」 https://ja.wikipedia.org/wiki/金沢弁 、「福井弁」 https://ja.wikipedia.org/wiki/福井弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、富山弁・金沢弁で「きのどくな」が「ありがとう」の意味で使われる点、福井弁の記事で「きのどくな」が石川と共通する語とされている点。能登・嶺南など県内の地域差、世代差、新潟など周辺県の分布は未確認。数値は作成時の見積もり。"

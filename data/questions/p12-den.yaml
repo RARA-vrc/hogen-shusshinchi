@@ -1,0 +1,18 @@
+id: p12-den
+category: grammar
+fun: 0.6
+text: "「こりゃ、ひでーでん」。この「〜でん」は「〜じゃん」「〜でしょ」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["1207"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+    - cells: ["1206", "1208"]
+      dist: { use: 0.10, hear: 0.30, none: 0.52, unknown: 0.08 }
+    - cells: ["1209"]
+      dist: { use: 0.03, hear: 0.12, none: 0.77, unknown: 0.08 }
+source: "Wikipedia日本語版「房州弁」 https://ja.wikipedia.org/wiki/房州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、房州弁の文末「〜でん」が「〜じゃん」「〜でしょ」にあたること(例「こらぁ、ひでーでん」)、房州弁が安房地域を中心に上総南部(勝浦市・大多喜町・御宿町・いすみ市・富津市・君津市など)で日常的に話され、袖ケ浦市・市原市の一部にも似た方言があること。「でん」個別の地域範囲、若年層での使用は未確認(記事は廃れた言葉も多いとする)。セルへの当てはめと数値は作成時の見積もり。"

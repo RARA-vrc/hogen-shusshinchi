@@ -1,0 +1,33 @@
+id: p06-imoni
+category: culture
+fun: 0.8
+text: "秋、河原にみんなで集まって里芋の鍋を囲む「芋煮会」。地元で定番の味は――"
+options:
+  - { id: gyu, text: "牛肉・しょうゆ味" }
+  - { id: butamiso, text: "豚肉・みそ味" }
+  - { id: butashoyu, text: "豚肉・しょうゆ味" }
+  - { id: tori, text: "鶏肉・しょうゆ味" }
+  - { id: none, text: "地元にそういう行事はない" }
+distribution:
+  default: { gyu: 0.03, butamiso: 0.03, butashoyu: 0.02, tori: 0.01, none: 0.85, unknown: 0.06 }
+  zones:
+    - cells: ["0601", "0602", "0603"]
+      dist: { gyu: 0.80, butamiso: 0.04, butashoyu: 0.03, tori: 0.01, none: 0.06, unknown: 0.06 }
+    - cells: ["0604"]
+      dist: { gyu: 0.15, butamiso: 0.65, butashoyu: 0.04, tori: 0.01, none: 0.09, unknown: 0.06 }
+    - cells: ["0701", "0702", "0703"]
+      dist: { gyu: 0.08, butamiso: 0.12, butashoyu: 0.45, tori: 0.02, none: 0.25, unknown: 0.08 }
+    - cells: ["0706", "0707"]
+      dist: { gyu: 0.06, butamiso: 0.40, butashoyu: 0.12, tori: 0.02, none: 0.32, unknown: 0.08 }
+    - cells: ["0708"]
+      dist: { gyu: 0.06, butamiso: 0.30, butashoyu: 0.30, tori: 0.02, none: 0.24, unknown: 0.08 }
+    - prefs: ["04"]
+      dist: { gyu: 0.08, butamiso: 0.65, butashoyu: 0.04, tori: 0.01, none: 0.16, unknown: 0.06 }
+    - prefs: ["03"]
+      dist: { gyu: 0.03, butamiso: 0.05, butashoyu: 0.04, tori: 0.35, none: 0.45, unknown: 0.08 }
+    - prefs: ["05"]
+      dist: { gyu: 0.03, butamiso: 0.25, butashoyu: 0.04, tori: 0.03, none: 0.57, unknown: 0.08 }
+source: "Wikipedia日本語版「芋煮」 https://ja.wikipedia.org/wiki/芋煮 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは次の点。山形県の村山・最上地方は牛肉・里芋・こんにゃく・ねぎをしょうゆで味付け(置賜も牛肉で、豆腐が入り味噌を少し加える)。庄内地方は豚肉などを入れたみそ味が一般的。宮城県の仙台平野は豚肉・里芋を仙台味噌で味付け。福島県中通りは豚肉しょうゆ味、浜通りは豚肉みそ味が一般的で、会津を中心に味噌と醤油のブレンドが見られる。岩手県(北上盆地など)は鶏肉しょうゆの「とりすき風」芋の子汁が一般的。秋田県は豚肉みそ味のなべっこも作られるが、きりたんぽやだまこもちが中心。芋煮会は宮城・山形・福島を中心に新潟・関東にも例がある。置賜を「牛肉・しょうゆ」に、会津をみそ・しょうゆ半々に振ったのは作成者の判断。宮城県の仙台平野以外、岩手の北上盆地以外、どれだけの人が行事に参加するかは未確認。数値はすべて作成時の見積もり。"

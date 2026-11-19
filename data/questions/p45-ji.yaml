@@ -1,0 +1,16 @@
+id: p45-ji
+category: grammar
+fun: 0.6
+text: "天気予報を見た友達が、語尾を上げて「明日、晴れやじ」。「晴れだよ」の意味のこの「〜じ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["4501", "4506"]
+      dist: { use: 0.32, hear: 0.38, none: 0.22, unknown: 0.08 }
+    - prefs: ["45"]
+      dist: { use: 0.06, hear: 0.30, none: 0.56, unknown: 0.08 }
+source: "Wikipedia日本語版「日向方言」https://ja.wikipedia.org/wiki/日向方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、日向方言の終助詞「じ」が「〜が」と同じような目的で使われ、「〜が」が語尾を下げるのに対し「〜じ」は語尾を上げて使い、主に県央で使われること(例「明日晴れやじ」=明日晴れだよ)。県央を宮崎東諸県(4501)と西都児湯(4506)に当てたのは作成時の判断(記事の区分では中部=児湯・宮崎北部)。周辺県の分布は未確認。数値は作成時の見積もり。"

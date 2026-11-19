@@ -1,0 +1,18 @@
+id: p24-ikoni
+category: grammar
+fun: 0.7
+text: "友達を誘って「一緒に行こに」。これは「一緒に行こうよ」の意味。誘うときに文末に付ける「〜に」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2401", "2403"]
+      dist: { use: 0.35, hear: 0.38, none: 0.19, unknown: 0.08 }
+    - cells: ["2402"]
+      dist: { use: 0.28, hear: 0.38, none: 0.26, unknown: 0.08 }
+    - cells: ["2404"]
+      dist: { use: 0.08, hear: 0.30, none: 0.52, unknown: 0.10 }
+source: "Wikipedia日本語版「三重弁」 https://ja.wikipedia.org/wiki/三重弁 および「伊勢弁」 https://ja.wikipedia.org/wiki/伊勢弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、勧誘表現に伊勢では「に」を付け(伊賀は「さ」、志摩は「に」や「か」)、伊勢弁の例として「一緒に行こに=行こうよ」があること。伊勢弁は三重県北中部の旧伊勢国の方言とされる。2402は中勢と伊賀を含むため少し低め、東紀州(2404)は出典に記載なく低めにした。他県での使用は記載なし、周辺県の分布は未確認。数値は作成時の見積もり。"

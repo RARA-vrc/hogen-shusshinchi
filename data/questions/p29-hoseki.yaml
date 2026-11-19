@@ -1,0 +1,14 @@
+id: p29-hoseki
+category: vocab
+fun: 0.7
+text: "おばあちゃんの家で「ほうせき、よばれ」と言われた。この「ほうせき」はお菓子のこと(宝石ではない)。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - prefs: ["29"]
+      dist: { use: 0.15, hear: 0.33, none: 0.43, unknown: 0.09 }
+source: "Wikipedia日本語版「奈良弁」 https://ja.wikipedia.org/wiki/奈良弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典の語彙の節で確認したのは、「ほうせき」を菓子などに用いること(「お菓子をもらった」にあたる例文がある)。使用地域・世代の記載はない。高齢層中心の語の可能性があるため use は低めにした(未確認)。周辺県の分布は未確認。「よばれる」は出典例文にある語をそのまま使ったが、その分布も未確認。数値は作成時の見積もり。"

@@ -1,0 +1,18 @@
+id: p25-gogawaku
+category: vocab
+fun: 0.6
+text: "約束をすっぽかされて「ほんまにごうがわくわ」。これは「腹が立つ」「業を煮やす」の意味。この「ごうがわく」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["2502", "2505", "2506"]
+      dist: { use: 0.25, hear: 0.38, none: 0.28, unknown: 0.09 }
+    - cells: ["2501", "2504"]
+      dist: { use: 0.15, hear: 0.33, none: 0.43, unknown: 0.09 }
+    - prefs: ["25"]
+      dist: { use: 0.08, hear: 0.25, none: 0.57, unknown: 0.10 }
+source: "Wikipedia日本語版「江州弁」(近江弁から転送) https://ja.wikipedia.org/wiki/近江弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典の語彙一覧で確認したのは、「ごーがわく」(業が沸く)が「業を煮やす。腹が立つ」の意味で、使用地域が湖北・湖東・湖南と書かれていること。他県での使用は出典に記載がなく、周辺県の分布は未確認(他府県にも似た言い方がある可能性あり)。表記は出典の「ごーがわく」を「ごうがわく」と書いた。数値は作成時の見積もり。"

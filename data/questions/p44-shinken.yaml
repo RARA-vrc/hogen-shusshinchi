@@ -1,0 +1,14 @@
+id: p44-shinken
+category: vocab
+fun: 0.6
+text: "「昨日の試合、しんけん面白かった」。まじめという意味ではなく「とても」「すごく」の意味で使うこの「しんけん」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["44"]
+      dist: { use: 0.40, hear: 0.37, none: 0.16, unknown: 0.07 }
+source: "Wikipedia日本語版「大分弁」https://ja.wikipedia.org/wiki/大分弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、大分弁の語彙に「しんけん:非常に、とても」があること(関連語「しらしんけん:一所懸命」も載っている)。大分県内の地域差、年代差と、宮崎・福岡など周辺県の分布は未確認。数値は作成時の見積もり。"

@@ -1,0 +1,14 @@
+id: p38-yomoda
+category: vocab
+fun: 0.7
+text: "「また、よもだばっかり言うて」。この「よもだ」は「いいかげん」「ぐだぐだ」「無責任」といった意味。この言葉、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["38"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+source: "Wikipedia日本語版「伊予弁」https://ja.wikipedia.org/wiki/伊予弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、伊予弁の語彙に「よもだ」=いい加減、ダラダラしている様、無責任 がある点。出典記事には独自研究の注意書きがある。県内(東予・中予・南予)の地域差、周辺県の分布は未確認。例文は作成者の作文。数値は作成時の見積もり。"

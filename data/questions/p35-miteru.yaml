@@ -1,0 +1,14 @@
+id: p35-miteru
+category: unaware
+fun: 0.7
+text: "「あ、ソースがみてとる」。この「みてる」は「(中身が)尽きる・なくなる」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["35"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+source: "Wikipedia日本語版「山口弁」https://ja.wikipedia.org/wiki/山口弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、山口弁の「みてる」が在庫や分量が尽きる意味の「なくなる」で、県外の人には「満てる」と逆の意味に取られることがあるという点。県内の地域注記はない。周辺県の分布は未確認。例文の活用形は作成者の作文。数値は作成時の見積もり。"

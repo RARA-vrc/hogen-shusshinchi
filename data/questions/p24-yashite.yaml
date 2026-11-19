@@ -1,0 +1,16 @@
+id: p24-yashite
+category: grammar
+fun: 0.6
+text: "「あの店、今日は休みやして」。この「やして」は「〜だよ」にあたる言い方。この「〜やして」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.91, unknown: 0.06 }
+  zones:
+    - cells: ["2402"]
+      dist: { use: 0.12, hear: 0.25, none: 0.54, unknown: 0.09 }
+    - prefs: ["24"]
+      dist: { use: 0.02, hear: 0.10, none: 0.79, unknown: 0.09 }
+source: "Wikipedia日本語版「三重弁」 https://ja.wikipedia.org/wiki/三重弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、伊賀では強い断定で「わして」と言い、「だよ」にあたる表現に「やして」があること。出典に例文はなく、問題文の文は作成者が組み立てたもの(要確認)。伊賀はセル2402(中勢伊賀)の一部にすぎないため値を低めにした。他県での使用は記載なし(泉州弁の記事には泉南の「わして」が紀州と共通するとあるが、「やして」とは別)。周辺県の分布は未確認。数値は作成時の見積もり。"

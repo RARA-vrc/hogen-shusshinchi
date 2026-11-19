@@ -1,0 +1,22 @@
+id: p20-dani
+category: grammar
+fun: 0.6
+text: "「あの店、明日から休みだに」。この文末の「〜だに」(「〜だよ」と言い切る言い方)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["2005"]
+      dist: { use: 0.38, hear: 0.38, none: 0.16, unknown: 0.08 }
+    - cells: ["2004"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+    - cells: ["2311", "2312"]
+      dist: { use: 0.32, hear: 0.38, none: 0.22, unknown: 0.08 }
+    - cells: ["2207", "2208"]
+      dist: { use: 0.28, hear: 0.40, none: 0.24, unknown: 0.08 }
+    - cells: ["2003", "2006", "2308", "2309", "2310"]
+      dist: { use: 0.05, hear: 0.30, none: 0.56, unknown: 0.09 }
+source: "Wikipedia日本語版「長野県方言」 https://ja.wikipedia.org/wiki/長野県方言 、「三河弁」 https://ja.wikipedia.org/wiki/三河弁 、「遠州弁」 https://ja.wikipedia.org/wiki/遠州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、「…だに」(「…だよ」の意)が長野県方言の南信州地域・上伊那南部地域の項にあること、三河弁の記事で「だに」は東三河のみで使われるとされること、遠州弁の記事で「〜だに」(断定)が挙げられていること。上伊那は南部のみの記載のため値を下げた。諏訪・木曽・西三河の値は「聞いたことがある」程度の推定で未確認。遠州弁の地域内分布、世代差も未確認。数値は作成時の見積もり。"

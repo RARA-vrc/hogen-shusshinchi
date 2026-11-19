@@ -1,0 +1,16 @@
+id: p28-beccyonai
+category: vocab
+fun: 0.7
+text: "転んだ子に「べっちょないか?」と声をかける。この「べっちょない」は「大丈夫だ」の意味(「別条ない」から)。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.04, none: 0.88, unknown: 0.07 }
+  zones:
+    - cells: ["2804", "2805", "2812"]
+      dist: { use: 0.35, hear: 0.40, none: 0.18, unknown: 0.07 }
+    - prefs: ["28"]
+      dist: { use: 0.12, hear: 0.40, none: 0.40, unknown: 0.08 }
+source: "Wikipedia日本語版「播州弁」 https://ja.wikipedia.org/wiki/播州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、播州弁の表現として「べっちょない」=「大丈夫だ」があり、「別条ない、別状ない」が変化したものとされること。播磨のどこで使うか、神戸・但馬など県内他地域や他府県での使用は出典に記載がなく、周辺府県の分布は未確認。数値は作成時の見積もり。"

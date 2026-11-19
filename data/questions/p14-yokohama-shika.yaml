@@ -1,0 +1,19 @@
+id: p14-yokohama-shika
+category: culture
+fun: 0.7
+text: "「横浜市歌」(横浜市の市の歌)。あなたは――"
+options:
+  - { id: sing, text: "学校で習って、今でもだいたい歌える" }
+  - { id: heard, text: "あることは知っている/聞いたことがある" }
+  - { id: no, text: "知らない" }
+distribution:
+  default: { sing: 0.01, heard: 0.08, no: 0.85, unknown: 0.06 }
+  zones:
+    - cells: ["1412"]
+      dist: { sing: 0.55, heard: 0.25, no: 0.15, unknown: 0.05 }
+    - prefs: ["14"]
+      dist: { sing: 0.05, heard: 0.35, no: 0.54, unknown: 0.06 }
+source: "Wikipedia日本語版「横浜市歌」 https://ja.wikipedia.org/wiki/横浜市歌 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、横浜市歌は他自治体の歌と比べ市民への浸透度が高いとされ、横浜市立の小・中学校では1990年代から音楽の授業で校歌とともに歌唱指導が行われ、市立学校出身者の多くが歌えると言われること。一方で教育を受けていない人や転入者は知らないこともあるとの指摘もある。横浜市外の県内での知名度は未確認。数値は作成時の見積もり。"

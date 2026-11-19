@@ -1,0 +1,23 @@
+id: p40-to-question
+category: grammar
+fun: 0.6
+text: "友達が新しい店の話をしている。「その店、もう知ってるの?」と聞き返すなら、いちばん自然なのは――"
+options:
+  - { id: to, text: "「知っとると?」「知っとーと?」" }
+  - { id: n, text: "「知っとるん?」「知っちょるん?」" }
+  - { id: no, text: "「知ってるの?」" }
+distribution:
+  default: { to: 0.02, n: 0.18, no: 0.72, unknown: 0.08 }
+  zones:
+    - cells: ["4012", "4013"]
+      dist: { to: 0.12, n: 0.62, no: 0.18, unknown: 0.08 }
+    - cells: ["4010"]
+      dist: { to: 0.40, n: 0.32, no: 0.20, unknown: 0.08 }
+    - prefs: ["40", "41", "42", "43"]
+      dist: { to: 0.68, n: 0.08, no: 0.17, unknown: 0.07 }
+    - prefs: ["45"]
+      dist: { to: 0.55, n: 0.12, no: 0.25, unknown: 0.08 }
+source: "Wikipedia日本語版「博多弁」https://ja.wikipedia.org/wiki/博多弁 /「北九州弁」https://ja.wikipedia.org/wiki/北九州弁 /「熊本弁」https://ja.wikipedia.org/wiki/熊本弁 /「日向方言」https://ja.wikipedia.org/wiki/日向方言 / 英語版「Nagasaki dialect」https://en.wikipedia.org/wiki/Nagasaki_dialect (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは次の点。博多弁では文末の「と」で疑問文を作る(「知っとーと?」の例)。北九州弁は疑問文で「と」でなく「ん」を使い、博多弁の「食べると?」に対し「食べるん?」と言う(北九州弁の範囲は遠賀郡〜京築地域とされる)。熊本弁にも「食べんと?」の例がある。日向方言(宮崎)の疑問の「〜と?」は県全域で使われる。長崎弁では「と」が準体助詞として使われる(疑問の例「こいだいんと?」)。佐賀県・鹿児島県・大分県の疑問の「と」は未確認のため、佐賀は肥筑方言の一員として福岡・長崎・熊本と同じ値に置いたが根拠は弱い。北九州以外の西日本の「〜ん?」の分布(default の n の値)は出典未確認の見積もり。直方・鞍手(4010)は北九州弁の範囲かどうか未確認で中間値。数値はすべて作成時の見積もり。"

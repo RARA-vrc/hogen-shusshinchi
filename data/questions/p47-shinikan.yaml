@@ -1,0 +1,18 @@
+id: p47-shinikan
+category: vocab
+fun: 0.6
+text: "「この店のそば、しにかんおいしい」。「とても」「すごく」の意味のこの「しにかん」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.00, hear: 0.02, none: 0.91, unknown: 0.07 }
+  zones:
+    - cells: ["4701"]
+      dist: { use: 0.35, hear: 0.38, none: 0.20, unknown: 0.07 }
+    - cells: ["4704", "4705"]
+      dist: { use: 0.04, hear: 0.26, none: 0.62, unknown: 0.08 }
+    - prefs: ["47"]
+      dist: { use: 0.08, hear: 0.42, none: 0.43, unknown: 0.07 }
+source: "Wikipedia日本語版「ウチナーヤマトグチの語彙一覧」https://ja.wikipedia.org/wiki/ウチナーヤマトグチの語彙一覧 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、ウチナーヤマトグチの語彙に「シニカン」があり、「シニ」(とても。非常に)と同義で、おもに沖縄本島北部で使われると書かれていること。本島北部を北部セル(4701)に当てた。本島中南部・宮古・八重山でどの程度聞くかは未確認で、宮古・八重山を本島中南部より低めにしたのは作成時の判断。数値は作成時の見積もり。"

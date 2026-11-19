@@ -1,0 +1,14 @@
+id: p10-nakkara
+category: vocab
+fun: 0.6
+text: "「今日はなっから寒いね」。これは「すごく」「だいぶ」の意味。この「なっから」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - prefs: ["10"]
+      dist: { use: 0.30, hear: 0.42, none: 0.20, unknown: 0.08 }
+source: "Wikipedia日本語版「群馬弁」 https://ja.wikipedia.org/wiki/群馬弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、群馬弁の語彙として「なっから」「なから」=すごく、随分の意味が載っていること。県内の地域差、若い世代での使用、周辺県の分布は未確認。数値は作成時の見積もり。"

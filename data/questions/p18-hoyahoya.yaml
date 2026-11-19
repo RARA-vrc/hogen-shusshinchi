@@ -1,0 +1,16 @@
+id: p18-hoyahoya
+category: unaware
+fun: 0.6
+text: "電話で友達の話を聞きながら、相づちは「ほやほや」「ほやほやほや」。「そうそう」の意味で「ほや」を2回、3回と重ねるこの相づち、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["1801", "1802", "1803"]
+      dist: { use: 0.42, hear: 0.35, none: 0.15, unknown: 0.08 }
+    - cells: ["1804"]
+      dist: { use: 0.10, hear: 0.35, none: 0.45, unknown: 0.10 }
+source: "Wikipedia日本語版「福井弁」 https://ja.wikipedia.org/wiki/福井弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、相づちの「ほや」(「そうや」から)を「ほやほや」「ほやほやほや」と2〜3回重ねて言うことが多いのが福井弁の特徴だという点。出典は嶺北の方言が対象で、嶺南の値は推定。「ほや」単独は他の地域でも使われうるが、周辺県の分布は未確認。数値は作成時の見積もり。"

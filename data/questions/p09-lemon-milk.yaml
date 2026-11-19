@@ -1,0 +1,21 @@
+id: p09-lemon-milk
+category: culture
+fun: 0.6
+text: "黄色いパッケージの「レモン牛乳」。学校の購買や運動会、近所のお店で――"
+options:
+  - { id: local, text: "地元で普通に売っていて、飲んだことがある" }
+  - { id: media, text: "名前は知っているが、地元では見かけない" }
+  - { id: no, text: "知らない" }
+distribution:
+  default: { local: 0.01, media: 0.15, no: 0.78, unknown: 0.06 }
+  zones:
+    - cells: ["0903"]
+      dist: { local: 0.75, media: 0.12, no: 0.08, unknown: 0.05 }
+    - prefs: ["09"]
+      dist: { local: 0.55, media: 0.25, no: 0.15, unknown: 0.05 }
+    - prefs: ["08", "10"]
+      dist: { local: 0.06, media: 0.30, no: 0.58, unknown: 0.06 }
+source: "Wikipedia日本語版「レモン牛乳」 https://ja.wikipedia.org/wiki/レモン牛乳 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、レモン牛乳が栃木県内の製乳メーカー2社が作る乳飲料の通称で、主に宇都宮市内の店や学校の購買・運動会などで売られて宇都宮市民になじみ深いこと、県外でも一部で買えること。県内の他地域・隣県での普及度は未確認。数値は作成時の見積もり。"

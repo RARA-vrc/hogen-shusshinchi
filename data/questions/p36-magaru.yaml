@@ -1,0 +1,19 @@
+id: p36-magaru
+category: vocab
+fun: 0.8
+text: "「そこにおったら、まがる」「それ、まがったらいかん」。この「まがる」を、方向を変える「曲がる」以外の意味で使うとしたら――"
+options:
+  - { id: jama, text: "「邪魔になる」の意味" }
+  - { id: sawaru, text: "「さわる」の意味" }
+  - { id: none, text: "「曲がる」以外の意味は知らない" }
+distribution:
+  default: { jama: 0.02, sawaru: 0.02, none: 0.90, unknown: 0.06 }
+  zones:
+    - prefs: ["36"]
+      dist: { jama: 0.50, sawaru: 0.03, none: 0.37, unknown: 0.10 }
+    - prefs: ["38"]
+      dist: { jama: 0.03, sawaru: 0.50, none: 0.37, unknown: 0.10 }
+source: "Wikipedia日本語版「阿波弁」https://ja.wikipedia.org/wiki/阿波弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、阿波弁の語彙に「まがる」=邪魔になる があること。あわせて Wikipedia「伊予弁」(https://ja.wikipedia.org/wiki/伊予弁 、2026-11-19閲覧)に「まがる」=触る(「まがるなや」=さわるなよ)があるため、愛媛の値を置いた。どちらも県内の地域差、香川・高知など周辺県の分布は未確認。例文は作成者の作文。数値は作成時の見積もり。"

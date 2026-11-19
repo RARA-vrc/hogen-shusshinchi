@@ -1,0 +1,20 @@
+id: p26-agaru
+category: culture
+fun: 0.6
+text: "店の場所を説明するとき、「〇〇通△△上ル」(交差点から北へ行ったところ)、「〜東入ル」(東へ入ったところ)のように、通りの名前と「上ル・下ル・東入ル・西入ル」で言い表すこと、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.08, none: 0.84, unknown: 0.07 }
+  zones:
+    - cells: ["2604"]
+      dist: { use: 0.50, hear: 0.38, none: 0.07, unknown: 0.05 }
+    - cells: ["2603", "2605", "2606"]
+      dist: { use: 0.20, hear: 0.55, none: 0.18, unknown: 0.07 }
+    - prefs: ["26"]
+      dist: { use: 0.08, hear: 0.50, none: 0.35, unknown: 0.07 }
+    - cells: ["2501", "2502", "2708"]
+      dist: { use: 0.02, hear: 0.25, none: 0.66, unknown: 0.07 }
+source: "Wikipedia日本語版「京都市内の通り」 https://ja.wikipedia.org/wiki/京都市内の通り (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、京都市中心部など格子状の街路の地域で、北へ向かうことを「上ル」、南へを「下ル」、東西を「東入」「西入」と表すこと、公的な住所では通り名を使わない市内周縁部でもこの方法で所在地を表すことが一般的であること。京都市外の府内・滋賀・大阪での使用は出典に記載がなく、値は作成者の見積もり(聞いたことがある程度を想定)。"

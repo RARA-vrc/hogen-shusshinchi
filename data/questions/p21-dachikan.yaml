@@ -1,0 +1,16 @@
+id: p21-dachikan
+category: vocab
+fun: 0.6
+text: "パソコンが何度やっても動かない。「こりゃ、だちかんわ」。この「だちかん」「だしかん」(「だめだ」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2105"]
+      dist: { use: 0.38, hear: 0.38, none: 0.16, unknown: 0.08 }
+    - cells: ["2101", "2102", "2103", "2104"]
+      dist: { use: 0.04, hear: 0.22, none: 0.65, unknown: 0.09 }
+source: "Wikipedia日本語版「飛騨方言」 https://ja.wikipedia.org/wiki/飛騨方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、飛騨弁の「だちかん(だしかん)」が「駄目だ」の意味で「埒が明かぬ」から転じたもの、丁寧形は「だちきません」とされる点。美濃・富山など周辺地域での使用、世代差は未確認(美濃の値は推定)。数値は作成時の見積もり。"

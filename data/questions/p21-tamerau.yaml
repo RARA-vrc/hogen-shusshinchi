@@ -1,0 +1,16 @@
+id: p21-tamerau
+category: unaware
+fun: 0.7
+text: "帰る友達を玄関で見送りながら、「暗いから、ためらって帰ってね」。この「ためらって」(「気をつけて」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["2101", "2102", "2103", "2104"]
+      dist: { use: 0.30, hear: 0.38, none: 0.24, unknown: 0.08 }
+    - cells: ["2105"]
+      dist: { use: 0.08, hear: 0.30, none: 0.52, unknown: 0.10 }
+source: "Wikipedia日本語版「美濃弁」 https://ja.wikipedia.org/wiki/美濃弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、美濃弁の語彙表に「ためらって」=「気をつけて」とある点のみ(地域注記なし)。名古屋弁の記事には記載がなかったが、愛知など周辺県での使用の有無は未確認。美濃内の地域差、世代差、飛騨の値は推定。例文は作成者の文。数値は作成時の見積もり。"

@@ -1,0 +1,24 @@
+id: p10-meppa
+category: vocab
+fun: 0.6
+text: "まぶたが赤く腫れてしまった(いわゆる「ものもらい」)。あなたの地元での呼び名は――"
+options:
+  - { id: monomorai, text: "「ものもらい」" }
+  - { id: meppa, text: "「めっぱ」" }
+  - { id: mekago, text: "「めかご」「めかいご」「めけご」" }
+  - { id: other, text: "そのほかの呼び名" }
+distribution:
+  default: { monomorai: 0.62, meppa: 0.01, mekago: 0.01, other: 0.30, unknown: 0.06 }
+  zones:
+    - cells: ["1004", "1006"]
+      dist: { monomorai: 0.40, meppa: 0.42, mekago: 0.04, other: 0.06, unknown: 0.08 }
+    - cells: ["1002", "1005"]
+      dist: { monomorai: 0.40, meppa: 0.20, mekago: 0.25, other: 0.07, unknown: 0.08 }
+    - cells: ["1007", "1008"]
+      dist: { monomorai: 0.40, meppa: 0.04, mekago: 0.42, other: 0.06, unknown: 0.08 }
+    - cells: ["1001", "1003", "1009", "1010"]
+      dist: { monomorai: 0.42, meppa: 0.04, mekago: 0.40, other: 0.06, unknown: 0.08 }
+source: "Wikipedia日本語版「群馬弁」 https://ja.wikipedia.org/wiki/群馬弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、群馬弁でものもらいを「めっぱ」(高崎、渋川、富岡、西毛地域)、「めかご」(吾妻、沼田、藤岡地域)、「めかいご」(中毛、桐生、太田地域)、「めけご」(館林地区)と呼ぶという地域注記。渋川は「めっぱ」、藤岡は「めかご」とあるが西毛との重なりがあるため両方を混ぜた値にした。中毛を前橋・伊勢崎セルに当てたのは作成者の解釈。埼玉・栃木など隣県での呼び名は未確認。数値は作成時の見積もり。"

@@ -1,0 +1,20 @@
+id: p46-dakarayo
+category: unaware
+fun: 0.6
+text: "同い年の友達が「今日、暑すぎん?」。あいづちで「だからよー」(「そうだよね」「ほんとそれ」の意味)と返す言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.03, hear: 0.10, none: 0.80, unknown: 0.07 }
+  zones:
+    - cells: ["4612"]
+      dist: { use: 0.20, hear: 0.35, none: 0.37, unknown: 0.08 }
+    - prefs: ["46"]
+      dist: { use: 0.45, hear: 0.33, none: 0.15, unknown: 0.07 }
+    - prefs: ["47"]
+      dist: { use: 0.50, hear: 0.32, none: 0.12, unknown: 0.06 }
+    - cells: ["4502", "4505"]
+      dist: { use: 0.20, hear: 0.38, none: 0.34, unknown: 0.08 }
+source: "Wikipedia日本語版「薩隅方言」https://ja.wikipedia.org/wiki/薩隅方言 /「ウチナーヤマトグチの語彙一覧」https://ja.wikipedia.org/wiki/ウチナーヤマトグチの語彙一覧 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、薩隅方言の語彙に「ダカラヨ:そうだ」があり、「ジャッド/ジャライ」より若い人が使い、同年代にしか使わないと書かれていること。沖縄のウチナーヤマトグチにも「だからよ」「だからよー」が相づち・了解の言葉として載っているため、沖縄も高めにした。共通語の「だからさ」と形が近く、他地域でも同じ形の相づちを使う人がいる可能性があるので default をやや高めにした。奄美(4612)、諸県(4502・4505)、熊本・宮崎のほかの地域での使用は未確認。数値は作成時の見積もり。"

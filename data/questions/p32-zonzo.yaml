@@ -1,0 +1,14 @@
+id: p32-zonzo
+category: vocab
+fun: 0.7
+text: "風邪のひきはじめ。「なんだか、ぞんぞがさばる」。これは「寒気がする」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["3201", "3202", "3203", "3207", "3103"]
+      dist: { use: 0.25, hear: 0.40, none: 0.27, unknown: 0.08 }
+source: "Wikipedia日本語版「雲伯方言」https://ja.wikipedia.org/wiki/雲伯方言 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典(雲伯方言)の語彙に「ぞんぞがさばる」=寒気がする がある。範囲は雲伯方言域(島根県出雲・隠岐、鳥取県西部)として扱った。世代差は出典に記載がなく、若い世代の使用率が不明なので値を控えめにした。周辺県の分布は未確認。数値は作成時の見積もり。"

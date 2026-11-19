@@ -1,0 +1,14 @@
+id: p22-bushottai
+category: vocab
+fun: 0.6
+text: "脱いだ服が床に散らかりっぱなしの部屋を見て、母がひとこと。「まあ、ぶしょったい」。この「ぶしょったい」(「だらしない」「汚らしい」の意味)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - prefs: ["22"]
+      dist: { use: 0.30, hear: 0.42, none: 0.20, unknown: 0.08 }
+source: "Wikipedia日本語版「静岡弁」 https://ja.wikipedia.org/wiki/静岡弁 、「遠州弁」 https://ja.wikipedia.org/wiki/遠州弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、静岡弁の「ぶしょったい、ぶしょってぁ」が「汚らしい、だらしない」の意味で、静岡県全域で使われる語の印(★)が付いていること、遠州弁の記事にも「ぶしょったい」(だらしない、汚い、格好悪い)があること。世代差、愛知・山梨・神奈川など周辺県の分布は未確認。数値は作成時の見積もり。"

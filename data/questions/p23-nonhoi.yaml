@@ -1,0 +1,20 @@
+id: p23-nonhoi
+category: knowledge
+fun: 0.7
+text: "「のんほい」。この言葉――"
+preset: know3
+distribution:
+  default: { local: 0.01, media: 0.04, no: 0.88, unknown: 0.07 }
+  zones:
+    - cells: ["2312"]
+      dist: { local: 0.62, media: 0.15, no: 0.16, unknown: 0.07 }
+    - cells: ["2311"]
+      dist: { local: 0.45, media: 0.15, no: 0.32, unknown: 0.08 }
+    - cells: ["2308", "2309", "2310"]
+      dist: { local: 0.05, media: 0.30, no: 0.57, unknown: 0.08 }
+    - prefs: ["23"]
+      dist: { local: 0.02, media: 0.20, no: 0.70, unknown: 0.08 }
+source: "Wikipedia日本語版「三河弁」 https://ja.wikipedia.org/wiki/三河弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、東三河では「のん」が使われ「のんほい」は豊橋で特に有名なこと、「のんほい」は西三河では全く使われないとされること。東三河北部(新城周辺)・尾張・遠州の値は未確認の推定。県内の他地域で「見聞きした」人の割合も推定で未確認。数値は作成時の見積もり。"

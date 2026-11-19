@@ -1,0 +1,16 @@
+id: p30-bareshoes
+category: unaware
+fun: 0.7
+text: "学校の昇降口で先生が「バレーシューズに履き替えなさい」。上履き(校舎内で履く靴)を「バレーシューズ」と呼ぶ言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.02, hear: 0.04, none: 0.87, unknown: 0.07 }
+  zones:
+    - cells: ["3001", "3002", "3003"]
+      dist: { use: 0.35, hear: 0.30, none: 0.27, unknown: 0.08 }
+    - prefs: ["30"]
+      dist: { use: 0.15, hear: 0.28, none: 0.48, unknown: 0.09 }
+source: "Wikipedia日本語版「紀州弁」(和歌山弁) https://ja.wikipedia.org/wiki/和歌山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典の「紀北方言」の語の一覧で確認したのは、「バレーシューズ」=「上履き」とあること。紀北を3001〜3003に対応させた。紀中・紀南や他府県で同じ呼び方をするかは出典に記載がなく未確認(他地域にもある可能性がある)。年代差も未確認。数値は作成時の見積もり。"

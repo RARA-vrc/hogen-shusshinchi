@@ -1,0 +1,14 @@
+id: p41-soigi
+category: vocab
+fun: 0.7
+text: "用事が済んで帰りぎわ、「そいぎ、また明日ね」。「それじゃあ」「では」の意味のこの「そいぎ」、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["41"]
+      dist: { use: 0.35, hear: 0.40, none: 0.17, unknown: 0.08 }
+source: "Wikipedia日本語版「佐賀弁」https://ja.wikipedia.org/wiki/佐賀弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、佐賀弁の語彙として「そいぎ(んた)」が「それじゃあ。そしたら。それでは。」「さようなら。それならば。」の意味で載っていること。佐賀県内の地域差(唐津地区・田代地区で使うか)と、長崎・福岡など周辺県の分布は未確認。数値は作成時の見積もり。"

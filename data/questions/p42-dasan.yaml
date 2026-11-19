@@ -1,0 +1,16 @@
+id: p42-dasan
+category: grammar
+fun: 0.6
+text: "「昨日は熱の出て、買い物に行きださんじゃった」。「行けなかった」の意味のこの「〜ださん」(できない)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["4201"]
+      dist: { use: 0.25, hear: 0.38, none: 0.28, unknown: 0.09 }
+    - prefs: ["42"]
+      dist: { use: 0.04, hear: 0.18, none: 0.70, unknown: 0.08 }
+source: "Wikipedia英語版「Nagasaki dialect」https://en.wikipedia.org/wiki/Nagasaki_dialect (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典で確認したのは、能力の否定(〜できない)を表す -ださん が長崎市の方言だけで使われるという記述と、「…行きださんじゃった」の例文(町へ行こうと思っていたが忙しくて行けなかった、の意)。出典が長崎市に限ると明記しているので confidence は medium。若い世代がどの程度使うかは未確認で、県内のほかの地域で聞く程度も見積もり。英語版の記事であり日本語版「長崎弁」には該当記述が見当たらなかった。数値は作成時の見積もり。"

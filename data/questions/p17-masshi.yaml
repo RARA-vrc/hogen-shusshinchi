@@ -1,0 +1,20 @@
+id: p17-masshi
+category: grammar
+fun: 0.7
+text: "試験の朝、家族に見送られる。「しっかり頑張るまっし」。この「〜まっし」(「〜しなさい」をやわらかくした言い方)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.06, none: 0.86, unknown: 0.07 }
+  zones:
+    - cells: ["1702"]
+      dist: { use: 0.38, hear: 0.45, none: 0.10, unknown: 0.07 }
+    - cells: ["1701"]
+      dist: { use: 0.30, hear: 0.45, none: 0.17, unknown: 0.08 }
+    - cells: ["1703", "1704"]
+      dist: { use: 0.12, hear: 0.45, none: 0.33, unknown: 0.10 }
+    - prefs: ["16"]
+      dist: { use: 0.03, hear: 0.30, none: 0.58, unknown: 0.09 }
+source: "Wikipedia日本語版「金沢弁」 https://ja.wikipedia.org/wiki/金沢弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、金沢弁の「まっし」が優しい命令を表し(「頑張るまっし」「行きまっし」など)、小松市などでも使われ、若い世代にも比較的残っている(ただし励まし・勧誘の意味に変わりつつある)という点。能登での使用、富山など周辺県の分布は未確認で、能登・富山の値は推定。全国でもテレビ等で聞いた人がいる想定。数値は作成時の見積もり。"

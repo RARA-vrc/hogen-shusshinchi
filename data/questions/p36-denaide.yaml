@@ -1,0 +1,14 @@
+id: p36-denaide
+category: grammar
+fun: 0.7
+text: "探していた鍵が机の上に。「なんな、ここにあるでないで」。この「〜でないで」は「〜じゃないか」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["36"]
+      dist: { use: 0.35, hear: 0.42, none: 0.15, unknown: 0.08 }
+source: "Wikipedia日本語版「阿波弁」https://ja.wikipedia.org/wiki/阿波弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、阿波弁で「〜でないで」が「〜ではないか」を表し、「あるでないで」(あるじゃないか)の例がある点。県内の地域差、周辺県の分布は未確認。例文の「なんな」は作成者の作文。数値は作成時の見積もり。"

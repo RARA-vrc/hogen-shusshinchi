@@ -1,0 +1,16 @@
+id: p21-yao
+category: grammar
+fun: 0.7
+text: "友達からのメッセージ。「明日の部活、休みやお」。「〜やよ」が「〜やお」に聞こえる、文末に「お」を添えるこの言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - cells: ["2101", "2102", "2103", "2104"]
+      dist: { use: 0.45, hear: 0.32, none: 0.15, unknown: 0.08 }
+    - cells: ["2105"]
+      dist: { use: 0.10, hear: 0.35, none: 0.45, unknown: 0.10 }
+source: "Wikipedia日本語版「美濃弁」 https://ja.wikipedia.org/wiki/美濃弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、美濃弁で1981年生まれ以降の世代に終助詞に「お」を添える傾向があり、2012年の美濃地方出身の19〜23歳への調査で友人との会話で「やお/やよ」を使う人が90%に上ったとされる点。名古屋弁の記事には「やお」の記載がなかったが、愛知など周辺県で使われないことを確認したわけではない。飛騨と年配層の値は推定。例文は作成者の文。数値は作成時の見積もり。"

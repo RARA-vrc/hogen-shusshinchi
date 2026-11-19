@@ -1,0 +1,16 @@
+id: p18-za
+category: grammar
+fun: 0.6
+text: "塀によじ登ろうとする弟に、姉がひとこと。「そこ登ったら、あかんざ」。この文末の「〜ざ」(「〜よ」と強く言い聞かせる言い方)、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.90, unknown: 0.07 }
+  zones:
+    - cells: ["1801", "1802", "1803"]
+      dist: { use: 0.38, hear: 0.38, none: 0.16, unknown: 0.08 }
+    - cells: ["1804"]
+      dist: { use: 0.08, hear: 0.35, none: 0.47, unknown: 0.10 }
+source: "Wikipedia日本語版「福井弁」 https://ja.wikipedia.org/wiki/福井弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、福井弁(嶺北の方言)で相手への主張を強める終助詞「ざ」があり、「ほんなことしたらあかんざ」の例がある点。出典は嶺北(敦賀を除く旧越前)を対象とし、嶺南は別扱いのため嶺南セルは推定。若者は共通語化が進んでいるとの記述あり。石川・富山など周辺県の分布は未確認。数値は作成時の見積もり。"

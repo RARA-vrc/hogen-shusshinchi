@@ -1,0 +1,14 @@
+id: p36-jo
+category: grammar
+fun: 0.7
+text: "「それ、うちの傘じょ」「明日は休みなんじょ」。「〜だ」「〜や」の代わりに女性がよく使う文末の「〜じょ」。あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["36"]
+      dist: { use: 0.25, hear: 0.55, none: 0.13, unknown: 0.07 }
+source: "Wikipedia日本語版「阿波弁」https://ja.wikipedia.org/wiki/阿波弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、阿波弁では女性が全県的に「じゃ/だ/や」の代わりに「じょ」という女性言葉を用いるという点。男性回答者は「聞く」側に寄るとみてuseを低めにした。周辺県の分布は未確認。山梨の禁止の「〜ちょ」(g16-cho)とは別の表現。例文は作成者の作文。数値は作成時の見積もり。"

@@ -1,0 +1,18 @@
+id: p30-yanikoi
+category: vocab
+fun: 0.7
+text: "「今日はやにこい暑いなあ」。この「やにこい」は「とても」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.02, none: 0.91, unknown: 0.06 }
+  zones:
+    - cells: ["3006"]
+      dist: { use: 0.30, hear: 0.38, none: 0.24, unknown: 0.08 }
+    - cells: ["3005"]
+      dist: { use: 0.15, hear: 0.33, none: 0.43, unknown: 0.09 }
+    - prefs: ["30"]
+      dist: { use: 0.03, hear: 0.18, none: 0.70, unknown: 0.09 }
+source: "Wikipedia日本語版「紀州弁」(和歌山弁) https://ja.wikipedia.org/wiki/和歌山弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: medium
+needs_review: true
+notes: "出典の紀中・紀南方言の語の一覧で確認したのは、「やにこい」=「とっても」で、日高郡みなべ町・田辺市・白浜町を中心とした西牟婁地方の語とされていること。田辺セル(3006)を中心に、みなべ町を含むと思われる御坊セル(3005)を中間にした(セルの範囲との対応は未確認)。問題文の文全体は作成者が組み立てたもので、出典に例文はない。周辺県の分布は未確認。数値は作成時の見積もり。"

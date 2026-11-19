@@ -1,0 +1,14 @@
+id: p29-mawari
+category: vocab
+fun: 0.6
+text: "出かける前に家族が「もう、まわりできた?」。この「まわり」は「準備・支度」の意味。この言い方、あなたは――"
+preset: use3
+distribution:
+  default: { use: 0.01, hear: 0.03, none: 0.89, unknown: 0.07 }
+  zones:
+    - prefs: ["29"]
+      dist: { use: 0.30, hear: 0.38, none: 0.24, unknown: 0.08 }
+source: "Wikipedia日本語版「奈良弁」 https://ja.wikipedia.org/wiki/奈良弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典の語彙の節で確認したのは、「まわり」を「準備」の意味で用いること(例は「準備したかい?」にあたる文)。県内の地域差・世代差の記載はなく、他県で使うかも記載なし。周辺県(京都南部・大阪・三重など)の分布は未確認。数値は作成時の見積もり。"

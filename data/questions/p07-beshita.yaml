@@ -1,0 +1,25 @@
+id: p07-beshita
+category: grammar
+fun: 0.7
+text: "「だから、前に言ったでしょう?」と念を押す場面。地元の口調で言うと、文末はどれに近い?"
+options:
+  - { id: beshita, text: "「言ったべした」" }
+  - { id: bai, text: "「言ったばい」" }
+  - { id: ppai, text: "「言ったっぱい」" }
+  - { id: ppeyo, text: "「言ったっぺよ」" }
+  - { id: other, text: "どれも使わない" }
+distribution:
+  default: { beshita: 0.01, bai: 0.02, ppai: 0.01, ppeyo: 0.04, other: 0.86, unknown: 0.06 }
+  zones:
+    - cells: ["0701", "0706", "0708"]
+      dist: { beshita: 0.45, bai: 0.05, ppai: 0.02, ppeyo: 0.08, other: 0.32, unknown: 0.08 }
+    - cells: ["0702"]
+      dist: { beshita: 0.12, bai: 0.40, ppai: 0.04, ppeyo: 0.06, other: 0.30, unknown: 0.08 }
+    - cells: ["0703"]
+      dist: { beshita: 0.08, bai: 0.10, ppai: 0.35, ppeyo: 0.07, other: 0.32, unknown: 0.08 }
+    - cells: ["0707"]
+      dist: { beshita: 0.05, bai: 0.03, ppai: 0.02, ppeyo: 0.45, other: 0.37, unknown: 0.08 }
+source: "Wikipedia日本語版「福島弁」 https://ja.wikipedia.org/wiki/福島弁 (2026-11-19閲覧。二次情報であり、一次文献は未確認)"
+confidence: low
+needs_review: true
+notes: "出典で確認したのは、「言ったじゃないですか」の言い方として、ゆったべした(相馬市・福島市・会津若松市付近)、ゆったばい(郡山市付近)、ゆったっぱい(白河市付近)、ゆったっぺよ(いわき市付近)が挙げられている点。各市付近を県北・相双・会津、県中、県南、いわきの各セル全体に広げたのは作成者の解釈で、境界は未確認。「〜っぺよ」は北関東など県外の「〜っぺ」と似ているため県外にも少し値を置いたが、県外の分布は未確認。数値はすべて作成時の見積もり。"
